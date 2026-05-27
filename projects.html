@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Projects &mdash; Mara Hyena Project</title>
+  <link rel="stylesheet" href="css/style.css">
+<style>
+.project-card{background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:3rem}
+.project-header{background:var(--green-dark);color:var(--white);padding:1.75rem 2rem;display:flex;align-items:flex-start;gap:1.5rem}
+.project-num{font-family:"EB Garamond",serif;font-size:3rem;font-weight:500;color:rgba(255,255,255,.2);line-height:1;flex-shrink:0}
+.project-header h2{color:var(--white);font-size:1.5rem;margin-bottom:.25rem}
+.project-header .lead-pi{font-size:.82rem;color:rgba(255,255,255,.6);letter-spacing:.05em}
+.project-body{padding:2rem;display:grid;grid-template-columns:2fr 1fr;gap:2rem}
+.project-body p{color:var(--text-muted)}
+.project-sidebar h4{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:.75rem}
+.tag{display:inline-block;background:var(--green-pale);color:var(--green-dark);font-size:.78rem;padding:.25rem .65rem;border-radius:2px;margin:.2rem .2rem .2rem 0;font-weight:500}
+.pi-list{list-style:none}
+.pi-list li{font-size:.85rem;color:var(--text-muted);padding:.3rem 0;border-bottom:1px solid var(--border)}
+.pi-list li:last-child{border-bottom:none}
+@media(max-width:680px){.project-body{grid-template-columns:1fr}.project-header{flex-direction:column;gap:.5rem}}
+</style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+  <script src="js/nav.js"></script>
+
+<div class="page-header">
+  <h1>Current Projects</h1>
+  <p>The MHP conducts collaborative research across several interrelated themes, all drawing on our 35+ year longitudinal dataset and ongoing field monitoring.</p>
+</div>
+
+<section class="bg-white">
+  <div class="section-inner">
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-num">01</span>
+        <div><h2>Urbanization &amp; Cognitive Evolution</h2><p class="lead-pi">Lead: Dr. Lily Johnson-Ulrich &mdash; Hunter College CUNY</p></div>
+      </div>
+      <div class="project-body">
+        <div>
+          <p>As human settlements expand around wildlife habitats, some hyena populations are increasingly exposed to urban environments while others remain in wild areas. This project uses this variation as a natural experiment to test the <strong>Exaptation Model</strong> of cognitive evolution: the hypothesis that cognitive traits evolved in one context can be co-opted to solve novel problems in radically different environments.</p>
+          <p>We compare spotted hyenas across an urbanization gradient in the Maasai Mara region, measuring neophilia/neophobia (boldness toward novel objects), problem-solving ability, and individual variation in behavior. Camera traps with controlled novel object arrays allow behavioral assessment at scale across multiple individuals simultaneously.</p>
+          <p>The project links cognitive and behavioral measurements to fitness outcomes tracked through our long-term database, directly testing whether urban-associated cognitive traits confer advantages in changing environments.</p>
+        </div>
+        <div class="project-sidebar">
+          <h4>Methods</h4>
+          <span class="tag">Camera traps</span><span class="tag">Novel object paradigm</span><span class="tag">Behavioral scoring</span><span class="tag">Long-term database</span><span class="tag">Fitness analysis</span>
+          <div style="margin-top:1.5rem"><h4>Key Team</h4>
+          <ul class="pi-list"><li>Dr. Lily Johnson-Ulrich</li><li>Dr. Kay Holekamp</li><li>Field RAs (Talek &amp; Serena)</li></ul></div>
+          <div style="margin-top:1.5rem"><h4>Funding</h4>
+          <ul class="pi-list"><li>NSF CAREER (pending)</li><li>Hunter College CUNY</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-num">02</span>
+        <div><h2>Social Networks &amp; Early-Life Effects</h2><p class="lead-pi">Lead: Dr. Eli Strauss &mdash; Max Planck Institute of Animal Behavior</p></div>
+      </div>
+      <div class="project-body">
+        <div>
+          <p>Spotted hyenas live in large, complex societies with fluid subgroup structure and stable dominance hierarchies. This project investigates how the social environment during early life shapes adult social behavior, stress physiology, and lifetime fitness.</p>
+          <p>Using detailed social network analysis applied to decades of behavioral observation data, we quantify each individual&#8217;s social integration, dominance rank, and relationship quality across their lifetime, linking these to long-term outcomes including survival, reproductive success, and stress hormone concentrations from non-invasive fecal samples.</p>
+          <p>Recent work has combined long-term behavioral data with molecular genetic analysis of gene expression patterns, revealing lasting epigenetic effects of early social experience &mdash; findings with broad relevance across mammals, including humans.</p>
+        </div>
+        <div class="project-sidebar">
+          <h4>Methods</h4>
+          <span class="tag">Social network analysis</span><span class="tag">Fecal glucocorticoids</span><span class="tag">Epigenetics</span><span class="tag">Long-term demography</span>
+          <div style="margin-top:1.5rem"><h4>Key Team</h4>
+          <ul class="pi-list"><li>Dr. Eli Strauss</li><li>Dr. Zach Laubach</li><li>Dr. Kay Holekamp</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-num">03</span>
+        <div><h2>GPS Collaring &amp; Movement Ecology</h2><p class="lead-pi">Collaborative &mdash; Multiple MHP Directors</p></div>
+      </div>
+      <div class="project-body">
+        <div>
+          <p>GPS collaring of individual hyenas enables fine-scale tracking of movement, ranging behavior, and space use across the Maasai Mara landscape. This project combines GPS data with behavioral observations and environmental covariates to understand how hyenas navigate a complex, human-modified landscape.</p>
+          <p>Key questions: How do clan territory boundaries shift over time? How do individuals respond to tourists, livestock, and human settlements? How does space use relate to social rank, age, sex, and reproductive state? And critically &mdash; do urban-exposed hyenas move differently than those in wilder areas?</p>
+        </div>
+        <div class="project-sidebar">
+          <h4>Methods</h4>
+          <span class="tag">GPS collaring</span><span class="tag">Remote sensing</span><span class="tag">GIS / spatial analysis</span><span class="tag">Home range estimation</span>
+          <div style="margin-top:1.5rem"><h4>Key Team</h4>
+          <ul class="pi-list"><li>Dr. Eli Strauss</li><li>Dr. Tracy Montgomery</li><li>Dr. Kenna Lehmann</li><li>Kenyan field staff</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <span class="project-num">04</span>
+        <div><h2>Long-Term Demography &amp; Clan Monitoring</h2><p class="lead-pi">Ongoing baseline &mdash; All MHP Directors</p></div>
+      </div>
+      <div class="project-body">
+        <div>
+          <p>The foundation of all MHP research is continuous baseline monitoring of the Serena North and Talek clans. Every day, our field team conducts observation sessions to record clan composition, individual identities, behavioral interactions, and life events (births, deaths, rank changes, dispersal).</p>
+          <p>This monitoring produces the longitudinal dataset that makes all other MHP research possible. Baseline monitoring also serves a direct conservation function: our data track population trends, document threats, and provide the evidence base for conservation recommendations to park authorities and government agencies.</p>
+        </div>
+        <div class="project-sidebar">
+          <h4>Methods</h4>
+          <span class="tag">Focal follows</span><span class="tag">Scan sampling</span><span class="tag">ID by spot pattern</span><span class="tag">Reproductive monitoring</span>
+          <div style="margin-top:1.5rem"><h4>Key Team</h4>
+          <ul class="pi-list"><li>All Co-Directors</li><li>Kenyan field staff</li><li>Rotating RAs</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="bg-pale" style="text-align:center">
+  <div class="section-inner" style="max-width:680px">
+    <p class="section-label">Publications</p>
+    <h2>Over 200 Peer-Reviewed Papers</h2>
+    <p>The MHP has produced a vast body of scientific literature spanning behavioral ecology, cognitive science, endocrinology, and conservation biology.</p>
+    <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="publications.html" class="btn-primary">View Publications</a>
+      <a href="https://www.holekamplab.org/hyena-publications.html" target="_blank" class="btn-outline" style="border-color:var(--green);color:var(--green)">Holekamp Lab &#8599;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="img/logo.png" alt="Mara Hyena Project">
+      <p>The Mara Hyena Project has monitored spotted hyena clans in Kenya&#8217;s Maasai Mara since 1988.</p>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="history.html">History</a>
+      <a href="mission.html">Mission</a>
+      <a href="team.html">Our Team</a>
+    </div>
+    <div class="footer-col">
+      <h4>Research</h4>
+      <a href="projects.html">Current Projects</a>
+      <a href="publications.html">Publications</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="donate.html">Donate</a>
+      <a href="donate.html#adopt">Adopt a Hyena</a>
+      <a href="mailto:marahyenaproject@gmail.com">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Mara Hyena Project.</span>
+    <span>Michigan State University &amp; Hunter College CUNY</span>
+  </div>
+</footer>
+</body>
+</html>
