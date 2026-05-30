@@ -52,27 +52,76 @@
   </div>
 </section>
 
+<style>
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.research-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 1;
+  display: block;
+  text-decoration: none;
+}
+.research-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.research-card:hover img {
+  transform: scale(1.04);
+}
+.research-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,35,15,0.85) 0%, rgba(10,35,15,0.1) 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.research-card:hover .research-card-overlay {
+  opacity: 1;
+}
+.research-card-overlay h3 {
+  color: white;
+  font-size: 1.1rem;
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+}
+@media (max-width: 680px) {
+  .research-grid { grid-template-columns: 1fr; }
+  .research-card { aspect-ratio: 4/3; }
+  .research-card-overlay { opacity: 1; }
+}
+</style>
+
 <section class="bg-pale">
   <div class="section-inner">
     <p class="section-label">Research</p>
     <h2>What We Study</h2>
     <div class="divider"></div>
-    <div class="grid-3">
-      <div class="card">
-        <h3>Social Systems &amp; Collective Behavior</h3>
-        <p>How do stable societies emerge from individuals with competing interests and diverse experiences? A central focus of the MHP over the past five years has been GPS and acoustic collar studies &mdash; fitting entire clans with collars that record location, movement, and sound simultaneously &mdash; to understand how hyenas coordinate collective action, communicate across distances, and make group decisions in real time.</p>
-        <a href="projects.html" style="color:var(--green); font-size:0.9rem; text-decoration:none; font-weight:500;">Learn more &rarr;</a>
-      </div>
-      <div class="card">
-        <h3>Cognition, Communication &amp; Behavior</h3>
-        <p>How do individuals perceive, learn from, and respond to their social and ecological world? We investigate the evolution of cognition and behavioral flexibility, the role of communication in mediating social relationships, and how hyenas navigate the challenges of group living and a rapidly changing environment.</p>
-        <a href="projects.html" style="color:var(--green); font-size:0.9rem; text-decoration:none; font-weight:500;">Learn more &rarr;</a>
-      </div>
-      <div class="card">
-        <h3>Development, Physiology &amp; Life History</h3>
-        <p>How do early-life social experiences shape biology across a lifetime? We examine how the type and timing of early experiences influence developmental plasticity, stress physiology, and aging, and how the acquisition and allocation of resources drives life history trade-offs and fitness outcomes.</p>
-        <a href="projects.html" style="color:var(--green); font-size:0.9rem; text-decoration:none; font-weight:500;">Learn more &rarr;</a>
-      </div>
+    <div class="research-grid">
+      <a href="projects.html" class="research-card">
+        <img src="img/research-social.jpg" alt="Social Systems & Collective Behavior">
+        <div class="research-card-overlay"><h3>Social Systems &amp; Collective Behavior</h3></div>
+      </a>
+      <a href="projects.html" class="research-card">
+        <img src="img/research-cognition.jpg" alt="Cognition, Communication & Behavior">
+        <div class="research-card-overlay"><h3>Cognition, Communication &amp; Behavior</h3></div>
+      </a>
+      <a href="projects.html" class="research-card">
+        <img src="img/research-development.jpg" alt="Development, Physiology & Life History">
+        <div class="research-card-overlay"><h3>Development, Physiology &amp; Life History</h3></div>
+      </a>
     </div>
     <div style="text-align:center; margin-top:2.5rem;">
       <a href="publications.html" class="btn-primary">View Publications</a>
