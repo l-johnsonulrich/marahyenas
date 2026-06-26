@@ -17,15 +17,81 @@
 .step-num{width:36px;height:36px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.9rem;flex-shrink:0}
 .step{display:flex;gap:1.25rem;align-items:flex-start;margin-bottom:2rem}
 .step h3{margin-bottom:.25rem;font-size:1.1rem}
+.grad-layout{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.grad-layout > div img{width:100%;height:auto;border-radius:4px;display:block;margin-top:1.5rem}
+.grad-layout .step:last-child{margin-bottom:0}
+@media(max-width:760px){.grad-layout{grid-template-columns:1fr;gap:1.5rem}}
+.camp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.camp-grid figure{margin:0}
+.camp-grid img{width:100%;height:180px;object-fit:cover;border-radius:4px;display:block;cursor:pointer;transition:opacity 0.2s}
+.camp-grid img:hover{opacity:0.8}
+.camp-grid figcaption{font-size:.85rem;color:var(--text-muted);margin-top:.4rem;text-align:center}
+.ra-do{max-width:1000px}
+.ra-do > div{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;margin-bottom:2.25rem}
+.ra-do > div > img{width:100%;height:250px;object-fit:cover;border-radius:4px;display:block}
+.ra-do > div:nth-child(even) > img{order:2}
+.ra-do h3{font-size:1.15rem;color:var(--green-dark);margin-bottom:.35rem}
+.ra-do p{color:var(--text);margin:0}
+@media(max-width:680px){
+  .ra-do > div{grid-template-columns:1fr;gap:1rem}
+  .ra-do > div:nth-child(even) > img{order:0}
+}
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:2rem}
+.lightbox.active{display:flex}
+.lightbox-content{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center}
+.lightbox img{max-width:100%;max-height:80vh;object-fit:contain}
+.lightbox-caption{color:rgba(255,255,255,0.8);font-size:.9rem;margin-top:1rem;text-align:center}
+.lightbox-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(255,255,255,0.8);font-size:2rem;cursor:pointer;padding:0;width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;transition:color 0.2s}
+.lightbox-close:hover{color:white}
+@media(max-width:680px){
+  .lightbox{padding:1rem}
+  .lightbox-close{top:-2rem}
+}
 </style>
 </head>
 <body>
   <div id="nav-placeholder"></div>
   <script src="js/nav.js"></script>
 
-<div class="page-header">
-  <h1>Join the MHP</h1>
-  <p>We welcome volunteer research assistants and prospective graduate students interested in behavioral ecology, cognition, and conservation.</p>
+<script>
+function openLightbox(img) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const caption = document.getElementById('lightbox-caption');
+  lightboxImg.src = img.src;
+  caption.textContent = img.nextElementSibling.textContent;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  document.querySelectorAll('.camp-grid img').forEach(img => {
+    img.addEventListener('click', function() {
+      openLightbox(this);
+    });
+  });
+});
+</script>
+
+<div class="page-header" style="position:relative; overflow:hidden; padding:0;">
+  <img src="img/ra-header.jpg" alt="Fieldwork in the Maasai Mara" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom;">
+  <div style="position:relative; background:rgba(14,61,30,0.62); padding:4rem 2rem; text-align:center;">
+    <h1>Join the MHP</h1>
+    <p>We welcome volunteer research assistants and prospective graduate students interested in behavioral ecology, cognition, and conservation.</p>
+  </div>
 </div>
 
 <section class="bg-white" id="ra">
@@ -35,15 +101,54 @@
     <div class="divider"></div>
     <div class="split">
       <div>
-        <p>Volunteer RAs join one of our two camps in the Maasai Mara for a minimum of six months and contribute directly to baseline data collection on the Serena North or Talek clans.</p>
-        <p><strong>What RAs do:</strong> Daily observation drives (typically 5&ndash;8am and 4&ndash;7pm), individual hyena identification by spot pattern, behavioral scoring using standardized protocols, GPS tracking, and camera trap maintenance. RAs also contribute to data entry and quality control.</p>
-        <p><strong>What RAs gain:</strong> Immersive field experience with a wild predator population, training in behavioral observation methods, exposure to long-term ecological research, and the extraordinary experience of living and working in the Maasai Mara.</p>
-        <p>RA positions are unpaid and self-funded, but the MHP provides accommodation at camp, training, and mentorship. Many former RAs have gone on to graduate programs in behavioral ecology and conservation science.</p>
+        <p>Volunteer RAs join one of our two camps (Serena or Talek) in the Maasai Mara for a minimum of 12 months and contribute directly to baseline data collection.</p>
+        <p><strong>What RAs gain:</strong> Immersive field experience with a wild predator population, training in behavioral observation methods, exposure to long-term ecological research, and the extraordinary experience of living and working in the Maasai Mara. Many former RAs have gone on to graduate programs in behavioral ecology and conservation science.</p>
+        <p>RAs are paid a small stipend, and all project-related costs are covered, including plane tickets, permits, and accommodation at camp.</p>
         <div style="background:var(--green-pale);border-left:4px solid var(--green);padding:1.25rem 1.5rem;border-radius:0 4px 4px 0;margin-top:1.5rem">
-          <p style="color:var(--green-dark);font-weight:500;margin:0">RA positions are recruited through individual Co-Directors. Review each director&#8217;s research focus below and reach out directly to the one whose work aligns with your interests.</p>
+          <p style="color:var(--green-dark);margin:0">Positions are recruited annually for January and July start dates, with recruitment typically beginning in August. Keep an eye on our <a href="https://instagram.com/marahyenaproject" target="_blank" style="color:var(--green);font-weight:500">Instagram</a>, Animal Behavior Society news, and this website for updates.</p>
         </div>
       </div>
-      <img src="img/camp.jpg" alt="MHP field camp">
+      <img src="img/serenacamp.jpg" alt="Serena research camp in the Maasai Mara">
+    </div>
+
+    <p class="section-label" style="margin-top:3rem">What RAs Do</p>
+    <div class="divider"></div>
+    <div class="ra-do">
+      <div>
+        <img src="img/ra-observations.jpg" alt="Researchers observing hyenas in the field">
+        <div>
+          <h3>Daily Observations</h3>
+          <p>Our researchers complete two sets of observational periods every day. This involves searching the open savannah for hyenas, identifying individual animals based on their spot patterns, logging any and all behaviors witnessed, filming behavior for later reference as needed, and navigating sometimes difficult terrain using landmarks and GPS coordinates. This work is difficult but highly rewarding, and requires resilience, problem-solving, a high level of accuracy, and excellent data collection skills.</p>
+        </div>
+      </div>
+      <div>
+        <img src="img/ra-identify.jpg" alt="Close view of a spotted hyena's unique spot pattern">
+        <div>
+          <h3>Identifying Hyenas</h3>
+          <p>Each individual hyena has a unique spot pattern, like a fingerprint. Our researchers have to become experts at identifying these patterns and recognizing them, even from a distance. Knowing a hyena&#8217;s identity helps us better understand the context of their behaviors and interactions with other individuals, and allows us to draw conclusions about the when, why, and how of hyena behavior. For more information on the research being done, see our <a href="projects.html" style="color:var(--green);font-weight:500">current projects</a>.</p>
+        </div>
+      </div>
+      <div>
+        <img src="img/ra-data.jpg" alt="Field sample collection and data entry">
+        <div>
+          <h3>Collecting &amp; Entering Data</h3>
+          <p>One of the most important parts of the research is collecting samples from the field, including blood, fur, and feces. These samples give us the ability to extract DNA in the lab, which lets researchers investigate further questions about hyena relationships and behavior. Researchers are responsible for entering data from collected samples, logging transcriptions, and watching back behavioral videos for context.</p>
+        </div>
+      </div>
+      <div>
+        <img src="img/ra-immobilization.jpg" alt="A collared hyena during a research immobilization">
+        <div>
+          <h3>Immobilizations</h3>
+          <p>In collaboration with experienced veterinary professionals and Kenya Wildlife Service personnel, the Mara Hyena Project conducts occasional immobilizations of hyenas of interest. Immobilizing an individual lets us safely measure its body condition, take samples, and place data-collection devices like collars for certain research projects. Our researchers assist in the fast-paced immobilization process and collect critical data on the hyena.</p>
+        </div>
+      </div>
+      <div>
+        <img src="img/ra-outreach.jpg" alt="MHP outreach and education">
+        <div>
+          <h3>Outreach</h3>
+          <p>A key part of the Mara Hyena Project&#8217;s mission is to spread the message of the importance of conservation. Hyenas are notoriously hated creatures, and part of our work involves sharing why hyenas are no less interesting than other Kenyan megafauna like lions, elephants, and leopards. Changing a mindset of hatred or fear into one of appreciation is one of the first steps toward success in conservation.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -53,12 +158,17 @@
     <p class="section-label">Graduate Training</p>
     <h2>Graduate Students</h2>
     <div class="divider"></div>
-    <p style="max-width:680px;margin-bottom:1.5rem">MHP Co-Directors are based at several universities and accept graduate students through their respective programs. Graduate students typically conduct dissertation research using MHP data and/or field seasons in Kenya, depending on their project.</p>
-    <div style="background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.5rem;margin-bottom:2rem;max-width:680px">
-      <p style="color:var(--green-dark);font-weight:500;margin-bottom:.5rem">How to apply</p>
-      <div class="step"><div class="step-num">1</div><div><h3>Read the research</h3><p>Familiarize yourself with the MHP&#8217;s current projects and publications. Identify which director&#8217;s work aligns with your interests. Cold emails without evidence of having read the relevant work are rarely successful.</p></div></div>
-      <div class="step"><div class="step-num">2</div><div><h3>Contact a director directly</h3><p>Email your director of interest with a brief statement of your background, your research interests, and why you want to work with them specifically. Include your CV. Do not mass-email all directors simultaneously.</p></div></div>
-      <div class="step"><div class="step-num">3</div><div><h3>Apply to their program</h3><p>Each director admits students through their home institution. Follow that university&#8217;s graduate application process. Deadlines typically fall December&ndash;January for the following fall.</p></div></div>
+    <div class="grad-layout">
+      <div>
+        <p>MHP Co-Directors are based at several universities and accept graduate students through their respective programs. Graduate students typically conduct dissertation research using MHP data and/or field seasons in Kenya, depending on their project.</p>
+        <img src="img/ra-grad.jpg" alt="Graduate research in the Maasai Mara">
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.75rem">
+        <p style="color:var(--green-dark);font-weight:500;margin-bottom:1.25rem">How to apply</p>
+        <div class="step"><div class="step-num">1</div><div><h3>Read the research</h3><p>Familiarize yourself with the MHP&#8217;s current projects and publications, and identify which director&#8217;s work aligns with your interests.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div><h3>Contact a director directly</h3><p>Email your director of interest with a brief statement of your background and your CV. Explain what research topics you want to study and why the MHP is a good fit for those questions, and describe what you would bring in terms of skills, experiences, and interests. Don&#8217;t mass-email all directors at once.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div><h3>Apply to their program</h3><p>Each director admits students through their home institution. Follow that university&#8217;s graduate application process. Deadlines typically fall December&ndash;January for the following fall.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -68,13 +178,29 @@
     <p class="section-label">Life in the Field</p>
     <h2>What to Expect in the Maasai Mara</h2>
     <div class="divider"></div>
-    <div class="grid-3">
-      <div class="card"><h3>Daily Routine</h3><p>Wake-up is typically before 5am for the morning drive. Observation sessions follow hyena activity, peaking at dawn and dusk. Afternoons involve data entry, vehicle maintenance, and downtime. Flexibility and patience are essential.</p></div>
-      <div class="card"><h3>Camp Conditions</h3><p>Both camps are functional but basic. Expect simple accommodations, limited electricity (solar), communal cooking, and no reliable internet. Mobile signal is intermittent. This is a remote research camp, not an eco-lodge.</p></div>
-      <div class="card"><h3>Health &amp; Safety</h3><p>Malaria prophylaxis is required. You will work in close proximity to large carnivores &mdash; safety protocols are strictly observed. Medical evacuation coverage is mandatory. The MHP provides safety training for all new arrivals.</p></div>
+    <div class="grid-2">
+      <div class="card"><h3>Daily Routine</h3><p>A typical day starts early. We leave camp around 5:30am for the morning observation session and return by 8:30 or 9am for breakfast. Afternoons are for data entry, vehicle maintenance, camp chores, exercise, and downtime. Evening observations run from 5pm until 8 or 8:30pm. Dinner is before evening obs at 4pm at Serena, or after obs around 8pm at Talek.</p></div>
+      <div class="card"><h3>Camp Life</h3><p>Camps are rustic but comfortable. Solar power runs the lights in your tent and charges laptops. Toilets are pit latrines (choo) and showers are bush showers. The kitchen has a gas stove and a fridge but no freezer; breakfast and dinner are provided, with lunch on your own. Everyone gets their own tent with a bed, desk, and dresser. There is a lab tent stocked with research supplies and a storage tent for food and equipment. Laundry is done by the Maasai mamas.</p></div>
+      <div class="card"><h3>Health &amp; Safety</h3><p>The MHP looks after the practical side of staying healthy in the field. RAs are provided with a Kenyan health insurance policy, and we ask everyone to follow CDC vaccination guidance and to confirm their own coverage for global emergency evacuation. Day-to-day malaria prevention is simple, with repellent, bed nets, or medication. New arrivals are oriented to camp and field safety when they arrive.</p></div>
       <div class="card"><h3>Community &amp; Culture</h3><p>Our Kenyan staff are experienced, knowledgeable, and welcoming. Respectful engagement with Maasai culture and community norms is expected. Basic Swahili is helpful but not required.</p></div>
-      <div class="card"><h3>What You&#8217;ll See</h3><p>The Maasai Mara is one of Africa&#8217;s most spectacular ecosystems. Beyond hyenas, you will encounter elephants, lions, cheetahs, wildebeest, and an extraordinary diversity of birds &mdash; often within meters of your vehicle.</p></div>
-      <div class="card"><h3>Physical Demands</h3><p>Long hours, early mornings, heat, dust, and difficult terrain are part of the job. Good physical fitness, adaptability, and a positive attitude under challenging conditions are more important than any specific prior experience.</p></div>
+      <div class="card"><h3>Physical Demands</h3><p>The physical demands are lighter than you might expect. The hardest parts are sitting in a vehicle for six or seven hours a day and rising before dawn every day, with only one day off a week (though it rarely feels like work). Living in a remote area with just one or two other RAs and a few staff for a full year asks for a positive, flexible, and cooperative attitude more than physical fitness. Expect cool nights (around 15&#176;C) and warm afternoons (up to 33&#176;C), along with dust and rain.</p></div>
+    </div>
+
+    <p class="section-label" style="margin-top:3rem">Around Camp</p>
+    <div class="divider"></div>
+    <div class="camp-grid" id="camp-photos">
+      <figure><img src="img/camp/sign.jpg" alt="Mara Hyena Project camp sign"><figcaption>Camp sign</figcaption></figure>
+      <figure><img src="img/camp/choo.jpg" alt="Pit latrine at camp"><figcaption>The choo (pit latrine)</figcaption></figure>
+      <figure><img src="img/camp/shower.jpg" alt="Bush shower at camp"><figcaption>Bush shower</figcaption></figure>
+      <figure><img src="img/camp/lab-tent.jpg" alt="Lab tent"><figcaption>Lab tent</figcaption></figure>
+      <figure><img src="img/camp/kitchen.jpg" alt="Camp kitchen"><figcaption>Kitchen</figcaption></figure>
+      <figure><img src="img/camp/tent-1.jpg" alt="Personal tent"><figcaption>Personal tent</figcaption></figure>
+      <figure><img src="img/camp/tent-2.jpg" alt="Personal tent"><figcaption>Personal tent</figcaption></figure>
+      <figure><img src="img/camp/tent-3.jpg" alt="Personal tent"><figcaption>Personal tent</figcaption></figure>
+      <figure><img src="img/camp/volleyball.jpg" alt="Team members playing volleyball"><figcaption>Volleyball</figcaption></figure>
+      <figure><img src="img/camp/water-chore.jpg" alt="Filling water jerry cans"><figcaption>Water chore</figcaption></figure>
+      <figure><img src="img/camp/kitchen-cleaning.jpg" alt="Kitchen cleaning"><figcaption>Kitchen cleaning</figcaption></figure>
+      <figure><img src="img/camp/warthog.jpg" alt="Warthog by the solar panels"><figcaption>Warthog by the solar panels</figcaption></figure>
     </div>
   </div>
 </section>
@@ -86,7 +212,7 @@
     <div class="divider"></div>
     <p style="max-width:640px;margin-bottom:2.5rem">Each Co-Director manages their own recruitment. Contact the director whose research focus most closely matches yours.</p>
     <div class="grid-2" style="gap:1rem">
-      <div class="contact-card"><img src="img/team/lily-johnson-ulrich.jpeg" alt="Dr. Lily Johnson-Ulrich" class="avatar"><div><h3>Dr. Lily Johnson-Ulrich</h3><p class="role">Hunter College CUNY</p><p class="focus">Cognitive ecology, urbanization, behavioral variation, neophilia/neophobia</p><a href="https://lilyjohnsonulrich.weebly.com/" target="_blank">Website &#8599;</a><a href="mailto:lily.johnsonulrich@hunter.cuny.edu">Email</a></div></div>
+      <div class="contact-card"><img src="img/team/lily-johnson-ulrich.jpeg" alt="Dr. Lily Johnson-Ulrich" class="avatar"><div><h3>Dr. Lily Johnson-Ulrich</h3><p class="role">Hunter College, CUNY</p><p class="focus">Cognitive ecology, urbanization, behavioral variation, neophilia/neophobia</p><a href="https://lilyjohnsonulrich.weebly.com/" target="_blank">Website &#8599;</a><a href="mailto:lily.johnsonulrich@hunter.cuny.edu">Email</a></div></div>
       <div class="contact-card"><img src="img/team/kay-holekamp.png" alt="Dr. Kay Holekamp" class="avatar"><div><h3>Dr. Kay Holekamp</h3><p class="role">Michigan State University</p><p class="focus">Behavioral ecology, social behavior, mammalian development, evolution of intelligence</p><a href="https://www.holekamplab.org/" target="_blank">Website &#8599;</a><a href="https://www.holekamplab.org/prospective-students.html" target="_blank">Prospective Students &#8599;</a></div></div>
       <div class="contact-card"><div class="avatar-i">ZL</div><div><h3>Dr. Zach Laubach</h3><p class="role">University of Colorado Boulder</p><p class="focus">Early-life effects, epigenetics, stress physiology, molecular ecology</p><a href="https://laubach.github.io/" target="_blank">Website &#8599;</a></div></div>
       <div class="contact-card"><img src="img/team/eli-strauss.jpeg" alt="Dr. Eli Strauss" class="avatar"><div><h3>Dr. Eli Strauss</h3><p class="role">Max Planck Institute of Animal Behavior</p><p class="focus">Social networks, collective behavior, computational methods</p><a href="https://straussed.github.io/" target="_blank">Website &#8599;</a></div></div>
@@ -95,6 +221,14 @@
     </div>
   </div>
 </section>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
 
 <footer>
   <div class="footer-inner">
@@ -121,8 +255,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2025 Mara Hyena Project.</span>
-    <span>Michigan State University &amp; Hunter College CUNY</span>
+    <span>&copy; 2026 Mara Hyena Project</span>
+    <span>Michigan State University &amp; Hunter College, CUNY</span>
   </div>
 </footer>
 </body>

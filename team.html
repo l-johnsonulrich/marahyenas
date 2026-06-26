@@ -6,125 +6,279 @@
   <title>Our Team &mdash; Mara Hyena Project</title>
   <link rel="stylesheet" href="css/style.css">
 <style>
-.contact-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.5rem;display:flex;align-items:flex-start;gap:1.25rem}
-.contact-card .avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0}
-.contact-card .avatar-i{width:64px;height:64px;border-radius:50%;background:var(--green-pale);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:"EB Garamond",serif;font-size:1.4rem;color:var(--green);flex-shrink:0}
-.contact-card h3{font-size:1rem;margin-bottom:.1rem}
-.contact-card .role{font-size:.82rem;color:var(--green);font-weight:500;margin-bottom:.4rem}
-.contact-card .focus{font-size:.85rem;color:var(--text-muted);margin-bottom:.5rem}
-.contact-card a{font-size:.82rem;color:var(--green);text-decoration:none;display:inline-block;margin-right:.75rem}
-.contact-card a:hover{text-decoration:underline}
-.step-num{width:36px;height:36px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.9rem;flex-shrink:0}
-.step{display:flex;gap:1.25rem;align-items:flex-start;margin-bottom:2rem}
-.step h3{margin-bottom:.25rem;font-size:1.1rem}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.team-member { text-align: center; }
+.team-member-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 1rem;
+}
+.team-member-initials {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--green-pale);
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 2.5rem;
+  color: var(--green);
+  margin-bottom: 1rem;
+}
+.team-member h3 { font-size: 1rem; margin-bottom: 0.2rem; color: var(--text); }
+.team-member .role { font-size: 0.8rem; color: var(--green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+.team-member .bio { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.5rem; }
+.team-member a { font-size: 0.8rem; color: var(--green); text-decoration: none; }
+.team-member a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-  <div id="nav-placeholder"></div>
-  <script src="js/nav.js"></script>
 
-<div class="page-header">
-  <h1>Our Team</h1>
-  <p>The Mara Hyena Project is supported by the passion and dedication of an incredible team of people from diverse backgrounds across two continents.</p>
+<div id="nav-placeholder"></div>
+<script src="js/nav.js"></script>
+
+<div class="page-header" style="position:relative; overflow:hidden; padding:0;">
+  <img src="img/team/field-team.jpeg" alt="MHP Field Team" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top;">
+  <div style="position:relative; background:rgba(14,61,30,0.78); padding:4rem 2rem; text-align:center;">
+    <h1>Our Team</h1>
+    <p>The Mara Hyena Project is supported by the passion and dedication of an incredible team of people. These individuals come from diverse backgrounds and experiences, and each brings a unique set of skills to the research and mission of the MHP.</p>
+  </div>
 </div>
 
+<!-- OUR TEAM -->
 <section class="bg-white">
   <div class="section-inner">
-    <p class="section-label">Leadership</p>
-    <h2>Co-Directors</h2>
+    <h2>Our Team</h2>
     <div class="divider"></div>
-    <div class="grid-3">
-      <div class="card team-card">
-        <img src="img/team/kay-holekamp.png" alt="Dr. Kay Holekamp" class="team-photo">
+    <div class="team-grid">
+
+      <div class="team-member">
+        <img src="img/team/kay-holekamp.jpg" alt="Dr. Kay Holekamp" class="team-member-photo">
         <h3>Dr. Kay Holekamp</h3>
         <p class="role">Founder &amp; Co-Director</p>
-        <p>Dr. Holekamp founded the MHP in 1988. She is a University Distinguished Professor at Michigan State University whose research focuses on mammalian behavioral development, social behavior, and the evolution of intelligence. Co-author of over 200 peer-reviewed publications.</p>
+        <p class="bio">University Distinguished Professor at Michigan State University and founder of the MHP in 1988.</p>
         <a href="https://www.holekamplab.org/" target="_blank">holekamplab.org &#8599;</a>
       </div>
-      <div class="card team-card">
-        <div class="team-initials">ZL</div>
+
+      <div class="team-member">
+        <img src="img/team/benson-pion.jpg" alt="Malit Benson Pion" class="team-member-photo">
+        <h3>Malit Benson Pion</h3>
+        <p class="role">Director of Operations</p>
+        <p class="bio">Oversees day-to-day logistics across both field camps, coordinating staff, supplies, and community relationships.</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/zach-laubach.jpg" alt="Dr. Zach Laubach" class="team-member-photo">
         <h3>Dr. Zach Laubach</h3>
         <p class="role">Co-Director</p>
-        <p>Dr. Laubach studies how early-life social environments influence gene expression, stress physiology, and long-term fitness outcomes in hyenas, bridging behavioral ecology and molecular biology.</p>
+        <p class="bio">Studies how early-life social environments influence gene expression, stress physiology, and long-term fitness.</p>
         <a href="https://laubach.github.io/" target="_blank">laubach.github.io &#8599;</a>
       </div>
-      <div class="card team-card">
-        <img src="img/team/eli-strauss.jpeg" alt="Dr. Eli Strauss" class="team-photo">
+
+      <div class="team-member">
+        <img src="img/team/eli-strauss.jpg" alt="Dr. Eli Strauss" class="team-member-photo">
         <h3>Dr. Eli Strauss</h3>
         <p class="role">Co-Director</p>
-        <p>Dr. Strauss is a behavioral ecologist at the Max Planck Institute of Animal Behavior. He investigates how stable social systems emerge from diverse individuals, using field experiments, computational methods, and long-term data.</p>
+        <p class="bio">Assistant Professor at Michigan State University studying how stable social systems emerge from diverse individuals.</p>
         <a href="https://straussed.github.io/" target="_blank">straussed.github.io &#8599;</a>
       </div>
-      <div class="card team-card">
-        <div class="team-initials">KL</div>
+
+      <div class="team-member">
+        <img src="img/team/kenna-lehmann.jpeg" alt="Dr. Kenna Lehmann" class="team-member-photo">
         <h3>Dr. Kenna Lehmann</h3>
         <p class="role">Co-Director</p>
-        <p>Dr. Lehmann&#8217;s research investigates the mechanisms and consequences of social behavior in spotted hyenas, with a focus on how sociality shapes individual fitness.</p>
+        <p class="bio">Studies the evolution and interdependence of sociality, communication, and cooperation in spotted hyenas.</p>
         <a href="https://kennadslehmann.weebly.com/" target="_blank">Website &#8599;</a>
       </div>
-      <div class="card team-card">
-        <div class="team-initials">TM</div>
+
+      <div class="team-member">
+        <img src="img/team/tracy-montgomery.png" alt="Dr. Tracy Montgomery" class="team-member-photo">
         <h3>Dr. Tracy Montgomery</h3>
         <p class="role">Co-Director</p>
-        <p>Dr. Montgomery studies behavioral variation and its ecological consequences in spotted hyenas, examining how individual differences in behavior influence survival and reproduction.</p>
+        <p class="bio">Assistant Professor at Michigan State University studying how group-living animals cope with individual, social, and ecological demands in fluctuating environments.</p>
         <a href="https://tracymmontgomery.weebly.com/" target="_blank">Website &#8599;</a>
       </div>
-      <div class="card team-card">
-        <img src="img/team/lily-johnson-ulrich.jpeg" alt="Dr. Lily Johnson-Ulrich" class="team-photo">
+
+      <div class="team-member">
+        <img src="img/team/lily-johnson-ulrich.png" alt="Dr. Lily Johnson-Ulrich" class="team-member-photo">
         <h3>Dr. Lily Johnson-Ulrich</h3>
         <p class="role">Co-Director</p>
-        <p>Dr. Johnson-Ulrich is an Assistant Professor at Hunter College (CUNY). Her research focuses on the evolution of cognitive traits and how urbanization acts as a natural experiment to investigate cognitive ecology and behavioral adaptation.</p>
-        <a href="https://lilyjohnsonulrich.weebly.com/" target="_blank">lilyjohnsonulrich.weebly.com &#8599;</a>
+        <p class="bio">Assistant Professor at Hunter College, CUNY studying the evolution of cognition and behavioral adaptation to urbanization.</p>
+        <a href="https://lilyjohnsonulrich.weebly.com/" target="_blank">Website &#8599;</a>
       </div>
+
+      <div class="team-member">
+        <img src="img/team/dee-white.jpg" alt="Dee White" class="team-member-photo">
+        <h3>Dee White</h3>
+        <p class="role">Data Manager</p>
+        <p class="bio">Manages the long-term relational database spanning over 35 years of individual-level behavioral and demographic data.</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/kayla-fowler.jpg" alt="Kayla Fowler" class="team-member-photo">
+        <h3>Kayla Fowler</h3>
+        <p class="role">Science Communications</p>
+        <p class="bio">Translates MHP research for public audiences and documents field activities through photography and written media.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- FIELD TEAM -->
 <section class="bg-pale">
   <div class="section-inner">
-    <p class="section-label">Operations</p>
-    <h2>Project Coordination</h2>
-    <div class="divider"></div>
-    <div class="grid-3">
-      <div class="card team-card"><div class="team-initials">DW</div><h3>Dee White</h3><p class="role">Data Manager</p><p>Dee manages the long-term relational database spanning over 35 years of individual-level behavioral and demographic data.</p></div>
-      <div class="card team-card"><div class="team-initials">MB</div><h3>Malit Benson Pion</h3><p class="role">Director of Operations</p><p>Malit oversees day-to-day logistics across both field camps in the Maasai Mara, coordinating staff, supplies, and community relationships.</p></div>
-      <div class="card team-card"><div class="team-initials">KF</div><h3>Kayla Fowler</h3><p class="role">Science Communications Coordinator</p><p>Kayla translates MHP research for public audiences and documents field activities through photography and written media.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="bg-white">
-  <div class="section-inner">
-    <p class="section-label">Kenya</p>
     <h2>Field Team</h2>
     <div class="divider"></div>
-    <p style="max-width:640px;margin-bottom:2.5rem">Our Kenyan field staff are the backbone of the MHP. Many have been with the project for decades and carry irreplaceable knowledge of individual animals, clan dynamics, and the land.</p>
-    <div class="grid-4">
-      <div class="card team-card"><div class="team-initials">JK</div><h3>Joseph Kamaamia</h3><p class="role">Camp Manager, Talek</p></div>
-      <div class="card team-card"><div class="team-initials">SK</div><h3>Samuel Kamaamia</h3><p class="role">Staff, Talek Camp</p></div>
-      <div class="card team-card"><div class="team-initials">PN</div><h3>Philimon Naiguran</h3><p class="role">Camp Manager, Serena</p></div>
-      <div class="card team-card"><div class="team-initials">DP</div><h3>Dickson &#8220;Chief&#8221; Pion</h3><p class="role">Staff, Talek Camp</p></div>
-      <div class="card team-card"><div class="team-initials">LN</div><h3>Lesinko Naurori</h3><p class="role">Staff, Talek Camp</p></div>
-      <div class="card team-card"><div class="team-initials">SK</div><h3>Stephen Kimoine</h3><p class="role">Staff, Serena Camp</p></div>
-      <div class="card team-card"><div class="team-initials">MN</div><h3>Moses Naiguran</h3><p class="role">Staff, Serena Camp</p></div>
-      <div class="card team-card"><div class="team-initials">SN</div><h3>Senjura Naurori</h3><p class="role">Staff, Talek Camp</p></div>
+    <p style="margin-bottom:2.5rem;">Our Kenyan field team has been the backbone of the MHP for many years. Each person brings dedication and commitment that keeps both camps running smoothly and the project alive in the field.</p>
+    <div class="team-grid">
+
+      <div class="team-member">
+        <img src="img/team/joseph-kamaamia.jpg" alt="Joseph Kamaamia" class="team-member-photo">
+        <h3>Joseph Kamaamia</h3>
+        <p class="role">Camp Manager, Talek</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/samuel-kamaamia.jpg" alt="Samuel Kamaamia" class="team-member-photo">
+        <h3>Samuel Kamaamia</h3>
+        <p class="role">Staff, Talek Camp</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/philimon-naiguran.jpg" alt="Philimon Naiguran" class="team-member-photo">
+        <h3>Philimon Naiguran</h3>
+        <p class="role">Camp Manager, Serena</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/dickson-pion.jpg" alt="Dickson Pion" class="team-member-photo">
+        <h3>Dickson &ldquo;Chief&rdquo; Pion</h3>
+        <p class="role">Staff, Talek Camp</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/lesinko-naurori.jpg" alt="Lesinko Naurori" class="team-member-photo">
+        <h3>Lesinko Naurori</h3>
+        <p class="role">Staff, Talek Camp</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/stephen-kimoine.jpg" alt="Stephen Kimoine" class="team-member-photo">
+        <h3>Stephen Kimoine</h3>
+        <p class="role">Staff, Serena Camp</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/moses-naiguran.jpg" alt="Moses Naiguran" class="team-member-photo">
+        <h3>Moses Naiguran</h3>
+        <p class="role">Staff, Serena Camp</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/senjura-naurori.jpg" alt="Senjura Naurori" class="team-member-photo">
+        <h3>Senjura Naurori</h3>
+        <p class="role">Staff, Talek Camp</p>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- STUDENTS & RAs -->
+<section class="bg-white">
+  <div class="section-inner">
+    <h2>Students &amp; Research Assistants</h2>
+    <div class="divider"></div>
+    <div class="team-grid">
+
+      <div class="team-member">
+        <img src="img/team/ben-pion.jpg" alt="Ben Pion" class="team-member-photo">
+        <h3>Ben Pion</h3>
+        <p class="role">Research Assistant, Talek</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/gaurav-singh-varma.jpg" alt="Gaurav Singh-Varma" class="team-member-photo">
+        <h3>Gaurav Singh-Varma</h3>
+        <p class="role">Research Assistant, Serena</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/anshita-das.png" alt="Anshita Das" class="team-member-photo">
+        <h3>Anshita Das</h3>
+        <p class="role">Research Assistant, Talek</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/mara-zali.jpg" alt="Mara Zali" class="team-member-photo">
+        <h3>Mara Zali</h3>
+        <p class="role">Research Assistant, Serena</p>
+      </div>
+
+      <div class="team-member">
+        <div class="team-member-initials">AN</div>
+        <h3>Anthony Nkoitoi</h3>
+        <p class="role">Research Assistant, Serena</p>
+      </div>
+
+      <div class="team-member">
+        <div class="team-member-initials">MA</div>
+        <h3>Mira Allen</h3>
+        <p class="role">Research Assistant, Talek</p>
+      </div>
+
+      <div class="team-member">
+        <div class="team-member-initials">CS</div>
+        <h3>Caroline Schlehuber</h3>
+        <p class="role">Research Assistant, Serena</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GRADUATE & POSTDOCTORAL -->
 <section class="bg-pale">
   <div class="section-inner">
-    <p class="section-label">Students &amp; RAs</p>
-    <h2>Current Students &amp; Research Assistants</h2>
+    <h2>Graduate &amp; Postdoctoral Students</h2>
     <div class="divider"></div>
-    <div class="grid-4">
-      <div class="card team-card"><div class="team-initials">BP</div><h3>Ben Pion</h3><p class="role">Research Assistant, Talek</p></div>
-      <div class="card team-card"><div class="team-initials">GS</div><h3>Gaurav Singh-Varma</h3><p class="role">Research Assistant, Serena</p></div>
-      <div class="card team-card"><div class="team-initials">AL</div><h3>Anne Ju Laberge</h3><p class="role">Research Assistant, Serena</p></div>
-      <div class="card team-card"><div class="team-initials">AN</div><h3>Austin Ni&ntilde;o</h3><p class="role">Research Assistant, Talek</p></div>
-      <div class="card team-card"><div class="team-initials">CH</div><h3>Colin Hadley</h3><p class="role">Research Assistant, Talek</p></div>
-      <div class="card team-card"><div class="team-initials">JW</div><h3>Jana Woerner</h3><p class="role">Ph.D. Candidate</p></div>
-      <div class="card team-card"><div class="team-initials">MS</div><h3>Maggie Sawdy</h3><p class="role">Ph.D. Candidate</p></div>
+    <div class="team-grid">
+
+      <div class="team-member">
+        <img src="img/team/jana-woerner.jpg" alt="Jana Woerner" class="team-member-photo">
+        <h3>Jana Woerner</h3>
+        <p class="role">Ph.D. Candidate, Michigan State University</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/maggie-sawdy.png" alt="Maggie Sawdy" class="team-member-photo">
+        <h3>Maggie Sawdy</h3>
+        <p class="role">Ph.D. Candidate, Michigan State University</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/tracey-reveron.jpg" alt="Tracey Reveron" class="team-member-photo">
+        <h3>Tracey Reveron</h3>
+        <p class="role">Master's Student, Hunter College</p>
+      </div>
+
+      <div class="team-member">
+        <img src="img/team/tanishi-dasgupta.png" alt="Tanishi Dasgupta" class="team-member-photo">
+        <h3>Tanishi Dasgupta</h3>
+        <p class="role">Master's Student, Hunter College</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -154,8 +308,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2025 Mara Hyena Project.</span>
-    <span>Michigan State University &amp; Hunter College CUNY</span>
+    <span>&copy; 2026 Mara Hyena Project</span>
+    <span>Michigan State University &amp; Hunter College, CUNY</span>
   </div>
 </footer>
 </body>

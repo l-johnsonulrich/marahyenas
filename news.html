@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In the News &mdash; Mara Hyena Project</title>
+  <link rel="stylesheet" href="css/style.css">
+<style>
+.news-list{display:grid;gap:1.5rem;max-width:880px;margin:0 auto}
+.news-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.75rem;transition:box-shadow .2s;display:flex;gap:1.5rem;align-items:flex-start}
+.news-card:hover{box-shadow:0 4px 20px rgba(26,107,53,0.1)}
+.news-thumb{flex-shrink:0;width:130px;align-self:stretch;border-radius:3px;overflow:hidden;background:var(--green-pale)}
+.news-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.news-thumb.full img{object-fit:contain}
+.news-body{flex:1;min-width:0}
+.news-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem;flex-wrap:wrap}
+.news-outlet{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green);font-weight:600}
+.news-date{font-size:.85rem;color:var(--text-muted)}
+.news-card h3{font-family:"EB Garamond",serif;font-size:1.35rem;font-weight:500;color:var(--green-dark);margin-bottom:.5rem;line-height:1.3}
+.news-card h3 a{color:inherit;text-decoration:none}
+.news-card h3 a:hover{color:var(--green)}
+.news-card p{color:var(--text-muted);font-size:.95rem;margin-bottom:.85rem}
+.news-card .read-more{color:var(--green);font-size:.85rem;font-weight:500;text-decoration:none;letter-spacing:.04em}
+.news-card .read-more:hover{text-decoration:underline}
+@media(max-width:600px){
+  .news-card{flex-direction:column;gap:1rem}
+  .news-thumb{width:100%;height:160px;align-self:auto}
+}
+</style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+  <script src="js/nav.js"></script>
+
+<div class="page-header">
+  <h1>In the News</h1>
+  <p>Press coverage, awards, and feature stories about MHP and our research.</p>
+</div>
+
+<section class="bg-pale">
+  <div class="section-inner">
+    <div class="news-list">
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/cub.jpg" alt="Hyena cub"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">National Geographic</span>
+            <span class="news-date">July 11, 2025</span>
+          </div>
+          <h3><a href="https://www.nationalgeographic.com/animals/article/mind-controlling-parasite-makes-hyena-cubs-more-reckless-around-lions" target="_blank" rel="noopener">Mind-controlling parasite makes hyena cubs more reckless around lions</a></h3>
+          <p>A feature on the study by Zach Laubach, Kay Holekamp, and colleagues showing that hyena cubs infected with the parasite <em>Toxoplasma gondii</em> get dangerously close to lions and are about four times more likely to be killed than uninfected cubs.</p>
+          <a href="https://www.nationalgeographic.com/animals/article/mind-controlling-parasite-makes-hyena-cubs-more-reckless-around-lions" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/kay.jpg" alt="Kay Holekamp"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">MSU African Studies Center</span>
+            <span class="news-date">April 7, 2025</span>
+          </div>
+          <h3><a href="https://africa.isp.msu.edu/news_article/23879" target="_blank" rel="noopener">2025 International Awards: Kay Holekamp</a></h3>
+          <p>MHP founder Kay Holekamp received the 2025 Ralph H. Smuckler Award for Advancing International Studies and Programs at MSU, recognizing her long-term contributions to international scholarship, teaching, and public service through her hyena research and the BEAM study abroad program.</p>
+          <a href="https://africa.isp.msu.edu/news_article/23879" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/national-geographic-magazine-march-2024-hyenas_copy.jpg" alt="National Geographic March 2024 cover"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">National Geographic &mdash; March 2024 Cover</span>
+            <span class="news-date">February 8, 2024</span>
+          </div>
+          <h3><a href="https://www.nationalgeographic.com/animals/article/spotted-hyenas-queens" target="_blank" rel="noopener">Love them or hate them, hyenas are getting the last laugh</a></h3>
+          <p>A feature story drawing on MHP's long-term research to explore spotted hyena society, cognition, and adaptability. The piece highlights work by Kay Holekamp and Lily Johnson-Ulrich on hyena innovation, matrilineal dominance, and the species' capacity to thrive alongside humans.</p>
+          <a href="https://www.nationalgeographic.com/animals/article/spotted-hyenas-queens" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/submit.jpg" alt="Hyena display"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">Earth.com</span>
+            <span class="news-date">June 27, 2023</span>
+          </div>
+          <h3><a href="https://www.earth.com/news/hyenas-experience-a-decline-in-social-rank-and-life-quality-over-time/" target="_blank" rel="noopener">Hyena clans have a social hierarchy where very few members have upward social mobility</a></h3>
+          <p>Coverage of Eli Strauss's analysis of four decades of MHP data showing that while hyenas can shift social rank over time, they tend to slide downward as new clan members are born or others leave, with knock-on effects for access to food and reproductive success.</p>
+          <a href="https://www.earth.com/news/hyenas-experience-a-decline-in-social-rank-and-life-quality-over-time/" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/cub-sunrise.jpg" alt="Hyena cub at sunrise"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">Inverse</span>
+            <span class="news-date">July 25, 2021</span>
+          </div>
+          <h3><a href="https://www.inverse.com/mind-body/what-people-can-learn-from-hyenas" target="_blank" rel="noopener">What nature's villain can teach us about being better humans</a></h3>
+          <p>A profile of Zach Laubach's <em>Nature Communications</em> study examining how early-life social experiences in spotted hyenas shape adult stress responses and DNA methylation patterns, and what those findings might suggest about human development.</p>
+          <a href="https://www.inverse.com/mind-body/what-people-can-learn-from-hyenas" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">CU Boulder Today</span>
+            <span class="news-date">July 22, 2021</span>
+          </div>
+          <h3><a href="https://www.colorado.edu/today/2021/07/22/early-life-social-connections-influence-gene-expression-stress-resilience" target="_blank" rel="noopener">Early-life social connections influence gene expression, stress resilience</a></h3>
+          <p>Press release on Zach Laubach's <em>Nature Communications</em> study, finding that hyenas with stronger maternal care and social connections during their cub and subadult years showed lower adult stress hormones and distinct DNA methylation patterns near genes involved in immune function and aging.</p>
+          <a href="https://www.colorado.edu/today/2021/07/22/early-life-social-connections-influence-gene-expression-stress-resilience" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/science-cover-2021_orig.jpg" alt="Science magazine cover, 2021"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">AAAS / Science</span>
+            <span class="news-date">July 16, 2021</span>
+          </div>
+          <h3><a href="https://www.aaas.org/news/inherited-social-networks-shape-hyena-society-and-survival" target="_blank" rel="noopener">Inherited Social Networks Shape Hyena Society and Survival</a></h3>
+          <p>Coverage of a <em>Science</em> paper by Amiyaal Ilany and Kay Holekamp combining 27 years of MHP observations with social network analysis. The work showed that hyena cubs inherit social networks from their mothers, with the strength of that inheritance varying by maternal rank.</p>
+          <a href="https://www.aaas.org/news/inherited-social-networks-shape-hyena-society-and-survival" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/lion-hyena.jpg" alt="Lion and hyena"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">CU Boulder Today</span>
+            <span class="news-date">June 23, 2021</span>
+          </div>
+          <h3><a href="https://www.colorado.edu/today/2021/06/23/cat-borne-parasite-toxoplasma-induces-fatally-bold-behavior-hyena-cubs" target="_blank" rel="noopener">Cat-borne parasite Toxoplasma induces fatally bold behavior in hyena cubs</a></h3>
+          <p>The original press release on Zach Laubach and colleagues' <em>Nature Communications</em> study, drawing on three decades of MHP data to show that <em>Toxoplasma gondii</em> infection in cubs is associated with bolder behavior near lions and higher mortality.</p>
+          <a href="https://www.colorado.edu/today/2021/06/23/cat-borne-parasite-toxoplasma-induces-fatally-bold-behavior-hyena-cubs" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">Animal Ecology in Focus</span>
+            <span class="news-date">January 18, 2021</span>
+          </div>
+          <h3><a href="https://animalecologyinfocus.com/2021/01/18/growing-up-hyena/" target="_blank" rel="noopener">Growing up hyena</a></h3>
+          <p>Julie Turner's behind-the-paper post for the <em>Journal of Animal Ecology</em>'s Animal Social Networks Special Issue, telling the story of her MHP analysis showing that the social position of female spotted hyenas during early life predicts their adult reproductive success and longevity.</p>
+          <a href="https://animalecologyinfocus.com/2021/01/18/growing-up-hyena/" target="_blank" rel="noopener" class="read-more">Read the post &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/cub-2.jpg" alt="Hyena cub"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">Nebraska Today</span>
+            <span class="news-date">March 10, 2020</span>
+          </div>
+          <h3><a href="https://news.unl.edu/article/great-expectations-falling-short-of-status-no-laughing-matter-for-hyenas" target="_blank" rel="noopener">Great expectations? Falling short of status no laughing matter for hyenas</a></h3>
+          <p>Eli Strauss and Daizaburo Shizuka analyzed MHP data to show that young hyenas who underperformed their inherited social ranks were roughly 1.5 times more likely to die at any given age than those who matched or exceeded expectations.</p>
+          <a href="https://news.unl.edu/article/great-expectations-falling-short-of-status-no-laughing-matter-for-hyenas" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb full"><img src="img/news/ethology_orig.jpg" alt="Ethology Volume 126, Issue 1 cover"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">Ethology &mdash; Cover Feature</span>
+            <span class="news-date">January 2020</span>
+          </div>
+          <h3><a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/eth.12964" target="_blank" rel="noopener">Risk-taking in free-living spotted hyenas is associated with anthropogenic disturbance, predicts survivorship, and is consistent across experimental contexts</a></h3>
+          <p>An MHP paper by Julie Turner, Rachel LaFleur, Allison Richardson, and Kay Holekamp earned the cover of <em>Ethology</em>'s January 2020 issue. The study used a life-size model hyena to test responses to a simulated intruder across two populations exposed to different levels of human activity, finding that less time spent near the model predicted better survivorship.</p>
+          <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/eth.12964" target="_blank" rel="noopener" class="read-more">Read the paper &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/dominant-cub.jpg" alt="Dominant hyena cub"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">Vice</span>
+            <span class="news-date">December 16, 2019</span>
+          </div>
+          <h3><a href="https://www.vice.com/en/article/women-leaders-not-biologically-natural-spotted-hyena-matriarchal-society/" target="_blank" rel="noopener">In the Face of Female Oppression, Take Refuge in the Spotted Hyena</a></h3>
+          <p>Shayla Love's long-form essay draws extensively on interviews with Kay Holekamp and Eli Strauss to explore why female spotted hyenas dominate males, covering the masculinized genitalia, prenatal androgen exposure, prolonged maternal care, and the role of social coalitions in maintaining female rank.</p>
+          <a href="https://www.vice.com/en/article/women-leaders-not-biologically-natural-spotted-hyena-matriarchal-society/" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/MOMO.png" alt="Hyena MOMO"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">Psychology Today</span>
+            <span class="news-date">November 26, 2019</span>
+          </div>
+          <h3><a href="https://www.psychologytoday.com/us/blog/animal-emotions/201911/innovation-and-fitness-among-wild-female-spotted-hyenas" target="_blank" rel="noopener">Innovation and Fitness Among Wild Female Spotted Hyenas</a></h3>
+          <p>Marc Bekoff covers a study by Lily Johnson-Ulrich, Sarah Benson-Amram, and Kay Holekamp examining how innovative ability relates to reproductive fitness in MHP's Talek West and Fig Tree clans. The research used a novel puzzle box to test 29 females, finding that more innovative mothers produced more cubs per year despite lower offspring survival.</p>
+          <a href="https://www.psychologytoday.com/us/blog/animal-emotions/201911/innovation-and-fitness-among-wild-female-spotted-hyenas" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/kay-darting.png" alt="Kay Holekamp darting a hyena"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">MSU Department of Integrative Biology</span>
+            <span class="news-date">July 2019</span>
+          </div>
+          <h3><a href="https://integrativebiology.natsci.msu.edu/news/hyena-expert-kay-holekamp-receives-distinguished-animal-behaviorist-award.aspx" target="_blank" rel="noopener">Hyena Expert Kay Holekamp Receives Distinguished Animal Behaviorist Award</a></h3>
+          <p>Kay Holekamp received the 2019 Distinguished Animal Behaviorist Award from the Animal Behavior Society, recognizing her career contributions to the field including MHP's findings on rank inheritance, telomere length and longevity, and the role of social coalitions in shifting clan hierarchies.</p>
+          <a href="https://integrativebiology.natsci.msu.edu/news/hyena-expert-kay-holekamp-receives-distinguished-animal-behaviorist-award.aspx" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/social.jpg" alt="Hyena social interaction"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">Scientific American</span>
+            <span class="news-date">April 19, 2019</span>
+          </div>
+          <h3><a href="https://www.scientificamerican.com/podcast/episode/hyena-society-stability-has-last-laugh/" target="_blank" rel="noopener">Hyena Society Stability Has Last Laugh</a></h3>
+          <p>A podcast episode on Eli Strauss and Kay Holekamp's <em>PNAS</em> paper analyzing rank reversals across five generations of MHP hyenas. The team found that strong coalitions, not body size, predict which females successfully climb the social hierarchy.</p>
+          <a href="https://www.scientificamerican.com/podcast/episode/hyena-society-stability-has-last-laugh/" target="_blank" rel="noopener" class="read-more">Listen to the episode &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/lcs-wafl.jpg" alt="Hyena LCS and Waffles"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">Futurity</span>
+            <span class="news-date">March 12, 2019</span>
+          </div>
+          <h3><a href="https://www.futurity.org/hyenas-social-status-2004982-2/" target="_blank" rel="noopener">Hyena 'royalty' need alliances to stay on top</a></h3>
+          <p>Coverage of Eli Strauss and Kay Holekamp's <em>PNAS</em> paper showing that hyena coalitions translate into lasting social status gains, with consequences that ripple across generations.</p>
+          <a href="https://www.futurity.org/hyenas-social-status-2004982-2/" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/soc-snf.jpg" alt="Hyena social network"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">PBS NOVA</span>
+            <span class="news-date">March 11, 2019</span>
+          </div>
+          <h3><a href="https://www.pbs.org/wgbh/nova/article/hyenas-climbing-social-ladder-easier-friends/" target="_blank" rel="noopener">For Hyenas, Climbing the Social Ladder is Easier with Friends</a></h3>
+          <p>NOVA's feature on the same Strauss and Holekamp <em>PNAS</em> work, told through the story of Waffles, a female who climbed from low rank to alpha by building a network of loyal allies.</p>
+          <a href="https://www.pbs.org/wgbh/nova/article/hyenas-climbing-social-ladder-easier-friends/" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/rckt.jpg" alt="Hyena Rocket"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">Scientific American</span>
+            <span class="news-date">May 30, 2017</span>
+          </div>
+          <h3><a href="https://www.scientificamerican.com/article/what-hyenas-can-tell-us-about-the-origins-of-intelligence/" target="_blank" rel="noopener">What Hyenas Can Tell Us about the Origins of Intelligence</a></h3>
+          <p>David Z. Hambrick on how Kay Holekamp's long-term MHP research challenges the social brain hypothesis, drawing on Sarah Benson-Amram's puzzle box studies to show that exploratory behavior, not social complexity, best predicts hyena problem-solving success.</p>
+          <a href="https://www.scientificamerican.com/article/what-hyenas-can-tell-us-about-the-origins-of-intelligence/" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div class="news-thumb"><img src="img/news/kay-cub.png" alt="Kay Holekamp with hyena cub"></div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span class="news-outlet">MSU Alumni Magazine</span>
+            <span class="news-date">April 1, 1996</span>
+          </div>
+          <h3><a href="https://alumni.msu.edu/stay-informed/magazine/article.cfm?id=281" target="_blank" rel="noopener">Feature: MSU's Mara Hyena Project</a></h3>
+          <p>An early feature on Kay Holekamp and Laura Smale's research in the Maasai Mara, written in the project's first decade and offering a glimpse of fieldwork in the original Talek clan.</p>
+          <a href="https://alumni.msu.edu/stay-informed/magazine/article.cfm?id=281" target="_blank" rel="noopener" class="read-more">Read the article &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="img/logo.png" alt="Mara Hyena Project">
+      <p>The Mara Hyena Project has monitored spotted hyena clans in Kenya&#8217;s Maasai Mara since 1988.</p>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="history.html">History</a>
+      <a href="mission.html">Mission</a>
+      <a href="team.html">Our Team</a>
+      <a href="news.html">In the News</a>
+    </div>
+    <div class="footer-col">
+      <h4>Research</h4>
+      <a href="projects.html">Current Projects</a>
+      <a href="publications.html">Publications</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="donate.html">Donate</a>
+      <a href="donate.html#adopt">Adopt a Hyena</a>
+      <a href="mailto:marahyenaproject@gmail.com">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Mara Hyena Project</span>
+    <span>Michigan State University &amp; Hunter College, CUNY</span>
+  </div>
+</footer>
+</body>
+</html>

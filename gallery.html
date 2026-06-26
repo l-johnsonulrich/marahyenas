@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery &mdash; Mara Hyena Project</title>
+  <link rel="stylesheet" href="css/style.css">
+<style>
+.gallery{max-width:1000px;margin:0 auto}
+.stage{position:relative;background:var(--green-dark);border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;height:clamp(320px,60vh,560px)}
+.stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.stage-btn{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(14,61,30,.55);color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.4rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.stage-btn:hover{background:var(--green)}
+.stage-btn.prev{left:14px}
+.stage-btn.next{right:14px}
+.stage-counter{position:absolute;top:14px;right:16px;background:rgba(14,61,30,.6);color:#fff;font-size:.78rem;letter-spacing:.05em;padding:.3rem .7rem;border-radius:999px}
+.caption{padding:1.25rem .25rem 0}
+.caption h3{font-family:'EB Garamond',serif;font-weight:500;font-size:1.35rem;color:var(--green-dark);margin:0 0 .35rem}
+.caption p{color:var(--text-muted);margin:0;font-size:.95rem;max-width:680px}
+.thumbs{display:flex;gap:.6rem;overflow-x:auto;padding:1.5rem 0 .5rem;scrollbar-width:thin}
+.thumbs button{flex:0 0 auto;width:96px;height:66px;padding:0;border:2px solid transparent;border-radius:4px;overflow:hidden;cursor:pointer;background:none;opacity:.6;transition:opacity .2s,border-color .2s}
+.thumbs button:hover{opacity:.9}
+.thumbs button.active{opacity:1;border-color:var(--green)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+</style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+  <script src="js/nav.js"></script>
+
+<div class="page-header">
+  <h1>Photo Gallery</h1>
+  <p>Spotted hyenas, the Maasai Mara, and life in the field, from more than three decades of research.</p>
+</div>
+
+<section class="bg-white">
+  <div class="section-inner">
+    <div class="gallery">
+      <div class="stage">
+        <button class="stage-btn prev" aria-label="Previous photo" onclick="changeSlide(-1)">&#8249;</button>
+        <img id="stage-img" src="" alt="">
+        <button class="stage-btn next" aria-label="Next photo" onclick="changeSlide(1)">&#8250;</button>
+        <span class="stage-counter" id="counter"></span>
+      </div>
+      <div class="caption">
+        <h3 id="cap-title"></h3>
+        <p id="cap-text"></p>
+      </div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="img/logo.png" alt="Mara Hyena Project">
+      <p>The Mara Hyena Project has monitored spotted hyena clans in Kenya&#8217;s Maasai Mara since 1988.</p>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="history.html">History</a>
+      <a href="mission.html">Mission</a>
+      <a href="team.html">Our Team</a>
+    </div>
+    <div class="footer-col">
+      <h4>Research</h4>
+      <a href="projects.html">Current Projects</a>
+      <a href="publications.html">Publications</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="donate.html">Donate</a>
+      <a href="donate.html#adopt">Adopt a Hyena</a>
+      <a href="mailto:marahyenaproject@gmail.com">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Mara Hyena Project</span>
+    <span>Michigan State University &amp; Hunter College, CUNY</span>
+  </div>
+</footer>
+
+<script>
+// Edit captions and order here. Add or remove entries freely.
+const photos = [
+  {src:"img/slideshow/research-cognition.jpg", title:"A spotted hyena in the morning light", text:"One of the thousands of individually known hyenas we have followed across the Maasai Mara."},
+  {src:"img/slideshow/hyena-landscape.jpg", title:"A clan gathers at dawn", text:"Spotted hyenas are highly social and live in large, structured clans of related and unrelated members."},
+  {src:"img/slideshow/socialsniff.jpg", title:"A greeting ceremony", text:"Clan members greet one another nose to nose, a behavior central to hyena social life."},
+  {src:"img/slideshow/research-development.jpg", title:"An adult and a young cub", text:"Cubs are born in dens and depend on their mothers for well over a year, longer than most carnivores."},
+  {src:"img/slideshow/30426802806_6d34d61863_b.jpg", title:"Moving a cub between dens", text:"A mother carries her cub by the scruff while relocating to a new communal den."},
+  {src:"img/slideshow/research-social.jpg", title:"A collared hyena", text:"GPS and acoustic collars let us track movement and vocal behavior across entire clans."},
+  {src:"img/slideshow/hero-landscape.jpg", title:"Storm light over the Mara", text:"Weather moves fast across the open grassland that the clans call home."},
+  {src:"img/slideshow/cubs-car.JPG", title:"Following the clan", text:"Our field vehicle is set up for daily observation and radio-tracking from before sunrise."},
+  {src:"img/slideshow/camp.jpg", title:"The field camp", text:"Researchers live in camp in the Mara through the field season, heading out at dawn and dusk."},
+  {src:"img/slideshow/community-outreach.jpg", title:"Outreach and teaching", text:"We bring hyena biology to local schools, students, and partners, often using real skulls and specimens."},
+  {src:"img/slideshow/hero-hyena.jpg", title:"Acacia at sunset", text:"The Maasai Mara, home to the clans we have studied since 1988."},
+  {src:"img/slideshow/30805918561_6f5b5eeb3d_b.jpg", title:"The wider Mara&#8211;Serengeti ecosystem", text:"Our study clans range across open grassland beneath the distant escarpment."}
+];
+
+let current = 0;
+const stageImg = document.getElementById('stage-img');
+const capTitle = document.getElementById('cap-title');
+const capText  = document.getElementById('cap-text');
+const counter  = document.getElementById('counter');
+const thumbsEl = document.getElementById('thumbs');
+
+photos.forEach((p, i) => {
+  const b = document.createElement('button');
+  b.setAttribute('aria-label', 'View photo ' + (i + 1));
+  b.innerHTML = '<img src="' + p.src + '" alt="">';
+  b.onclick = () => goTo(i);
+  thumbsEl.appendChild(b);
+});
+
+function render() {
+  const p = photos[current];
+  stageImg.src = p.src;
+  stageImg.alt = p.title.replace(/&#8211;/g, '\u2013');
+  capTitle.innerHTML = p.title;
+  capText.innerHTML = p.text;
+  counter.textContent = (current + 1) + ' / ' + photos.length;
+  [...thumbsEl.children].forEach((b, i) => b.classList.toggle('active', i === current));
+  const active = thumbsEl.children[current];
+  if (active) active.scrollIntoView({block:'nearest', inline:'nearest', behavior:'smooth'});
+}
+function goTo(i){ current = (i + photos.length) % photos.length; render(); }
+function changeSlide(d){ goTo(current + d); }
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft') changeSlide(-1);
+  if (e.key === 'ArrowRight') changeSlide(1);
+});
+render();
+</script>
+</body>
+</html>

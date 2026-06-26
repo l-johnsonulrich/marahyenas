@@ -7,48 +7,84 @@
   <link rel="stylesheet" href="css/style.css">
 <style>
 .mission-statement{font-family:'EB Garamond',serif;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:400;font-style:italic;color:var(--green-dark);line-height:1.5;border-left:4px solid var(--green);padding:1.5rem 2rem;margin:2rem 0 3rem;max-width:760px}
-.value-card{background:var(--white);border:1px solid var(--border);border-top:3px solid var(--green);border-radius:4px;padding:1.75rem}
+.pillar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem}
+.pillar-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:4px;overflow:hidden;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s}
+.pillar-card:hover{box-shadow:0 6px 24px rgba(26,107,53,.12);transform:translateY(-3px)}
+.pillar-card img{width:100%;height:170px;object-fit:cover;display:block}
+.pillar-card-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
+.pillar-card-body h3{font-family:'EB Garamond',serif;font-weight:500;font-size:1.3rem;color:var(--green-dark);margin:0 0 .6rem}
+.pillar-card-body p{color:var(--text-muted);font-size:.92rem;line-height:1.6;margin:0 0 1rem}
+.pillar-more{margin-top:auto;font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--green)}
 </style>
 </head>
 <body>
   <div id="nav-placeholder"></div>
   <script src="js/nav.js"></script>
 
-<div class="page-header">
-  <h1>Our Mission</h1>
-  <p>Science, conservation, and community &mdash; the three pillars of the Mara Hyena Project.</p>
+<div class="page-header" style="position:relative; overflow:hidden; padding:0;">
+  <img src="img/mission-header.jpg" alt="Spotted hyena clan in the Maasai Mara" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom;">
+  <div style="position:relative; background:rgba(14,61,30,0.62); padding:4rem 2rem; text-align:center;">
+    <h1>Our Mission</h1>
+    <p>Science, conservation, community, and education: the four pillars of the Mara Hyena Project.</p>
+  </div>
 </div>
 
 <section class="bg-white">
   <div class="section-inner" style="max-width:900px">
     <p class="section-label">Mission Statement</p>
-    <blockquote class="mission-statement">The Mara Hyena Project is dedicated to advancing scientific understanding of spotted hyena behavior, ecology, and cognition through rigorous long-term field research, while contributing meaningfully to the conservation of hyenas and the communities that live alongside them in Kenya&#8217;s Maasai Mara.</blockquote>
-    <p>Since 1988, the MHP has pursued this mission through daily field research in the Maasai Mara, building one of the most detailed longitudinal datasets on any wild animal population. Our work is grounded in a conviction that excellent science and genuine community engagement are not competing priorities &mdash; they reinforce each other.</p>
-    <p>We believe that long-term studies are irreplaceable. Questions about how early life shapes adult outcomes, how social structures evolve, or how populations respond to environmental change cannot be answered in the span of a single grant cycle. The MHP&#8217;s 35-year commitment to continuous monitoring is what makes our science uniquely powerful.</p>
-    <p>We are equally committed to making that science relevant beyond academia &mdash; to the communities that share the Mara with hyenas, to policymakers who shape wildlife management decisions, and to a public audience that deserves accurate information about one of Africa&#8217;s most misunderstood animals.</p>
+    <blockquote class="mission-statement">The Mara Hyena Project advances scientific understanding of spotted hyena behavior, ecology, and cognition through long-term field research. We work to conserve hyenas and the ecosystem they depend on, to support the communities that share the Maasai Mara with them, and to train the next generation of scientists in Kenya and abroad.</blockquote>
+    <p>Since 1988, the MHP has carried out daily field research in the Maasai Mara, building one of the most detailed long-term datasets on any wild animal population. Good science and real community partnership are not competing goals. Each depends on the other.</p>
+    <p>We think long-term studies are irreplaceable. Questions about how early life shapes adult outcomes, how social structures change, or how populations respond to a changing environment cannot be answered within a single grant cycle. More than 35 years of continuous monitoring is what makes this kind of research possible.</p>
+    <p>We also work to make that science useful beyond the academy: for the communities that share the Mara with hyenas, for the people who shape wildlife management, and for a public that rarely gets accurate information about one of Africa&#8217;s most misunderstood animals.</p>
   </div>
 </section>
 
 <section class="bg-pale">
   <div class="section-inner">
-    <p class="section-label">Our Values</p>
+    <p class="section-label">Our Pillars</p>
     <h2>What Guides Our Work</h2>
     <div class="divider"></div>
-    <div class="grid-3">
-      <div class="value-card"><h3>Scientific Rigor</h3><p>We hold our research to the highest standards of behavioral ecology and evolutionary biology. Our methods are transparent, our data carefully curated, and our findings subject to peer review.</p></div>
-      <div class="value-card"><h3>Long-Term Commitment</h3><p>Some of the most important questions in ecology can only be answered across years and decades. We are committed to continuous monitoring not just because it produces better science, but because the animals and communities we study deserve consistency.</p></div>
-      <div class="value-card"><h3>Community Partnership</h3><p>The MHP operates in the Maasai Mara because Kenyan communities and institutions permit and support our presence. Providing conflict consulting, running educational programs, and training Kenyan researchers are core activities, not afterthoughts.</p></div>
-      <div class="value-card"><h3>Conservation Impact</h3><p>Our research generates knowledge that directly informs hyena conservation. Understanding population dynamics, threat factors, and human-hyena interactions is the foundation of effective conservation action.</p></div>
-      <div class="value-card"><h3>Training the Next Generation</h3><p>The MHP has trained dozens of graduate students and hundreds of undergraduate researchers. We take mentorship seriously at every level.</p></div>
-      <div class="value-card"><h3>Open Science</h3><p>We publish in peer-reviewed journals, share data where possible, and make our quarterly reports publicly available. Science is most powerful when it is accessible.</p></div>
+    <div class="pillar-grid">
+      <a class="pillar-card" href="projects.html">
+        <img src="img/mission-science.jpg" alt="Spotted hyena research in the field">
+        <div class="pillar-card-body">
+          <h3>Science</h3>
+          <p>Rigorous, peer-reviewed research built on one of the longest continuous datasets on any wild mammal. We work in the open, sharing data and findings so others can build on them.</p>
+          <span class="pillar-more">Our research &rarr;</span>
+        </div>
+      </a>
+      <a class="pillar-card" href="conservation.html">
+        <img src="img/mission-conservation.jpg" alt="Hyena in the Mara-Serengeti landscape">
+        <div class="pillar-card-body">
+          <h3>Conservation</h3>
+          <p>Our long-term data informs hyena conservation across the wider Mara&#8211;Serengeti ecosystem. We collaborate with regional scientists and Kenyan institutions, including the Wildlife Research and Training Institute (WRTI), on shared conservation goals.</p>
+          <span class="pillar-more">Conservation &amp; threats &rarr;</span>
+        </div>
+      </a>
+      <a class="pillar-card" href="community-outreach.html">
+        <img src="img/mission-comm.jpg" alt="MHP community outreach in the Maasai Mara">
+        <div class="pillar-card-body">
+          <h3>Community</h3>
+          <p>We are part of the Maasai Mara. We hire and train Maasai staff and researchers, give talks at lodges, schools, and to local partners, and work directly to reduce human-hyena conflict.</p>
+          <span class="pillar-more">Community outreach &rarr;</span>
+        </div>
+      </a>
+      <a class="pillar-card" href="join-ra.html#grad">
+        <img src="img/mission-edu.jpg" alt="MHP field and research team">
+        <div class="pillar-card-body">
+          <h3>Education</h3>
+          <p>We train and mentor the next generation of scientists, from American and Kenyan undergraduates to graduate students, and help build STEM capacity in Kenya by supporting young Maasai researchers.</p>
+          <span class="pillar-more">Train with us &rarr;</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
 <section class="bg-green" style="text-align:center">
   <div class="section-inner" style="max-width:680px">
-    <h2>35 Years. Two Clans. One Commitment.</h2>
-    <p>The MHP&#8217;s longevity reflects the dedication of a remarkable team, the support of funders and donors, and the goodwill of Kenyan communities and institutions. We are grateful &mdash; and determined to continue.</p>
+    <h2>More Than 35 Years in the Mara</h2>
+    <p>Across more than three decades of daily monitoring, the MHP currently follows seven hyena clans in the Maasai Mara. That work depends on a dedicated field and research team, the support of funders and donors, and the partnership of Kenyan communities and institutions. We intend to keep it going.</p>
     <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
       <a href="donate.html" class="btn-primary">Support the MHP</a>
       <a href="history.html" class="btn-outline">Our History</a>
@@ -81,8 +117,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2025 Mara Hyena Project.</span>
-    <span>Michigan State University &amp; Hunter College CUNY</span>
+    <span>&copy; 2026 Mara Hyena Project</span>
+    <span>Michigan State University &amp; Hunter College, CUNY</span>
   </div>
 </footer>
 </body>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEAM Study Abroad &mdash; Mara Hyena Project</title>
+  <link rel="stylesheet" href="css/style.css">
+<style>
+.subnav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.subnav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:thin}
+.subnav a{display:inline-block;padding:1rem .85rem;color:var(--text-muted);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.subnav a:hover{color:var(--green-dark);border-bottom-color:var(--green-light)}
+.beam-section{scroll-margin-top:70px}
+.beam-section ul{margin:0 0 1rem 1.25rem;color:var(--text-muted)}
+.beam-section ul li{margin-bottom:.4rem;line-height:1.6}
+.beam-section a{color:var(--green);text-decoration:none;font-weight:500}
+.beam-section a:hover{text-decoration:underline}
+.fee-box{background:var(--green-pale);border-left:4px solid var(--green);padding:1.25rem 1.5rem;border-radius:0 4px 4px 0;margin:1.5rem 0}
+.fee-box strong{color:var(--green-dark)}
+.callout{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.5rem;margin-top:2rem}
+.callout h3{font-size:1.1rem;margin-bottom:.5rem}
+.step{display:flex;gap:1.25rem;align-items:flex-start;margin-bottom:1.5rem}
+.step-num{width:36px;height:36px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.9rem;flex-shrink:0}
+.step h3{margin-bottom:.25rem;font-size:1.1rem}
+.step p{margin:0}
+.camp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.camp-grid figure{margin:0}
+.camp-grid img{width:100%;height:180px;object-fit:cover;border-radius:4px;display:block;cursor:pointer;transition:opacity 0.2s}
+.camp-grid img:hover{opacity:0.8}
+.camp-grid figcaption{font-size:.85rem;color:var(--text-muted);margin-top:.4rem;text-align:center}
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:2rem}
+.lightbox.active{display:flex}
+.lightbox-content{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center}
+.lightbox img{max-width:100%;max-height:80vh;object-fit:contain}
+.lightbox-caption{color:rgba(255,255,255,0.8);font-size:.9rem;margin-top:1rem;text-align:center}
+.lightbox-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(255,255,255,0.8);font-size:2rem;cursor:pointer;padding:0;width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;transition:color 0.2s}
+.lightbox-close:hover{color:white}
+@media(max-width:680px){
+  .lightbox{padding:1rem}
+  .lightbox-close{top:-2rem}
+}
+@media(max-width:680px){.subnav-inner{padding:0 1rem}}
+.site-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.site-layout .photos img{width:100%;height:250px;object-fit:cover;border-radius:4px;display:block;margin-bottom:1rem}
+.site-layout .photos img:last-child{margin-bottom:0}
+.site-layout .map-fig{max-width:320px;margin:2rem 0 0;text-align:center}
+.site-layout .map-fig img{width:100%;height:auto;border-radius:4px;display:block}
+.site-layout .map-fig figcaption{font-size:.85rem;color:var(--text-muted);margin-top:.5rem}
+.instructors-layout{display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:center}
+.instructors-layout .vertical-photo{width:100%;max-width:320px;height:460px;object-fit:cover;border-radius:4px;justify-self:center;display:block}
+@media(max-width:900px){
+  .site-layout,.instructors-layout{grid-template-columns:1fr}
+  .instructors-layout .vertical-photo{height:400px;max-width:280px}
+  .site-layout .map-fig{margin-left:auto;margin-right:auto}
+}
+</style>
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+  <script src="js/nav.js"></script>
+
+<div class="page-header" style="position:relative; overflow:hidden; padding:0;">
+  <img src="img/beam/beam-class.png" alt="BEAM students observing wildlife in the Maasai Mara" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;">
+  <div style="position:relative; background:rgba(14,61,30,0.62); padding:4rem 2rem; text-align:center;">
+    <h1>BEAM: Study Abroad</h1>
+    <p>Behavioral Ecology of African Mammals &mdash; an intensive three-week field course in Kenya's Maasai Mara.</p>
+  </div>
+</div>
+
+<div class="subnav">
+  <div class="subnav-inner">
+    <a href="#overview">Overview</a>
+    <a href="#objectives">Course Objectives</a>
+    <a href="#site">Study Site</a>
+    <a href="#instructors">Instructors</a>
+    <a href="#eligibility">Eligibility</a>
+    <a href="#costs">Costs</a>
+    <a href="#application">Application</a>
+    <a href="#health-safety">Health &amp; Safety</a>
+    <a href="#gallery">Gallery</a>
+  </div>
+</div>
+
+<section class="bg-white beam-section" id="overview">
+  <div class="section-inner">
+    <p class="section-label">About the Program</p>
+    <h2>Behavioral Ecology of African Mammals</h2>
+    <div class="divider"></div>
+    <div class="split">
+      <div>
+        <p>BEAM is an intensive three-week field course focused on the behavioral ecology of African mammals in their natural habitat. The course curriculum is designed to exploit the extraordinary richness, diversity, and observability of the mammalian fauna inhabiting Kenya's protected areas. The majority of the course is conducted in the Maasai Mara National Reserve.</p>
+        <p>Situated in the northern portion of the Serengeti ecosystem, the Mara contains savannas, acacia woodlands, and riverine forests, and these habitats are occupied by different groups of mammals. Throughout the course we use our bush vehicles as classrooms and mobile "blinds" from which to observe the behavior of resident herbivores and carnivores. The course also offers students a unique opportunity to learn about the cultures of Kenya, particularly the indigenous Maasai who inhabit the areas surrounding the Mara.</p>
+      </div>
+      <img src="img/beam/beam.jpg" alt="BEAM group in the field">
+    </div>
+    <p style="margin-top:2rem">BEAM is offered through Michigan State University's College of Natural Science and the Department of Integrative Biology, and is arranged through the Office for Education Abroad. Once accepted, students enroll for six (6) credits in IBIO 490, Overseas Study in Zoology.</p>
+    <div class="fee-box">
+      <p style="margin:0"><strong>Open to non-MSU students.</strong> Students from any institution are encouraged to apply. Non-MSU applicants enroll through MSU's Office for Education Abroad and pay the Lifelong Education rate for tuition (regardless of state of residence). See <a href="#eligibility" style="color:var(--green);font-weight:500">Eligibility</a> and <a href="#costs" style="color:var(--green);font-weight:500">Costs</a> for details.</p>
+    </div>
+    <div class="fee-box">
+      <p style="margin:0"><strong>BEAM 2026</strong> received a large number of applicants and has an extensive waitlist. If you are interested in BEAM 2027, please email the lead instructor, <a href="mailto:woernerj@msu.edu" style="color:var(--green);font-weight:500">Jana Woerner</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pale beam-section" id="objectives">
+  <div class="section-inner">
+    <p class="section-label">Curriculum</p>
+    <h2>Course Objectives</h2>
+    <div class="divider"></div>
+    <div class="split">
+      <div>
+        <p>BEAM focuses on the behavior of African mammals and the ecological variables that shape the behavior exhibited by each resident species. During the program, students begin by identifying and becoming familiar with resident mammals, then move on to making detailed observations of individuals and groups and monitoring their interactions. Students learn how the scientific method is applied to the study of behavioral ecology, and use a variety of techniques for systematic data collection to test hypotheses for why each species engages in particular types of behavior.</p>
+        <p>The best times of day for observing the behavior of African mammals are around dawn and dusk. As a result, students spend two or three hours each morning and evening in vehicles, observing and quantifying the behavior of various mammals and testing hypotheses about why these animals behave as they do. During the warmer hours around midday, and again each evening, course instructors lecture on selected topics germane to understanding the Serengeti-Mara ecosystem and the behavior of its animals.</p>
+      </div>
+      <img src="img/beam/data-collection.jpg" alt="BEAM students collecting behavioral data in the field">
+    </div>
+    <p style="margin-top:2rem">After developing an understanding of the behavioral biology of African mammals and the methods available for its study, students are expected to develop and conduct independent projects answering specific questions about the behavior of one species, comparing the behavior of two different species, or testing an explanatory hypothesis in relation to behavior.</p>
+    <div class="split" style="margin-top:2.5rem">
+      <div>
+        <h3 style="font-size:1.15rem;margin-bottom:.75rem">Topics covered</h3>
+        <ul>
+          <li>Ecological determinants of mammalian behavior</li>
+          <li>Life history patterns of resident mammals</li>
+          <li>The relationship between morphology and behavior</li>
+          <li>Field methods in the study of mammalian behavior</li>
+          <li>Foraging and feeding behavior</li>
+          <li>Vigilance and anti-predator behavior</li>
+          <li>Reproductive behavior: courtship, sexual behavior, and parental behavior</li>
+          <li>Social behavior: agonistic behavior, affiliative behavior, and communication</li>
+          <li>Physiological correlates of behavior</li>
+          <li>Effects of human populations on behavior and conservation</li>
+          <li>Current research in the field of behavioral ecology</li>
+        </ul>
+      </div>
+      <img src="img/beam/student-binos.png" alt="BEAM students observing wildlife with binoculars">
+    </div>
+  </div>
+</section>
+
+<section class="bg-white beam-section" id="site">
+  <div class="section-inner">
+    <p class="section-label">Location</p>
+    <h2>Study Site</h2>
+    <div class="divider"></div>
+    <div class="site-layout">
+      <div>
+        <p>The course takes place primarily in the Maasai Mara National Reserve in southern Kenya. The Mara is situated in the northern portion of the Serengeti ecosystem and offers unparalleled opportunities for observation of African mammals.</p>
+        <p>The vast open, rolling grasslands and riverine forests of the Mara are occupied by an extraordinary diversity of mammalian species, and these animals serve as subjects in the studies conducted by students enrolled in this program. The course also visits other areas within the Great Rift Valley, which afford comparative insights into the behavioral ecology of mammals in different habitats and regions.</p>
+        <figure class="map-fig">
+          <img src="img/beam/kenya-map.jpg" alt="Map of Kenya showing the Maasai Mara">
+          <figcaption>Kenya, with the Maasai Mara in the southwest</figcaption>
+        </figure>
+      </div>
+      <div class="photos">
+        <img src="img/beam/tracks.jpg" alt="The Maasai Mara landscape">
+        <img src="img/beam/sunset.jpg" alt="Sunset behind balanites trees">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pale beam-section" id="instructors">
+  <div class="section-inner">
+    <p class="section-label">Teaching Team</p>
+    <h2>Instructors</h2>
+    <div class="divider"></div>
+    <div class="instructors-layout">
+      <div>
+        <p>Jana Woerner is the lead instructor for BEAM 2026. She is a PhD candidate in the Department of Integrative Biology at Michigan State University, and has taught the course since 2022. She has a wide range of research and field experience, including time spent living in Kenya and studying spotted hyenas in the Maasai Mara National Reserve.</p>
+        <p>For more information about the course, please email <a href="mailto:woernerj@msu.edu">Jana Woerner</a>.</p>
+      </div>
+      <img class="vertical-photo" src="img/beam/instructor-cheetah.jpg" alt="Instructor observing cheetahs with students">
+    </div>
+  </div>
+</section>
+
+<section class="bg-white beam-section" id="eligibility">
+  <div class="section-inner">
+    <p class="section-label">Who Can Apply</p>
+    <h2>Eligibility</h2>
+    <div class="divider"></div>
+    <div class="split">
+      <div>
+        <p>This program is designed for undergraduate and graduate students majoring in any biological science, environmental science, wildlife ecology, or related fields. Students from other institutions are encouraged to apply for this unique learning experience.</p>
+        <p>Students must be in good academic standing and have an overall grade point average of at least 3.0 at the time of application. Students must also have completed at least one year of undergraduate courses and an introductory biology course at the time of departure. Priority will be given to students who have successfully completed IBIO 313 (Animal Behavior), IBIO 365 (The Biology of Mammals), IBIO 355 (Ecology) and/or IBIO 415 (Behavioral Ecology), although these courses are not required. Final acceptance into the program is based on an individual interview with the instructors.</p>
+      </div>
+      <img src="img/beam/students-lion.jpg" alt="BEAM students observing a lion">
+    </div>
+    <div class="split" style="margin-top:2.5rem">
+      <img src="img/beam/students-equator.jpg" alt="BEAM students at the equator">
+      <div>
+        <p>Students potentially interested in taking this course should attend an informational meeting held in the fall or early spring semester. Please email one of the instructors if you are interested; they will have more information about the meeting time and place and will be able to add your email address to the BEAM list.</p>
+        <p>Students who enroll in this course are required to attend at least four additional preparatory meetings to be held during the spring semester. A valid passport, visa, and record of immunizations are required for travel to Kenya.</p>
+        <p>Please note that not all sites involved in this program are accessible to individuals with certain disabilities. An applicant's participation may also be denied or their participation approval may be revoked if their conduct before departure raises doubts as to their suitability for program participation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pale beam-section" id="costs">
+  <div class="section-inner">
+    <p class="section-label">Program Fees</p>
+    <h2>Costs</h2>
+    <div class="divider"></div>
+    <div class="split">
+      <div>
+        <p>The program fee for 2026 is <strong>$5,050</strong>, with estimated additional costs of $2,000, plus MSU tuition costs.</p>
+        <h3 style="font-size:1.15rem;margin-top:1.5rem;margin-bottom:.75rem">The program fee includes:</h3>
+        <ul>
+          <li>Application fee ($100)</li>
+          <li>Deposit ($750)</li>
+          <li>Pre-departure orientation</li>
+          <li>Accommodation</li>
+          <li>Meals</li>
+          <li>Transportation in Kenya</li>
+          <li>Field trips</li>
+          <li>International health insurance</li>
+        </ul>
+      </div>
+      <img src="img/beam/students-elephant.jpg" alt="BEAM students observing elephants">
+    </div>
+    <h3 style="font-size:1.15rem;margin-top:1.5rem;margin-bottom:.75rem">Not included (participants budget separately):</h3>
+    <ul>
+      <li>MSU tuition and fees (for six credits)*</li>
+      <li>Airfare**</li>
+      <li>Books and supplies</li>
+      <li>Optional field trips</li>
+      <li>Passport application fee (if applicable)</li>
+      <li>Kenyan visa ($30)</li>
+      <li>Pre-departure immunizations (if applicable)</li>
+      <li>Personal spending money</li>
+    </ul>
+    <p style="font-size:.88rem;color:var(--text-muted);margin-top:1.25rem">*Check the <a href="http://www.ctlr.msu.edu/COStudentAccounts/Tuition_Fees_MainMenu.aspx" target="_blank">MSU Office of the Controller</a> for current tuition rates, fees, and taxes. MSU students pay the same amount they would pay for six credits of study at MSU; non-MSU students pay the Lifelong Education rate, regardless of state of residence.</p>
+    <p style="font-size:.88rem;color:var(--text-muted)">**Round-trip air travel from Detroit to Nairobi has historically cost less than $1,500. Program fees, dates, and arrangements may be subject to change due to unexpected circumstances.</p>
+    <div class="callout">
+      <h3>Financial Assistance</h3>
+      <p>Financial assistance is available for students, who need to make appropriate arrangements with the Office for Education Abroad and the Office of Financial Aid. All students planning to use financial aid toward a study abroad program must indicate their intentions on the study abroad application. Non-MSU students should check with their home institution's financial aid office.</p>
+      <p style="margin-top:1rem;font-weight:500;color:var(--green-dark)">Resources for study abroad financial aid and scholarships:</p>
+      <ul>
+        <li><a href="https://educationabroad.isp.msu.edu/plan/funding-options/" target="_blank">MSU Office for Education Abroad</a></li>
+        <li><a href="https://natsci.msu.edu/undergraduate/current-students/scholarships-and-financial-aid/index.aspx" target="_blank">College of Natural Science</a></li>
+        <li><a href="https://www.canr.msu.edu/academics/undergraduate/studyabroad/canr_study_abroad_scholarships" target="_blank">College of Agriculture and Natural Resources</a></li>
+        <li><a href="https://honorscollege.msu.edu/programs/scholarships/scholarships-for-current-students/" target="_blank">Honors College</a></li>
+        <li><a href="https://lbc.msu.edu/research/funding" target="_blank">Lyman Briggs College</a></li>
+        <li><a href="https://cvm.msu.edu/students/financial-aid-and-scholarships" target="_blank">College of Veterinary Medicine</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white beam-section" id="application">
+  <div class="section-inner">
+    <p class="section-label">How to Apply</p>
+    <h2>Application</h2>
+    <div class="divider"></div>
+    <p>To apply for BEAM, you must complete two separate applications:</p>
+    <div class="step" style="margin-top:1.5rem"><div class="step-num">1</div><div><h3>MSU Office for Education Abroad (OEA) general application</h3><p style="color:var(--text-muted)">Submit through the <a href="https://msueducationabroad.via-trm.com/program_brochure/11190/" target="_blank">OEA website</a>. A $100 non-refundable application fee is required (later applied to the program fee).</p></div></div>
+    <div class="step"><div class="step-num">2</div><div><h3>BEAM Supplemental Application</h3><p style="color:var(--text-muted)">Download the <a href="files/beam/beam_supplemental_2026.docx">BEAM Supplemental Application</a> and email your completed form to <a href="mailto:woernerj@msu.edu">Jana Woerner</a>.</p></div></div>
+    <div class="fee-box">
+      <p style="margin:0"><strong>Deadline:</strong> February 15 (per OEA) for both the general and supplemental applications. Applications are reviewed on a rolling basis starting January 1st, and BEAM often fills up long before the OEA deadline due to its small class size (limited to 17 students).</p>
+    </div>
+    <p>After applications are reviewed, applicants are interviewed by the course instructors and final decisions are made as soon as possible. Applicants are evaluated based on this program's eligibility criteria, overall GPA, GPA in related courses, supplemental application, writing ability, and personal interview.</p>
+    <p>Detailed information about application procedures, the acceptance process, pre-departure orientation, on-site logistics, and returning home is provided in the Student Handbook (given to students upon submission of their application).</p>
+    <p style="font-size:.88rem;color:var(--text-muted);margin-top:1.25rem">After students accept admission into the program, they will be billed for an additional non-refundable $750 deposit, which is also applied to the program fee. Students who wish to withdraw their application are required to notify the Office for Education Abroad in writing.</p>
+  </div>
+</section>
+
+<section class="bg-pale beam-section" id="health-safety">
+  <div class="section-inner">
+    <p class="section-label">Staying Safe Abroad</p>
+    <h2>Health &amp; Safety</h2>
+    <div class="divider"></div>
+    <div class="split">
+      <div>
+        <h3 style="font-size:1.15rem;margin-bottom:.5rem">International Health Insurance</h3>
+        <p>The program fee includes mandatory international health insurance administered through International SOS. This policy provides supplemental health insurance, medical evacuation, and medically required repatriation. For further information, please visit the <a href="https://globalsafety.isp.msu.edu/students/education-abroad/" target="_blank">MSU Office for Global Health, Safety and Security</a>.</p>
+        <h3 style="font-size:1.15rem;margin-top:1.5rem;margin-bottom:.5rem">Preventive health information for international travelers</h3>
+        <p>Recommendations about preventive medications and vaccinations for international travelers are continually reviewed by several public health and international travel organizations. We advise you to consult the CDC's recommendations for traveling to Kenya, and to discuss travel medicine with the Travel Clinic at MSU's Olin Health Center or with any other physician experienced in travel medicine. Plan ahead.</p>
+        <ul>
+          <li><a href="https://travelclinic.msu.edu/" target="_blank">Olin Health Center Travel Clinic</a></li>
+          <li><a href="https://wwwnc.cdc.gov/travel/destinations/traveler/none/kenya" target="_blank">CDC Health Information for Travelers to Kenya</a></li>
+        </ul>
+      </div>
+      <img src="img/beam/students-maasai.jpg" alt="BEAM students with members of the Maasai community">
+    </div>
+  </div>
+</section>
+
+<section class="bg-white beam-section" id="gallery">
+  <div class="section-inner">
+    <p class="section-label">From the Field</p>
+    <h2>Photo Gallery</h2>
+    <div class="divider"></div>
+    <p style="margin-bottom:2rem">Click any photo to view it full-size.</p>
+    <div class="camp-grid" id="beam-gallery">
+      <figure><img src="img/beam/students-lions.jpg" alt="Students with lion pride"><figcaption>Lion pride sighting</figcaption></figure>
+      <figure><img src="img/beam/students-giraffe.jpg" alt="Students observing giraffes"><figcaption>Giraffe observations</figcaption></figure>
+      <figure><img src="img/beam/students-escarpment.jpg" alt="Students on the Rift Valley escarpment"><figcaption>Rift Valley escarpment</figcaption></figure>
+      <figure><img src="img/beam/student-meru.jpg" alt="Student at Meru"><figcaption>Meru National Park</figcaption></figure>
+      <figure><img src="img/beam/lion-pride.jpg" alt="Lion pride"><figcaption>Lion pride</figcaption></figure>
+      <figure><img src="img/beam/cub-car.jpg" alt="Hyena cub near vehicle"><figcaption>Hyena cub up close</figcaption></figure>
+      <figure><img src="img/beam/baboons.jpg" alt="Baboons sunbathing"><figcaption>A group of baboons, <em>Papio anubis</em>, sunbathe in the morning light</figcaption></figure>
+      <figure><img src="img/beam/buffalo.jpg" alt="Cape buffalo herd"><figcaption>A herd of Cape buffalo, <em>Syncerus caffer</em></figcaption></figure>
+      <figure><img src="img/beam/wildebeest.jpg" alt="Wildebeest migration from above"><figcaption>Wildebeest, <em>Connochaetes taurinus</em>, during their annual migration, seen from a hot air balloon</figcaption></figure>
+      <figure><img src="img/beam/zebra.jpg" alt="Zebras drinking water"><figcaption>Zebras, <em>Equus burchelli</em>, drink water</figcaption></figure>
+      <figure><img src="img/beam/hartebeest.jpg" alt="Two hartebeest"><figcaption>Two hartebeest, <em>Alcelaphus buselaphus</em></figcaption></figure>
+      <figure><img src="img/beam/research-presentations.jpg" alt="Student research presentations"><figcaption>Students present their findings from their research projects</figcaption></figure>
+      <figure><img src="img/beam/dna-extraction.jpg" alt="DNA extraction work"><figcaption>Students extract DNA from the blood samples they collected from an anesthetized hyena</figcaption></figure>
+      <figure><img src="img/beam/beam-lecture.jpg" alt="Bush lecture in camp"><figcaption>Bush lecture back in camp</figcaption></figure>
+      <figure><img src="img/beam/maasai-village.jpg" alt="Maasai village visit"><figcaption>A visit to a Maasai village</figcaption></figure>
+      <figure><img src="img/beam/maasai-dance.jpg" alt="Maasai traditional dance"><figcaption>Students watch as local Maasai perform a traditional dance</figcaption></figure>
+      <figure><img src="img/beam/maasai-dance2.jpg" alt="Students dancing with Maasai"><figcaption>Students dance with the Maasai</figcaption></figure>
+      <figure><img src="img/beam/maasai-school.jpg" alt="Local Maasai school visit"><figcaption>Students visit a local Maasai school</figcaption></figure>
+      <figure><img src="img/beam/craft-center.jpg" alt="Women's craft center visit"><figcaption>Students visit a women's craft center</figcaption></figure>
+      <figure><img src="img/beam/stormy-sunset.jpg" alt="Stormy sunset"><figcaption>Sunset with storm clouds in the distance</figcaption></figure>
+      <figure><img src="img/beam/beam-border.jpg" alt="Kenya-Tanzania border"><figcaption>Students visit the Kenya-Tanzania border</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="img/logo.png" alt="Mara Hyena Project">
+      <p>The Mara Hyena Project has monitored spotted hyena clans in Kenya&#8217;s Maasai Mara since 1988.</p>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="history.html">History</a>
+      <a href="mission.html">Mission</a>
+      <a href="team.html">Our Team</a>
+    </div>
+    <div class="footer-col">
+      <h4>Research</h4>
+      <a href="projects.html">Current Projects</a>
+      <a href="publications.html">Publications</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="donate.html">Donate</a>
+      <a href="donate.html#adopt">Adopt a Hyena</a>
+      <a href="mailto:marahyenaproject@gmail.com">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Mara Hyena Project</span>
+    <span>Michigan State University &amp; Hunter College, CUNY</span>
+  </div>
+</footer>
+
+<script>
+function openLightbox(img) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const caption = document.getElementById('lightbox-caption');
+  lightboxImg.src = img.src;
+  caption.textContent = img.nextElementSibling.textContent;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  document.querySelectorAll('#beam-gallery img').forEach(img => {
+    img.addEventListener('click', function() {
+      openLightbox(this);
+    });
+  });
+});
+</script>
+</body>
+</html>

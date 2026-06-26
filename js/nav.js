@@ -18,6 +18,7 @@ document.getElementById('nav-placeholder').innerHTML = `
           <a href="history.html">History</a>
           <a href="mission.html">Mission</a>
           <a href="team.html">Our Team</a>
+          <a href="news.html">In the News</a>
         </div>
       </li>
       <li>
@@ -26,6 +27,8 @@ document.getElementById('nav-placeholder').innerHTML = `
           <a href="join-ra.html">Volunteer Research Assistants</a>
           <a href="join-ra.html#grad">Graduate Students</a>
           <a href="join-ra.html#field">Life in the Field</a>
+          <a href="join-ra.html#camp-photos">Camp Photos</a>
+          <a href="beam.html">BEAM Study Abroad</a>
         </div>
       </li>
       <li>
@@ -41,7 +44,6 @@ document.getElementById('nav-placeholder').innerHTML = `
         <div class="dropdown">
           <a href="community-outreach.html">Community Outreach</a>
           <a href="conservation.html">Hyena Conservation &amp; Threats</a>
-          <a href="myths.html">Myths &amp; Misconceptions</a>
         </div>
       </li>
       <li>
@@ -54,9 +56,9 @@ document.getElementById('nav-placeholder').innerHTML = `
       <li>
         <button onclick="toggleDropdown(this)">Support &#9662;</button>
         <div class="dropdown">
-          <a href="support.html">Support the MHP</a>
-          <a href="donate.html">Donate Directly</a>
+          <a href="donate.html">Donate</a>
           <a href="donate.html#adopt">Adopt a Hyena</a>
+          <a href="donate.html#volunteer">Volunteer Remotely</a>
         </div>
       </li>
       <li><a href="donate.html" class="donate-btn">Donate</a></li>
