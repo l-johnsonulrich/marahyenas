@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join the MHP &mdash; Mara Hyena Project</title>
+  <title>Life in the Field &mdash; Mara Hyena Project</title>
   <link rel="stylesheet" href="css/style.css">
 <style>
 .contact-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.5rem;display:flex;align-items:flex-start;gap:1.25rem}
@@ -21,11 +21,6 @@
 .grad-layout > div img{width:100%;height:auto;border-radius:4px;display:block;margin-top:1.5rem}
 .grad-layout .step:last-child{margin-bottom:0}
 @media(max-width:760px){.grad-layout{grid-template-columns:1fr;gap:1.5rem}}
-.camp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-.camp-grid figure{margin:0}
-.camp-grid img{width:100%;height:180px;object-fit:cover;border-radius:4px;display:block;cursor:pointer;transition:opacity 0.2s}
-.camp-grid img:hover{opacity:0.8}
-.camp-grid figcaption{font-size:.85rem;color:var(--text-muted);margin-top:.4rem;text-align:center}
 .ra-do{max-width:1000px}
 .ra-do > div{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;margin-bottom:2.25rem}
 .ra-do > div > img{width:100%;height:250px;object-fit:cover;border-radius:4px;display:block}
@@ -36,16 +31,24 @@
   .ra-do > div{grid-template-columns:1fr;gap:1rem}
   .ra-do > div:nth-child(even) > img{order:0}
 }
-.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:2rem}
-.lightbox.active{display:flex}
-.lightbox-content{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center}
-.lightbox img{max-width:100%;max-height:80vh;object-fit:contain}
-.lightbox-caption{color:rgba(255,255,255,0.8);font-size:.9rem;margin-top:1rem;text-align:center}
-.lightbox-close{position:absolute;top:-2.5rem;right:0;background:none;border:none;color:rgba(255,255,255,0.8);font-size:2rem;cursor:pointer;padding:0;width:2.5rem;height:2.5rem;display:flex;align-items:center;justify-content:center;transition:color 0.2s}
-.lightbox-close:hover{color:white}
+.notice-banner{background:#fff7e0;border-left:4px solid #c08400}
+.notice-banner-inner{max-width:1200px;margin:0 auto;padding:1.25rem 2rem}
+.notice-banner h3{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#8b5e00;font-weight:600;margin-bottom:.4rem}
+.notice-banner p{color:var(--text);margin:0;font-size:.95rem;line-height:1.6}
+.slideshow{position:relative;max-width:960px;margin:0 auto}
+.slides{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:4px;background:var(--green-pale)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .4s ease;pointer-events:none}
+.slide.active{opacity:1;pointer-events:auto}
+.slide img{width:100%;height:100%;object-fit:contain;display:block}
+.slide figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(14,61,30,.92) 0%,rgba(14,61,30,.78) 70%,rgba(14,61,30,0) 100%);color:white;padding:2.5rem 1.75rem 1.25rem;font-size:.95rem;line-height:1.55}
+.slide-prev,.slide-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:white;border:none;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:1.3rem;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:5;line-height:1}
+.slide-prev{left:1rem}
+.slide-next{right:1rem}
+.slide-prev:hover,.slide-next:hover{background:rgba(0,0,0,.7)}
+.slide-counter{text-align:center;margin-top:1rem;color:var(--text-muted);font-size:.85rem;letter-spacing:.05em}
 @media(max-width:680px){
-  .lightbox{padding:1rem}
-  .lightbox-close{top:-2rem}
+  .slide figcaption{padding:2rem 1.25rem 1rem;font-size:.88rem}
+  .slide-prev,.slide-next{width:38px;height:38px}
 }
 </style>
 </head>
@@ -53,51 +56,108 @@
   <div id="nav-placeholder"></div>
   <script src="js/nav.js"></script>
 
-<script>
-function openLightbox(img) {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const caption = document.getElementById('lightbox-caption');
-  lightboxImg.src = img.src;
-  caption.textContent = img.nextElementSibling.textContent;
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
-  document.body.style.overflow = 'auto';
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
-
-  document.querySelectorAll('.camp-grid img').forEach(img => {
-    img.addEventListener('click', function() {
-      openLightbox(this);
-    });
-  });
-});
-</script>
-
 <div class="page-header" style="position:relative; overflow:hidden; padding:0;">
   <img src="img/ra-header.jpg" alt="Fieldwork in the Maasai Mara" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center bottom;">
   <div style="position:relative; background:rgba(14,61,30,0.62); padding:4rem 2rem; text-align:center;">
-    <h1>Join the MHP</h1>
-    <p>We welcome volunteer research assistants and prospective graduate students interested in behavioral ecology, cognition, and conservation.</p>
+    <h1>Life in the Field</h1>
+    <p>Field positions, student attachments, and graduate research opportunities with the Mara Hyena Project.</p>
   </div>
 </div>
+
+<div class="notice-banner">
+  <div class="notice-banner-inner">
+    <h3>Recruitment Status</h3>
+    <p>We currently have no open field positions, and we do not respond to unsolicited emails about field positions. Please check this page periodically for updates.</p>
+  </div>
+</div>
+
+<section class="bg-white" id="camp-photos">
+  <div class="section-inner">
+    <p class="section-label">Life in the Field</p>
+    <h2>Around Camp</h2>
+    <div class="divider"></div>
+    <div class="slideshow" id="slideshow">
+      <div class="slides">
+        <figure class="slide active">
+          <img src="img/camp/sign.jpg" alt="Mara Hyena Project camp sign">
+          <figcaption>Welcome to the Mara Hyena Project. Our two field camps &mdash; Serena and Talek &mdash; sit deep within the Maasai Mara National Reserve, where MHP has monitored hyena clans since 1988.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/tent-1.jpg" alt="Personal tent">
+          <figcaption>Every researcher and staff member gets their own private tent, with a bed, desk, and dresser. Solar power runs the lights and charges laptops.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/tent-2.jpg" alt="Personal tent">
+          <figcaption>Tents are tucked under acacia trees and give everyone private space to retreat to after long days in the field.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/tent-3.jpg" alt="Personal tent">
+          <figcaption>Mornings start before dawn &mdash; a typical day begins with the 5:30am drive out for morning observations and returns around 8:30am for breakfast.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/choo.jpg" alt="Pit latrine at camp">
+          <figcaption>Camp is rustic but comfortable. Toilets are pit latrines, known locally as the <em>choo</em>.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/shower.jpg" alt="Bush shower at camp">
+          <figcaption>Bush showers offer a welcome rinse after long observation sessions in the dust and sun.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/kitchen.jpg" alt="Camp kitchen">
+          <figcaption>The kitchen has a gas stove and a fridge but no freezer. Breakfast and dinner are prepared by the camp cook; lunch is on your own.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/lab-tent.jpg" alt="Lab tent">
+          <figcaption>The lab tent is the work hub &mdash; sample storage, data entry stations, and supplies for processing each day's observations.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/kitchen-cleaning.jpg" alt="Kitchen cleaning">
+          <figcaption>Camp chores rotate among everyone in residence. Keeping things tidy and functional is part of life in a remote field camp.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/water-chore.jpg" alt="Filling water jerry cans">
+          <figcaption>Filling jerry cans from the borehole is one of several daily rotating chores.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/volleyball.jpg" alt="Team members playing volleyball">
+          <figcaption>Afternoons between observation sessions are for data entry, vehicle maintenance, exercise, and downtime. Pickup volleyball is a long-standing camp tradition.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="img/camp/warthog.jpg" alt="Warthog by the solar panels">
+          <figcaption>Camp wildlife are part of the experience &mdash; the solar panels have become unofficial real estate for resident warthogs.</figcaption>
+        </figure>
+      </div>
+      <button class="slide-prev" aria-label="Previous slide">&#10094;</button>
+      <button class="slide-next" aria-label="Next slide">&#10095;</button>
+      <div class="slide-counter"><span class="slide-current">1</span> / <span class="slide-total">12</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pale" id="grad">
+  <div class="section-inner">
+    <p class="section-label">Graduate Training</p>
+    <h2>Graduate Students</h2>
+    <div class="divider"></div>
+    <div class="grad-layout">
+      <div>
+        <p>MHP Co-Directors are based at several universities and accept graduate students through their respective programs. Graduate students typically conduct dissertation research using MHP data and/or field seasons in Kenya, depending on their project.</p>
+        <img src="img/ra-grad.jpg" alt="Graduate research in the Maasai Mara">
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.75rem">
+        <p style="color:var(--green-dark);font-weight:500;margin-bottom:1.25rem">How to apply</p>
+        <div class="step"><div class="step-num">1</div><div><h3>Read the research</h3><p>Familiarize yourself with the MHP&#8217;s current projects and publications, and identify which director&#8217;s work aligns with your interests.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div><h3>Contact a director directly</h3><p>Email your director of interest with a brief statement of your background and your CV. Explain what research topics you want to study and why the MHP is a good fit for those questions, and describe what you would bring in terms of skills, experiences, and interests. Don&#8217;t mass-email all directors at once.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div><h3>Apply to their program</h3><p>Each director admits students through their home institution. Follow that university&#8217;s graduate application process. Deadlines typically fall December&ndash;January for the following fall.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="bg-white" id="ra">
   <div class="section-inner">
     <p class="section-label">Field Positions</p>
-    <h2>Volunteer Research Assistants</h2>
+    <h2>International Research Assistants</h2>
     <div class="divider"></div>
     <div class="split">
       <div>
@@ -110,9 +170,48 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <img src="img/serenacamp.jpg" alt="Serena research camp in the Maasai Mara">
     </div>
+  </div>
+</section>
 
-    <p class="section-label" style="margin-top:3rem">What RAs Do</p>
+<section class="bg-pale" id="kenyan-ra">
+  <div class="section-inner">
+    <p class="section-label">Field Positions</p>
+    <h2>Kenyan Research Assistants</h2>
     <div class="divider"></div>
+    <div class="split">
+      <div>
+        <p>Kenyan Research Assistants are full members of MHP's field team and work alongside our international staff to conduct daily behavioral observations, collect biological samples, manage field equipment, and support visiting researchers. Our long-serving Kenyan RAs play essential roles in maintaining the project's continuous monitoring program, and many have built long careers in wildlife research through their work with MHP.</p>
+        <p>Kenyan RAs are hired for an initial one-year term with the possibility to renew based on performance and project needs.</p>
+        <p>We prioritize candidates from communities adjacent to the Maasai Mara and from Kenyan universities with backgrounds in ecology, wildlife management, animal science, or related fields. We also give priority to candidates interested in pursuing further education and graduate research on spotted hyenas, and many former Kenyan RAs have gone on to graduate programs in the biological sciences.</p>
+        <p>Open positions are advertised locally and through partner Kenyan institutions when they become available. Inquiries from qualified Kenyan candidates can be directed to <a href="mailto:marahyenaproject@gmail.com" style="color:var(--green);font-weight:500">marahyenaproject@gmail.com</a>.</p>
+      </div>
+      <img src="img/benson.png" alt="Benson Pion, MHP Kenyan Field Manager">
+    </div>
+  </div>
+</section>
+
+<section class="bg-white" id="student-attachments">
+  <div class="section-inner">
+    <p class="section-label">Field Positions</p>
+    <h2>Student Attachments</h2>
+    <div class="divider"></div>
+    <div class="split">
+      <img src="img/benson-darting.JPG" alt="Student attachment participating in a hyena darting">
+      <div>
+        <p>Student Attachments are short-term placements at MHP for Kenyan undergraduate and Master's students, typically lasting three to six months as part of an academic attachment or industrial training requirement. Attached students participate in daily research activities at our field camps, gaining hands-on experience in behavioral observation, GPS tracking, sample collection, and basic laboratory methods.</p>
+        <p>Priority is given to students from Kenyan universities studying ecology, wildlife management, animal science, veterinary science, or related disciplines. We accept attachments on a rolling basis, subject to camp capacity.</p>
+        <p>Interested students should email <a href="mailto:marahyenaproject@gmail.com" style="color:var(--green);font-weight:500">marahyenaproject@gmail.com</a> with a CV, academic transcript, a brief statement describing their interests and goals, and a letter from their academic supervisor confirming the attachment requirement and proposed dates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pale" id="what-field-researchers-do">
+  <div class="section-inner">
+    <p class="section-label">Daily Work</p>
+    <h2>What Field Researchers Do</h2>
+    <div class="divider"></div>
+    <p style="max-width:760px;margin-bottom:2.5rem">Field work at MHP follows the same daily rhythm regardless of position. International RAs, Kenyan RAs, and student attachments all share the same core responsibilities in camp and in the field.</p>
     <div class="ra-do">
       <div>
         <img src="img/ra-observations.jpg" alt="Researchers observing hyenas in the field">
@@ -153,59 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-<section class="bg-pale" id="grad">
-  <div class="section-inner">
-    <p class="section-label">Graduate Training</p>
-    <h2>Graduate Students</h2>
-    <div class="divider"></div>
-    <div class="grad-layout">
-      <div>
-        <p>MHP Co-Directors are based at several universities and accept graduate students through their respective programs. Graduate students typically conduct dissertation research using MHP data and/or field seasons in Kenya, depending on their project.</p>
-        <img src="img/ra-grad.jpg" alt="Graduate research in the Maasai Mara">
-      </div>
-      <div style="background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.75rem">
-        <p style="color:var(--green-dark);font-weight:500;margin-bottom:1.25rem">How to apply</p>
-        <div class="step"><div class="step-num">1</div><div><h3>Read the research</h3><p>Familiarize yourself with the MHP&#8217;s current projects and publications, and identify which director&#8217;s work aligns with your interests.</p></div></div>
-        <div class="step"><div class="step-num">2</div><div><h3>Contact a director directly</h3><p>Email your director of interest with a brief statement of your background and your CV. Explain what research topics you want to study and why the MHP is a good fit for those questions, and describe what you would bring in terms of skills, experiences, and interests. Don&#8217;t mass-email all directors at once.</p></div></div>
-        <div class="step"><div class="step-num">3</div><div><h3>Apply to their program</h3><p>Each director admits students through their home institution. Follow that university&#8217;s graduate application process. Deadlines typically fall December&ndash;January for the following fall.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bg-white" id="field">
-  <div class="section-inner">
-    <p class="section-label">Life in the Field</p>
-    <h2>What to Expect in the Maasai Mara</h2>
-    <div class="divider"></div>
-    <div class="grid-2">
-      <div class="card"><h3>Daily Routine</h3><p>A typical day starts early. We leave camp around 5:30am for the morning observation session and return by 8:30 or 9am for breakfast. Afternoons are for data entry, vehicle maintenance, camp chores, exercise, and downtime. Evening observations run from 5pm until 8 or 8:30pm. Dinner is before evening obs at 4pm at Serena, or after obs around 8pm at Talek.</p></div>
-      <div class="card"><h3>Camp Life</h3><p>Camps are rustic but comfortable. Solar power runs the lights in your tent and charges laptops. Toilets are pit latrines (choo) and showers are bush showers. The kitchen has a gas stove and a fridge but no freezer; breakfast and dinner are provided, with lunch on your own. Everyone gets their own tent with a bed, desk, and dresser. There is a lab tent stocked with research supplies and a storage tent for food and equipment. Laundry is done by the Maasai mamas.</p></div>
-      <div class="card"><h3>Health &amp; Safety</h3><p>The MHP looks after the practical side of staying healthy in the field. RAs are provided with a Kenyan health insurance policy, and we ask everyone to follow CDC vaccination guidance and to confirm their own coverage for global emergency evacuation. Day-to-day malaria prevention is simple, with repellent, bed nets, or medication. New arrivals are oriented to camp and field safety when they arrive.</p></div>
-      <div class="card"><h3>Community &amp; Culture</h3><p>Our Kenyan staff are experienced, knowledgeable, and welcoming. Respectful engagement with Maasai culture and community norms is expected. Basic Swahili is helpful but not required.</p></div>
-      <div class="card"><h3>Physical Demands</h3><p>The physical demands are lighter than you might expect. The hardest parts are sitting in a vehicle for six or seven hours a day and rising before dawn every day, with only one day off a week (though it rarely feels like work). Living in a remote area with just one or two other RAs and a few staff for a full year asks for a positive, flexible, and cooperative attitude more than physical fitness. Expect cool nights (around 15&#176;C) and warm afternoons (up to 33&#176;C), along with dust and rain.</p></div>
-    </div>
-
-    <p class="section-label" style="margin-top:3rem">Around Camp</p>
-    <div class="divider"></div>
-    <div class="camp-grid" id="camp-photos">
-      <figure><img src="img/camp/sign.jpg" alt="Mara Hyena Project camp sign"><figcaption>Camp sign</figcaption></figure>
-      <figure><img src="img/camp/choo.jpg" alt="Pit latrine at camp"><figcaption>The choo (pit latrine)</figcaption></figure>
-      <figure><img src="img/camp/shower.jpg" alt="Bush shower at camp"><figcaption>Bush shower</figcaption></figure>
-      <figure><img src="img/camp/lab-tent.jpg" alt="Lab tent"><figcaption>Lab tent</figcaption></figure>
-      <figure><img src="img/camp/kitchen.jpg" alt="Camp kitchen"><figcaption>Kitchen</figcaption></figure>
-      <figure><img src="img/camp/tent-1.jpg" alt="Personal tent"><figcaption>Personal tent</figcaption></figure>
-      <figure><img src="img/camp/tent-2.jpg" alt="Personal tent"><figcaption>Personal tent</figcaption></figure>
-      <figure><img src="img/camp/tent-3.jpg" alt="Personal tent"><figcaption>Personal tent</figcaption></figure>
-      <figure><img src="img/camp/volleyball.jpg" alt="Team members playing volleyball"><figcaption>Volleyball</figcaption></figure>
-      <figure><img src="img/camp/water-chore.jpg" alt="Filling water jerry cans"><figcaption>Water chore</figcaption></figure>
-      <figure><img src="img/camp/kitchen-cleaning.jpg" alt="Kitchen cleaning"><figcaption>Kitchen cleaning</figcaption></figure>
-      <figure><img src="img/camp/warthog.jpg" alt="Warthog by the solar panels"><figcaption>Warthog by the solar panels</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="bg-pale">
+<section class="bg-white">
   <div class="section-inner">
     <p class="section-label">Contact</p>
     <h2>Reach Out to a Director</h2>
@@ -222,13 +269,32 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-<div class="lightbox" id="lightbox">
-  <div class="lightbox-content">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <img id="lightbox-img" src="" alt="">
-    <div class="lightbox-caption" id="lightbox-caption"></div>
-  </div>
-</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('#slideshow .slide');
+  const prev = document.querySelector('#slideshow .slide-prev');
+  const next = document.querySelector('#slideshow .slide-next');
+  const current = document.querySelector('#slideshow .slide-current');
+  const total = document.querySelector('#slideshow .slide-total');
+  let idx = 0;
+  if (total) total.textContent = slides.length;
+
+  function show(i) {
+    slides[idx].classList.remove('active');
+    idx = (i + slides.length) % slides.length;
+    slides[idx].classList.add('active');
+    if (current) current.textContent = idx + 1;
+  }
+
+  if (prev) prev.addEventListener('click', () => show(idx - 1));
+  if (next) next.addEventListener('click', () => show(idx + 1));
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+});
+</script>
 
 <footer>
   <div class="footer-inner">
@@ -241,6 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="history.html">History</a>
       <a href="mission.html">Mission</a>
       <a href="team.html">Our Team</a>
+      <a href="news.html">In the News</a>
     </div>
     <div class="footer-col">
       <h4>Research</h4>

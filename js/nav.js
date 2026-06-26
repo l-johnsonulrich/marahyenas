@@ -13,25 +13,6 @@ document.getElementById('nav-placeholder').innerHTML = `
     </button>
     <ul class="nav-links" id="nav-links">
       <li>
-        <button onclick="toggleDropdown(this)">About Us &#9662;</button>
-        <div class="dropdown">
-          <a href="history.html">History</a>
-          <a href="mission.html">Mission</a>
-          <a href="team.html">Our Team</a>
-          <a href="news.html">In the News</a>
-        </div>
-      </li>
-      <li>
-        <button onclick="toggleDropdown(this)">Join the MHP &#9662;</button>
-        <div class="dropdown">
-          <a href="join-ra.html">Volunteer Research Assistants</a>
-          <a href="join-ra.html#grad">Graduate Students</a>
-          <a href="join-ra.html#field">Life in the Field</a>
-          <a href="join-ra.html#camp-photos">Camp Photos</a>
-          <a href="beam.html">BEAM Study Abroad</a>
-        </div>
-      </li>
-      <li>
         <button onclick="toggleDropdown(this)">Research &#9662;</button>
         <div class="dropdown">
           <a href="why-hyenas.html">Why Study Spotted Hyenas?</a>
@@ -47,8 +28,29 @@ document.getElementById('nav-placeholder').innerHTML = `
         </div>
       </li>
       <li>
+        <button onclick="toggleDropdown(this)">Life in the Field &#9662;</button>
+        <div class="dropdown">
+          <a href="join-ra.html">Field Positions</a>
+          <a href="join-ra.html#grad">Graduate Students</a>
+          <a href="join-ra.html#student-attachments">Student Attachments</a>
+          <a href="join-ra.html#kenyan-ra">Kenyan Research Assistants</a>
+          <a href="join-ra.html#camp-photos">Camp Photos</a>
+          <a href="beam.html">BEAM Study Abroad</a>
+        </div>
+      </li>
+      <li>
+        <button onclick="toggleDropdown(this)">About Us &#9662;</button>
+        <div class="dropdown">
+          <a href="history.html">History</a>
+          <a href="mission.html">Mission</a>
+          <a href="team.html">Our Team</a>
+          <a href="news.html">In the News</a>
+        </div>
+      </li>
+      <li>
         <button onclick="toggleDropdown(this)">About Hyenas &#9662;</button>
         <div class="dropdown">
+          <a href="hyena-behavior.html">Hyena Behavior</a>
           <a href="myths.html">Myths &amp; Misconceptions</a>
           <a href="gallery.html">Photo Gallery</a>
         </div>
@@ -58,7 +60,6 @@ document.getElementById('nav-placeholder').innerHTML = `
         <div class="dropdown">
           <a href="donate.html">Donate</a>
           <a href="donate.html#adopt">Adopt a Hyena</a>
-          <a href="donate.html#volunteer">Volunteer Remotely</a>
         </div>
       </li>
       <li><a href="donate.html" class="donate-btn">Donate</a></li>
