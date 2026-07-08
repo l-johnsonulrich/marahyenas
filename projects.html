@@ -11,21 +11,25 @@
 .project-num{font-family:"EB Garamond",serif;font-size:3rem;font-weight:500;color:rgba(255,255,255,.2);line-height:1;flex-shrink:0}
 .project-header h2{color:var(--white);font-size:1.5rem;margin-bottom:.25rem}
 .project-header .lead-pi{font-size:.82rem;color:rgba(255,255,255,.6);letter-spacing:.05em}
-.project-body{padding:2rem;display:grid;grid-template-columns:2fr 1fr;gap:2rem}
+.project-body{padding:2rem;display:grid;grid-template-columns:1.8fr 1fr 1.3fr;gap:2rem;align-items:start}
 .project-body p{color:var(--text-muted)}
 .project-sidebar h4{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:.75rem}
+.project-photo{margin:0}
+.project-photo img{width:100%;height:auto;border-radius:4px;display:block}
+.project-photo figcaption{font-size:.78rem;color:var(--text-muted);margin-top:.45rem;line-height:1.4}
 .tag{display:inline-block;background:var(--green-pale);color:var(--green-dark);font-size:.78rem;padding:.25rem .65rem;border-radius:2px;margin:.2rem .2rem .2rem 0;font-weight:500}
 .pi-list{list-style:none}
 .pi-list li{font-size:.85rem;color:var(--text-muted);padding:.3rem 0;border-bottom:1px solid var(--border)}
 .pi-list li:last-child{border-bottom:none}
-@media(max-width:680px){.project-body{grid-template-columns:1fr}.project-header{flex-direction:column;gap:.5rem}}
+@media(max-width:900px){.project-body{grid-template-columns:1fr 1fr;gap:1.75rem}.project-photo{grid-column:1/-1;max-width:320px}}
+@media(max-width:680px){.project-body{grid-template-columns:1fr}.project-photo{max-width:none}.project-header{flex-direction:column;gap:.5rem}}
 </style>
 </head>
 <body>
   <div id="nav-placeholder"></div>
   <script src="js/nav.js"></script>
 
-<div class="page-header">
+<div class="page-header" style="background-image:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('img/CommunalDen.png');background-size:cover;background-position:center;color:#fff">
   <h1>Current Projects</h1>
   <p>The MHP conducts collaborative research across several interrelated themes, all drawing on our 35+ year longitudinal dataset and ongoing field monitoring.</p>
 </div>
@@ -36,21 +40,24 @@
     <div class="project-card">
       <div class="project-header">
         <span class="project-num">01</span>
-        <div><h2>Urbanization &amp; Cognitive Evolution</h2><p class="lead-pi">Lead: Dr. Lily Johnson-Ulrich &mdash; Hunter College, CUNY</p></div>
+        <div><h2>Long-Term Data Collection &amp; Clan Monitoring</h2><p class="lead-pi">Ongoing baseline &mdash; All MHP Directors</p></div>
       </div>
       <div class="project-body">
         <div>
-          <p>As human settlements expand around wildlife habitats, some hyena populations are increasingly exposed to urban environments while others remain in wild areas. This project uses this variation as a natural experiment to test the <strong>Exaptation Model</strong> of cognitive evolution: the hypothesis that cognitive traits evolved in one context can be co-opted to solve novel problems in radically different environments.</p>
-          <p>We compare spotted hyenas across an urbanization gradient in the Maasai Mara region, measuring neophilia/neophobia (boldness toward novel objects), problem-solving ability, and individual variation in behavior. Camera traps with controlled novel object arrays allow behavioral assessment at scale across multiple individuals simultaneously.</p>
-          <p>The project links cognitive and behavioral measurements to fitness outcomes tracked through our long-term database, directly testing whether urban-associated cognitive traits confer advantages in changing environments.</p>
+          <p>Established in 1988, the MHP runs one of the longest continuous, individual-based field studies of any wild large carnivore. Near-daily observation sessions record the identities, locations, social interactions, and life events &mdash; births, deaths, rank changes, dispersal &mdash; of every hyena in our focal clans, each recognized by its unique spot pattern.</p>
+          <p>These daily records feed a curated database stretching back to the late 1980s: the foundation for all other MHP research and a basis for evidence-based management in Kenya. The work integrates non-invasive hormone and diet sampling, passive acoustic monitoring, GPS-based spatial ecology, and documentation of human&ndash;carnivore conflict, and has supported more than 100 publications and the training of dozens of Kenyan and international scientists.</p>
         </div>
+        <figure class="project-photo">
+          <img src="img/PROJECT3.jpg" alt="Field team observing a focal clan">
+          <figcaption>Two littermates gently play with each other; these cubs have been monitored from birth.</figcaption>
+        </figure>
         <div class="project-sidebar">
           <h4>Methods</h4>
-          <span class="tag">Camera traps</span><span class="tag">Novel object paradigm</span><span class="tag">Behavioral scoring</span><span class="tag">Long-term database</span><span class="tag">Fitness analysis</span>
+          <span class="tag">Daily focal observation</span><span class="tag">ID by spot pattern</span><span class="tag">Relational database</span><span class="tag">Fecal hormones</span><span class="tag">Passive acoustics</span><span class="tag">Conflict monitoring</span>
           <div style="margin-top:1.5rem"><h4>Key Team</h4>
-          <ul class="pi-list"><li>Dr. Lily Johnson-Ulrich</li><li>Dr. Kay Holekamp</li><li>Field RAs (Talek &amp; Serena)</li></ul></div>
-          <div style="margin-top:1.5rem"><h4>Funding</h4>
-          <ul class="pi-list"><li>NSF CAREER (pending)</li><li>Hunter College, CUNY</li></ul></div>
+          <ul class="pi-list"><li>All MHP Co-Directors</li><li>Kenyan field staff</li><li>Students &amp; interns</li></ul></div>
+          <div style="margin-top:1.5rem"><h4>Partners</h4>
+          <ul class="pi-list"><li>Michigan State University</li><li>KWS &amp; WRTI</li><li>Narok County</li><li>Mara &amp; Naboisho Conservancies</li></ul></div>
         </div>
       </div>
     </div>
@@ -58,19 +65,24 @@
     <div class="project-card">
       <div class="project-header">
         <span class="project-num">02</span>
-        <div><h2>Social Networks &amp; Early-Life Effects</h2><p class="lead-pi">Lead: Dr. Eli Strauss &mdash; Max Planck Institute of Animal Behavior</p></div>
+        <div><h2>Vocal Communication &amp; Collective Action</h2><p class="lead-pi">Lead: Dr. Kay E. Holekamp &mdash; Michigan State University</p></div>
       </div>
       <div class="project-body">
         <div>
-          <p>Spotted hyenas live in large, complex societies with fluid subgroup structure and stable dominance hierarchies. This project investigates how the social environment during early life shapes adult social behavior, stress physiology, and lifetime fitness.</p>
-          <p>Using detailed social network analysis applied to decades of behavioral observation data, we quantify each individual&#8217;s social integration, dominance rank, and relationship quality across their lifetime, linking these to long-term outcomes including survival, reproductive success, and stress hormone concentrations from non-invasive fecal samples.</p>
-          <p>Recent work has combined long-term behavioral data with molecular genetic analysis of gene expression patterns, revealing lasting epigenetic effects of early social experience &mdash; findings with broad relevance across mammals, including humans.</p>
+          <p>Funded by the Human Frontier Science Program, this project fits an entire hyena clan &mdash; the Pond clan, up to 50 individuals over 18 months old &mdash; with custom collars that continuously record GPS location, fine-scale movement, and sound for the life of the collar. It is the first study ever to capture the vocal signals of every member of a wild animal group alongside their movements.</p>
+          <p>By knowing where every hyena goes and what it hears and utters, we can test how vocal communication coordinates collective action, especially the cooperative recruitment hyenas use to defend or steal kills from lions. Machine-learning tools classify calls and behaviors, and targeted playback experiments isolate cause and effect. The Mara clan is one arm of a comparative effort that also collars entire groups of meerkats in South Africa and coatis in Panama.</p>
         </div>
+        <figure class="project-photo">
+          <img src="img/PROJECT1.jpg" alt="Collared hyenas of the Pond clan">
+          <figcaption>ISSA showing off her multi-sensor collar.</figcaption>
+        </figure>
         <div class="project-sidebar">
           <h4>Methods</h4>
-          <span class="tag">Social network analysis</span><span class="tag">Fecal glucocorticoids</span><span class="tag">Epigenetics</span><span class="tag">Long-term demography</span>
+          <span class="tag">GPS collars</span><span class="tag">Accelerometers</span><span class="tag">Acoustic recording</span><span class="tag">Machine learning</span><span class="tag">Playback experiments</span>
           <div style="margin-top:1.5rem"><h4>Key Team</h4>
-          <ul class="pi-list"><li>Dr. Eli Strauss</li><li>Dr. Zach Laubach</li><li>Dr. Kay Holekamp</li></ul></div>
+          <ul class="pi-list"><li>Dr. Kay Holekamp</li><li>Dr. Ariana Strandburg-Peshkin</li><li>Dr. Kenna Lehmann</li><li>Dr. Eli Strauss</li><li>Dr. Andrew Gersick</li><li>Dr. Frants Jensen</li><li>Jana Woerner</li><li>Dr. Marie Roche</li></ul></div>
+          <div style="margin-top:1.5rem"><h4>Funding</h4>
+          <ul class="pi-list"><li>Human Frontier Science Program</li></ul></div>
         </div>
       </div>
     </div>
@@ -78,37 +90,24 @@
     <div class="project-card">
       <div class="project-header">
         <span class="project-num">03</span>
-        <div><h2>GPS Collaring &amp; Movement Ecology</h2><p class="lead-pi">Collaborative &mdash; Multiple MHP Directors</p></div>
+        <div><h2>Urbanization &amp; Rapid Evolution</h2><p class="lead-pi">NSF LTREB &mdash; Laubach, Johnson-Ulrich &amp; Holekamp</p></div>
       </div>
       <div class="project-body">
         <div>
-          <p>GPS collaring of individual hyenas enables fine-scale tracking of movement, ranging behavior, and space use across the Maasai Mara landscape. This project combines GPS data with behavioral observations and environmental covariates to understand how hyenas navigate a complex, human-modified landscape.</p>
-          <p>Key questions: How do clan territory boundaries shift over time? How do individuals respond to tourists, livestock, and human settlements? How does space use relate to social rank, age, sex, and reproductive state? And critically &mdash; do urban-exposed hyenas move differently than those in wilder areas?</p>
+          <p>As settlements, livestock, and roads expand around the Mara, some hyena clans face rapidly urbanizing conditions while others remain in near-pristine habitat. This NSF Long-Term Research in Environmental Biology (LTREB) study treats that rural&ndash;urban gradient &mdash; from undisturbed Serena, to rapidly urbanizing Talek, to the fully urban hyenas of Mekelle, Ethiopia &mdash; as a natural experiment in evolution in action.</p>
+          <p>We first identify which behavioral, physiological, and morphological traits shift with urbanization, then use the project&#8217;s multigenerational pedigrees to estimate their heritability, and finally link traits to survival and reproduction to measure selection. Combined with whole-genome sequencing, this lets us disentangle whether hyenas are adapting through micro-evolution, phenotypic plasticity, or both, and how large carnivores may cope in a rapidly changing world. Several MHP directors, including Eli Strauss, Tracy Montgomery, and Kenna Lehmann, are developing complementary projects along the same gradient.</p>
         </div>
+        <figure class="project-photo">
+          <img src="img/PROJECT2.jpg" alt="Hyena in an urbanizing landscape">
+          <figcaption>Humans and wildlife are increasingly coming into close contact in Talek town.</figcaption>
+        </figure>
         <div class="project-sidebar">
           <h4>Methods</h4>
-          <span class="tag">GPS collaring</span><span class="tag">Remote sensing</span><span class="tag">GIS / spatial analysis</span><span class="tag">Home range estimation</span>
+          <span class="tag">Urbanization gradient</span><span class="tag">Quantitative genetics</span><span class="tag">Pedigrees</span><span class="tag">Whole-genome sequencing</span><span class="tag">Selection gradients</span><span class="tag">Long-term database</span>
           <div style="margin-top:1.5rem"><h4>Key Team</h4>
-          <ul class="pi-list"><li>Dr. Eli Strauss</li><li>Dr. Tracy Montgomery</li><li>Dr. Kenna Lehmann</li><li>Kenyan field staff</li></ul></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-num">04</span>
-        <div><h2>Long-Term Demography &amp; Clan Monitoring</h2><p class="lead-pi">Ongoing baseline &mdash; All MHP Directors</p></div>
-      </div>
-      <div class="project-body">
-        <div>
-          <p>The foundation of all MHP research is continuous baseline monitoring of the Serena North and Talek clans. Every day, our field team conducts observation sessions to record clan composition, individual identities, behavioral interactions, and life events (births, deaths, rank changes, dispersal).</p>
-          <p>This monitoring produces the longitudinal dataset that makes all other MHP research possible. Baseline monitoring also serves a direct conservation function: our data track population trends, document threats, and provide the evidence base for conservation recommendations to park authorities and government agencies.</p>
-        </div>
-        <div class="project-sidebar">
-          <h4>Methods</h4>
-          <span class="tag">Focal follows</span><span class="tag">Scan sampling</span><span class="tag">ID by spot pattern</span><span class="tag">Reproductive monitoring</span>
-          <div style="margin-top:1.5rem"><h4>Key Team</h4>
-          <ul class="pi-list"><li>All Co-Directors</li><li>Kenyan field staff</li><li>Rotating RAs</li></ul></div>
+          <ul class="pi-list"><li>Dr. Zachary Laubach</li><li>Dr. Lily Johnson-Ulrich</li><li>Dr. Kay Holekamp</li><li>Dr. Eli Strauss</li><li>Dr. Tracy Montgomery</li><li>Dr. Kenna Lehmann</li></ul></div>
+          <div style="margin-top:1.5rem"><h4>Funding</h4>
+          <ul class="pi-list"><li>NSF LTREB</li></ul></div>
         </div>
       </div>
     </div>
