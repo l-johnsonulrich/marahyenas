@@ -23,18 +23,19 @@ document.getElementById('nav-placeholder').innerHTML = `
       <li>
         <button onclick="toggleDropdown(this)">Conservation &#9662;</button>
         <div class="dropdown">
+          <a href="conservation.html">Current Threats</a>
           <a href="community-outreach.html">Community Outreach</a>
-          <a href="conservation.html">Hyena Conservation &amp; Threats</a>
+          <a href="monitoring.html">Ecological Monitoring</a>
         </div>
       </li>
       <li>
-        <button onclick="toggleDropdown(this)">Life in the Field &#9662;</button>
+        <a href="join-ra.html" onclick="return navClick(this, event)">Training &#9662;</a>
         <div class="dropdown">
+          <a href="join-ra.html#camp-photos">Life in Camp</a>
           <a href="join-ra.html">Field Positions</a>
           <a href="join-ra.html#grad">Graduate Students</a>
           <a href="join-ra.html#student-attachments">Student Attachments</a>
           <a href="join-ra.html#kenyan-ra">Kenyan Research Assistants</a>
-          <a href="join-ra.html#camp-photos">Camp Photos</a>
           <a href="beam.html">BEAM Study Abroad</a>
         </div>
       </li>
@@ -74,4 +75,14 @@ function toggleMenu() {
 }
 function toggleDropdown(btn) {
   btn.parentElement.classList.toggle('open');
+}
+// For top-level items that are also links: on mobile, tap toggles the
+// submenu instead of navigating; on desktop, follow the link normally.
+function navClick(el, e) {
+  if (window.innerWidth <= 680) {
+    e.preventDefault();
+    el.parentElement.classList.toggle('open');
+    return false;
+  }
+  return true;
 }

@@ -6,8 +6,14 @@
   <title>Conservation &amp; Threats &mdash; Mara Hyena Project</title>
   <link rel="stylesheet" href="css/style.css">
 <style>
-.threat-card{background:var(--white);border:1px solid var(--border);border-left:4px solid #c0392b;border-radius:0 4px 4px 0;padding:1.5rem 1.75rem}
+.threat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.25rem}
+.threat-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-left:4px solid #c0392b;border-radius:0 4px 4px 0;padding:1.5rem 1.75rem}
 .threat-card h3{color:var(--text);margin-bottom:.5rem}
+.threat-card p{margin:0 0 1.25rem}
+.threat-photo{margin:auto 0 0}
+.threat-photo img{width:100%;height:auto;border-radius:3px;display:block}
+.threat-photo .ph{width:100%;aspect-ratio:3/2;background:var(--green-pale);border:1px dashed var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--text-muted);font-size:.8rem;letter-spacing:.03em;padding:1rem}
+.threat-photo figcaption{font-size:.72rem;color:var(--text-muted);line-height:1.35;margin-top:.45rem;font-style:italic}
 .stat-box{background:var(--green-dark);color:var(--white);border-radius:4px;padding:1.5rem;text-align:center}
 .stat-box .num{font-family:'EB Garamond',serif;font-size:2.8rem;font-weight:500;color:#7ecf97;display:block;line-height:1;margin-bottom:.5rem}
 .stat-box p{color:rgba(255,255,255,.8);font-size:.88rem;margin:0}
@@ -17,9 +23,12 @@
   <div id="nav-placeholder"></div>
   <script src="js/nav.js"></script>
 
-<div class="page-header">
-  <h1>Hyena Conservation &amp; Threats</h1>
-  <p>Spotted hyenas face a growing suite of threats despite their &#8220;Least Concern&#8221; IUCN status. Understanding these threats is the first step toward addressing them.</p>
+<div class="page-header" style="position:relative; overflow:hidden; padding:0;">
+  <img src="img/hyena-landscape.jpg" alt="Spotted hyena in the Maasai Mara landscape" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;">
+  <div style="position:relative; background:rgba(14,61,30,0.62); padding:4rem 2rem; text-align:center;">
+    <h1>Threats to Hyenas</h1>
+    <p>Spotted hyenas face a growing suite of threats despite their &#8220;Least Concern&#8221; IUCN status. Understanding these threats is the first step toward addressing them.</p>
+  </div>
 </div>
 
 <section class="bg-white">
@@ -30,14 +39,14 @@
         <h2>Declining Despite &#8220;Least Concern&#8221;</h2>
         <div class="divider"></div>
         <p>The spotted hyena (<em>Crocuta crocuta</em>) is listed as Least Concern on the IUCN Red List, but this classification is misleading. Populations are declining across much of the species&#8217; range, and fewer than 50,000 individuals are estimated to remain in the wild. Outside of protected areas, hyenas face intense persecution and rapidly shrinking habitat.</p>
-        <p>The IUCN&#8217;s most recent species action plan for hyenas dates to 1998, leaving a significant knowledge gap about current distribution and population trends. The MHP&#8217;s long-term data contributes directly to filling this gap.</p>
+        <p>The IUCN&#8217;s most recent <a href="https://www.iucnredlist.org/species/5674/45194782">species action plan for spotted hyenas</a> dates to 2014, leaving a significant knowledge gap about current distribution and population trends. The MHP&#8217;s long-term data contributes directly to filling this gap.</p>
       </div>
       <div>
         <div class="grid-2" style="gap:1rem">
-          <div class="stat-box"><span class="num">&lt;50,000</span><p>Estimated spotted hyenas remaining in the wild</p></div>
-          <div class="stat-box"><span class="num">400+</span><p>Killed annually by wire snares alone</p></div>
-          <div class="stat-box"><span class="num">29%</span><p>Of recorded mortality attributable to direct persecution</p></div>
-          <div class="stat-box"><span class="num">1998</span><p>Year of last IUCN spotted hyena action plan</p></div>
+          <div class="stat-box"><span class="num">27,000 - 47,000</span><p>Estimated spotted hyenas remaining in the wild</p></div>
+          <div class="stat-box"><span class="num">Declining</span><p>Population Status</p></div>
+          <div class="stat-box"><span class="num">>50%</span><p>Of recorded mortality attributable to humans</p></div>
+          <div class="stat-box"><span class="num">2014</span><p>Year of last IUCN spotted hyena action plan</p></div>
         </div>
       </div>
     </div>
@@ -49,13 +58,31 @@
     <p class="section-label">Threats</p>
     <h2>What Threatens Spotted Hyenas</h2>
     <div class="divider"></div>
-    <div class="grid-2" style="gap:1.25rem">
-      <div class="threat-card"><h3>Persecution &amp; Retaliatory Killing</h3><p>Hyenas are shot, speared, trapped, and poisoned across their range &mdash; often inside protected areas. When hyenas prey on livestock, retaliatory killing is common and sometimes indiscriminate, wiping out entire clans through mass poisoning. This is the single largest documented threat to the species.</p></div>
-      <div class="threat-card"><h3>Habitat Loss &amp; Fragmentation</h3><p>Expanding human settlements, agricultural encroachment, and road construction reduce and fragment hyena habitat. As wild habitat shrinks, hyenas are forced into closer contact with human communities, increasing conflict and persecution. The Maasai Mara region has seen significant land-use change over the MHP&#8217;s 35-year study period.</p></div>
-      <div class="threat-card"><h3>Snaring</h3><p>Wire snares set for bushmeat species kill hyenas as bycatch at alarming rates. In the Serengeti, snaring accounted for more than 50% of adult hyena mortality in some study periods. Snares are indiscriminate and largely invisible &mdash; a serious and underappreciated threat.</p></div>
-      <div class="threat-card"><h3>Prey Depletion</h3><p>As wildlife prey species decline, hyenas are forced to seek food closer to human settlements and livestock. This increases conflict, leading to more persecution &mdash; a cycle that can rapidly destabilize hyena populations.</p></div>
-      <div class="threat-card"><h3>Traditional Medicine &amp; Superstition</h3><p>Hyena body parts are used in traditional medicine in parts of Africa and the Middle East. Cultural beliefs associating hyenas with witchcraft also drive persecution in some regions, requiring sustained education and community engagement to change.</p></div>
-      <div class="threat-card"><h3>Road Mortality</h3><p>Increasing road traffic through and around protected areas raises hyena mortality from vehicle collisions and also fragments habitat, restricting movement and isolating populations. This threat is growing as infrastructure development accelerates across East Africa.</p></div>
+    <div class="threat-grid">
+      <div class="threat-card">
+        <h3>Persecution &amp; Retaliatory Killing</h3><p>Hyenas are shot, speared, trapped, and poisoned across their range, often inside protected areas. When hyenas prey on livestock, retaliatory killing is common and sometimes indiscriminate, wiping out entire clans through mass poisoning. This is the single largest documented threat to the species.</p>
+        <figure class="threat-photo"><img src="img/poisoning.jpg" alt="Aftermath of a mass hyena poisoning event"><figcaption>In April 2014 a mass poisoning event killed more than 19 hyenas in the Talek West Clan along with numerous jackals, tawny eagles, and vultures.</figcaption></figure>
+      </div>
+      <div class="threat-card">
+        <h3>Habitat Loss &amp; Fragmentation</h3><p>Expanding human settlements, agricultural encroachment, and road construction reduce and fragment hyena habitat. As wild habitat shrinks, hyenas are forced into closer contact with human communities, increasing conflict and persecution. The Maasai Mara region has seen significant land-use change over the MHP&#8217;s 35-year study period.</p>
+        <figure class="threat-photo"><img src="img/talek-town.png" alt="Shops line the muddy street of Talek town"><figcaption>The rapidly growing Talek town is putting increasing pressure on wildlife. Hyenas regularly travel in and around town to forage on trash and livestock remains.</figcaption></figure>
+      </div>
+      <div class="threat-card">
+        <h3>Snaring</h3><p>Wire snares set for bushmeat species kill hyenas as bycatch at alarming rates. In the Serengeti, snaring accounted for more than 50% of adult hyena mortality in some study periods. Snares are indiscriminate and largely invisible creating a serious and underappreciated threat.</p>
+        <figure class="threat-photo"><img src="img/zimu-snare.JPG" alt="A subadult hyena with a snare around it's neck walking while a piece of snare drags behind him."><figcaption>ZIMU, a subadult hyena from Serena North Clan, with a snare around his neck, the end dragged 3m behind him as he walked.</figcaption></figure>
+      </div>
+      <div class="threat-card">
+        <h3>Prey Depletion</h3><p>As wildlife prey species decline, hyenas are forced to seek food closer to human settlements and livestock. This increases conflict, leading to more persecution, and creating a cycle that can rapidly destabilize hyena populations.</p>
+        <figure class="threat-photo"><img src="img/cow-carcass.png" alt="Hyenas feeding on a cow carcass"><figcaption>Talek hyenas feeding on a cow carcass.</figcaption></figure>
+      </div>
+      <div class="threat-card">
+        <h3>Traditional Medicine &amp; Superstition</h3><p>Hyena body parts are used in traditional medicine in parts of Africa and the Middle East. Cultural beliefs associating hyenas with witchcraft also drive persecution in some regions, requiring sustained education and community engagement to change.</p>
+        <figure class="threat-photo"><img src="img/hyena-cave-art.png" alt="A crudely drawn hyena in red paint on a cave wall."><figcaption>Spotted hyenas have existed in folklore for thousands of years; a cave hyena <i>(Crocuta crocuta spelaea)</i> painting found in the Chauvet cave from 32,000 years ago.</figcaption></figure>
+      </div>
+      <div class="threat-card">
+        <h3>Road Mortality</h3><p>Increasing road traffic through and around protected areas raises hyena mortality from vehicle collisions and also fragments habitat, restricting movement and isolating populations. This threat is growing as infrastructure development accelerates across East Africa.</p>
+        <figure class="threat-photo"><img src="img/roadkill.jpg" alt="A dead hyena by the side of a road."><figcaption>Roadkill is a risk both inside and outside protected areas.</figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
@@ -75,9 +102,9 @@
           <li>They recycle nutrients at rates that benefit the broader ecosystem</li>
           <li>Their presence structures the behavior and distribution of other carnivores</li>
         </ul>
-        <p>Losing hyenas from an ecosystem does not just mean losing one species &mdash; it means losing the services they provide to every other species around them.</p>
+        <p>Losing hyenas from an ecosystem does not just mean losing one species, it means losing the ecosystem services they provide to every other species around them, including humans.</p>
       </div>
-      <img src="img/hyena-landscape.jpg" alt="Hyena in the Maasai Mara">
+      <img src="img/rckt.jpg" alt="RCKT, an immigrant male hyena in Serena South Clan.">
     </div>
   </div>
 </section>
