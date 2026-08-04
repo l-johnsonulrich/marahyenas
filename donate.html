@@ -20,6 +20,15 @@
 .impact-list{list-style:none;margin:1rem 0}
 .impact-list li{font-size:.85rem;color:var(--text-muted);padding:.3rem 0;padding-left:1.2rem;position:relative}
 .impact-list li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600}
+.campaign-meta{display:flex;gap:2rem;margin:1.5rem 0;flex-wrap:wrap}
+.campaign-meta div{display:flex;flex-direction:column}
+.campaign-meta strong{font-family:"EB Garamond",serif;font-size:1.6rem;color:var(--green-dark);line-height:1.1}
+.campaign-meta span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+.soon-badge{display:inline-block;vertical-align:middle;background:var(--green-pale);color:var(--green);font-size:.7rem;padding:.25rem .7rem;border-radius:2px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-left:.75rem}
+.coming-soon-panel{background:var(--green-pale);border:1px dashed var(--green);border-radius:4px;padding:2.5rem 2rem;text-align:center;max-width:720px;margin-top:1rem}
+.coming-soon-panel p{color:var(--green-dark)}
+.coming-soon-panel a{color:var(--green);font-weight:600;text-decoration:none}
+.coming-soon-panel a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -46,25 +55,46 @@
   </div>
 </section>
 
-<section class="bg-pale" id="adopt">
+<section class="bg-pale" id="waffles">
   <div class="section-inner">
-    <p class="section-label">Adopt a Hyena</p>
-    <h2>Sponsor a Cub</h2>
+    <p class="section-label">Limited Campaign</p>
+    <h2>Adopt Waffles &mdash; In Plush Form</h2>
     <div class="divider"></div>
-    <p style="max-width:640px;margin-bottom:2.5rem">Spotted hyena cubs are born into specific clans and carry unique personalities from the start. By sponsoring a cub, you support their monitoring and receive updates on their development. Profiles coming soon as our field team identifies and names the current season&#8217;s cubs.</p>
-    <div class="grid-3">
-      <div class="adopt-card"><div class="adopt-img">&#128054;</div><div class="adopt-body"><span class="clan-badge">Talek Clan</span><h3>Cub Name TBD</h3><p>Profile coming soon as the season&#8217;s cubs are identified and named by our field team.</p><div class="adopt-price">$50 <span>/ year</span></div><ul class="impact-list"><li>Digital adoption certificate</li><li>Cub profile &amp; clan history</li><li>Annual field update</li></ul><a href="https://give.msu.edu/?SMID=A51410" target="_blank" class="btn-primary" style="display:block;text-align:center;margin-top:1rem">Adopt &rarr;</a></div></div>
-      <div class="adopt-card"><div class="adopt-img">&#128054;</div><div class="adopt-body"><span class="clan-badge">Talek Clan</span><h3>Cub Name TBD</h3><p>Profile coming soon as the season&#8217;s cubs are identified and named by our field team.</p><div class="adopt-price">$50 <span>/ year</span></div><ul class="impact-list"><li>Digital adoption certificate</li><li>Cub profile &amp; clan history</li><li>Annual field update</li></ul><a href="https://give.msu.edu/?SMID=A51410" target="_blank" class="btn-primary" style="display:block;text-align:center;margin-top:1rem">Adopt &rarr;</a></div></div>
-      <div class="adopt-card"><div class="adopt-img">&#128054;</div><div class="adopt-body"><span class="clan-badge">Talek Clan</span><h3>Cub Name TBD</h3><p>Profile coming soon as the season&#8217;s cubs are identified and named by our field team.</p><div class="adopt-price">$50 <span>/ year</span></div><ul class="impact-list"><li>Digital adoption certificate</li><li>Cub profile &amp; clan history</li><li>Annual field update</li></ul><a href="https://give.msu.edu/?SMID=A51410" target="_blank" class="btn-primary" style="display:block;text-align:center;margin-top:1rem">Adopt &rarr;</a></div></div>
-      <div class="adopt-card"><div class="adopt-img">&#128054;</div><div class="adopt-body"><span class="clan-badge">Serena North Clan</span><h3>Cub Name TBD</h3><p>Profile coming soon.</p><div class="adopt-price">$50 <span>/ year</span></div><ul class="impact-list"><li>Digital adoption certificate</li><li>Cub profile &amp; clan history</li><li>Annual field update</li></ul><a href="https://give.msu.edu/?SMID=A51410" target="_blank" class="btn-primary" style="display:block;text-align:center;margin-top:1rem">Adopt &rarr;</a></div></div>
-      <div class="adopt-card"><div class="adopt-img">&#128054;</div><div class="adopt-body"><span class="clan-badge">Serena North Clan</span><h3>Cub Name TBD</h3><p>Profile coming soon.</p><div class="adopt-price">$50 <span>/ year</span></div><ul class="impact-list"><li>Digital adoption certificate</li><li>Cub profile &amp; clan history</li><li>Annual field update</li></ul><a href="https://give.msu.edu/?SMID=A51410" target="_blank" class="btn-primary" style="display:block;text-align:center;margin-top:1rem">Adopt &rarr;</a></div></div>
-      <div class="adopt-card"><div class="adopt-img">&#128054;</div><div class="adopt-body"><span class="clan-badge">Serena North Clan</span><h3>Cub Name TBD</h3><p>Profile coming soon.</p><div class="adopt-price">$50 <span>/ year</span></div><ul class="impact-list"><li>Digital adoption certificate</li><li>Cub profile &amp; clan history</li><li>Annual field update</li></ul><a href="https://give.msu.edu/?SMID=A51410" target="_blank" class="btn-primary" style="display:block;text-align:center;margin-top:1rem">Adopt &rarr;</a></div></div>
+    <div class="split">
+      <img src="https://www.gimmeswag.com/cdn/shop/files/Waffles_QueenofSerenaNorthClan_Pledge1.jpg?v=1785347104&amp;width=1080" alt="Waffles, Queen of Serena North Clan plush">
+      <div>
+        <span class="clan-badge">Serena North Clan</span>
+        <p>Waffles began life at the bottom of her clan&#8217;s hierarchy. Against the odds, she built the alliances she needed to overthrow the matriarch and become queen of Serena North &mdash; then raised a line of syrup-named cubs whose descendants still rule the clan today.</p>
+        <p>Now you can take her home. We&#8217;ve partnered with Gimme Swag on a limited-edition plush of Waffles, and every pledge supports hyena research and conservation in the Maasai Mara.</p>
+        <div class="campaign-meta">
+          <div><strong>$39.99</strong><span>Final price</span></div>
+          <div><strong>$2</strong><span>To pledge today</span></div>
+          <div><strong>Aug 14</strong><span>Pledges close</span></div>
+        </div>
+        <p style="font-size:.85rem">The plush is only produced if 100 fans pledge before the deadline. If the goal isn&#8217;t met, every pledge is refunded in full. Ships worldwide.</p>
+        <div class="hero-actions" style="margin-top:1.25rem">
+          <a href="https://buy.stripe.com/eVqeVc5P097z7uZ4kX4sF0X" target="_blank" rel="noopener" class="btn-primary">Pledge $2 Today</a>
+          <a href="https://www.gimmeswag.com/products/waffles-queen-of-serena-north-clan" target="_blank" rel="noopener" class="btn-outline" style="border-color:var(--green);color:var(--green)">See Campaign &amp; Live Progress</a>
+        </div>
+      </div>
     </div>
-    <p style="margin-top:2rem;font-size:.85rem;color:var(--text-muted);text-align:center">All donations are processed through the MSU Foundation and are tax-deductible.</p>
   </div>
 </section>
 
-<section class="bg-white" id="volunteer">
+<section class="bg-white" id="adopt">
+  <div class="section-inner">
+    <p class="section-label">Adopt a Hyena</p>
+    <h2>Sponsor a Cub <span class="soon-badge">Coming Soon</span></h2>
+    <div class="divider"></div>
+    <p style="max-width:640px;margin-bottom:1.5rem">Spotted hyena cubs are born into specific clans and carry unique personalities from the start. By sponsoring a cub, you&#8217;ll support their monitoring and receive updates on their development.</p>
+    <div class="coming-soon-panel">
+      <p>Our cub-sponsorship program is launching soon. Our field team is identifying and naming this season&#8217;s cubs now, and full adoption profiles will appear here shortly.</p>
+      <p style="margin-bottom:0">Want to support a specific hyena today? <a href="#waffles">Adopt Waffles in plush form</a> through our current campaign.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pale" id="volunteer">
   <div class="section-inner">
     <p class="section-label">Give Your Time</p>
     <h2>Volunteer Opportunities</h2>

@@ -51,9 +51,9 @@ document.getElementById('nav-placeholder').innerHTML = `
       <li>
         <button onclick="toggleDropdown(this)">About Hyenas &#9662;</button>
         <div class="dropdown">
-          <a href="hyena-behavior.html">Hyena Behavior</a>
-          <a href="myths.html">Myths &amp; Misconceptions</a>
-          <a href="gallery.html">Photo Gallery</a>
+          <a href="construction.html">Hyena Behavior</a>
+          <a href="construction.html">Myths &amp; Misconceptions</a>
+          <a href="construction.html">Photo Gallery</a>
         </div>
       </li>
       <li>
