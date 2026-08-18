@@ -26,7 +26,7 @@
 
 <div class="page-header" style="background-image:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url('img/zebra-banner.jpg');background-size:cover;background-position:center;color:#fff">
   <h1>Publications</h1>
-  <p>A live index of spotted hyena research from the Mara Hyena Project and its collaborators, drawn from the OpenAlex scholarly database and ranked by citations.</p>
+  <p>A live index of spotted hyena research from the Mara Hyena Project and its collaborators, drawn from the OpenAlex scholarly database and sorted by date.</p>
 </div>
 
 <section class="bg-white">
@@ -189,7 +189,7 @@
         });
       });
     });
-    records.sort(function (a, b) { return b.cited - a.cited; });
+  records.sort(function (a, b) { return (b.year || 0) - (a.year || 0) || (b.cited - a.cited); });
     if (!records.length) {
       statusEl.textContent = "No publications found. Try the links below.";
       return;
