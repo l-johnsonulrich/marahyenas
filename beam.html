@@ -23,35 +23,35 @@
 .step-num{width:36px;height:36px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.9rem;flex-shrink:0}
 .step h3{margin-bottom:.25rem;font-size:1.1rem}
 .step p{margin:0}
-/* PHOTO CAROUSEL */
-.gc-stage{position:relative;background:var(--green-dark);border-radius:6px;overflow:hidden;aspect-ratio:16/10;max-height:70vh}
-.gc-main{width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in}
-.gc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.85);color:var(--green-dark);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;z-index:2;padding:0}
-.gc-arrow:hover{background:#fff}
-.gc-arrow:focus-visible{outline:3px solid var(--green-light);outline-offset:2px}
-.gc-arrow svg{width:20px;height:20px;stroke:currentColor;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.gc-prev{left:.75rem}
-.gc-next{right:.75rem}
-.gc-meta{display:flex;align-items:baseline;justify-content:space-between;gap:1.5rem;margin:.75rem 0 1rem}
-.gc-caption{font-size:.9rem;color:var(--text-muted)}
-.gc-counter{font-size:.8rem;color:var(--text-muted);letter-spacing:.08em;white-space:nowrap}
-.gc-thumbs{position:relative;display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:.5rem;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+/* PHOTO CAROUSEL - styled to match the slideshow on join-ra.html */
+.gc{position:relative;max-width:960px;margin:0 auto}
+.gc-stage{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;border-radius:4px;background:var(--green-pale)}
+.gc-layer{position:absolute;inset:0;opacity:0;transition:opacity .4s ease;pointer-events:none;margin:0}
+.gc-layer.is-on{opacity:1;pointer-events:auto}
+.gc-layer img{width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in}
+.gc-layer figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(14,61,30,.92) 0%,rgba(14,61,30,.78) 70%,rgba(14,61,30,0) 100%);color:white;padding:2.5rem 1.75rem 1.25rem;font-size:.95rem;line-height:1.55}
+.gc-prev,.gc-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:white;border:none;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:1.3rem;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:5;line-height:1}
+.gc-prev{left:1rem}
+.gc-next{right:1rem}
+.gc-prev:hover,.gc-next:hover{background:rgba(0,0,0,.7)}
+.gc-prev:focus-visible,.gc-next:focus-visible{outline:3px solid var(--green-light);outline-offset:2px}
+.gc-counter{text-align:center;margin-top:1rem;color:var(--text-muted);font-size:.85rem;letter-spacing:.05em}
+.gc-thumbs{position:relative;display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x proximity;margin-top:1rem;padding-bottom:.5rem;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
 .gc-thumbs::-webkit-scrollbar{height:6px}
 .gc-thumbs::-webkit-scrollbar-track{background:transparent}
 .gc-thumbs::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 .gc-thumbs figure{margin:0;flex:0 0 calc((100% - 2.5rem)/6);scroll-snap-align:start}
-.gc-thumbs img{width:100%;height:72px;object-fit:cover;border-radius:4px;display:block;cursor:pointer;opacity:.55;transition:opacity .2s;outline:2px solid transparent;outline-offset:-2px}
+.gc-thumbs img{width:100%;height:64px;object-fit:cover;border-radius:4px;display:block;cursor:pointer;opacity:.55;transition:opacity .2s;outline:2px solid transparent;outline-offset:-2px}
 .gc-thumbs img:hover{opacity:.85}
 .gc-thumbs img:focus-visible{outline-color:var(--green-light)}
 .gc-thumbs figure.is-active img{opacity:1;outline-color:var(--green)}
 .gc-thumbs figcaption{display:none}
 @media(max-width:900px){.gc-thumbs figure{flex:0 0 calc((100% - 1.5rem)/4)}}
 @media(max-width:680px){
-  .gc-stage{aspect-ratio:4/3}
-  .gc-arrow{width:36px;height:36px}
-  .gc-arrow svg{width:16px;height:16px}
+  .gc-layer figcaption{padding:2rem 1.25rem 1rem;font-size:.88rem}
+  .gc-prev,.gc-next{width:38px;height:38px}
   .gc-thumbs figure{flex:0 0 calc((100% - 1rem)/3)}
-  .gc-thumbs img{height:60px}
+  .gc-thumbs img{height:56px}
 }
 .lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:2rem}
 .lightbox.active{display:flex}
@@ -322,16 +322,14 @@
     <h2>Photo Gallery</h2>
     <div class="divider"></div>
     <p style="margin-bottom:1.5rem">Use the arrows to browse, or click the large photo to view it full-size.</p>
-    <div class="gc">
+    <div class="gc" id="beam-carousel">
       <div class="gc-stage">
-        <button class="gc-arrow gc-prev" id="gc-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <img class="gc-main" id="gc-main" alt="">
-        <button class="gc-arrow gc-next" id="gc-next" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <figure class="gc-layer is-on"><img alt=""><figcaption></figcaption></figure>
+        <figure class="gc-layer"><img alt=""><figcaption></figcaption></figure>
+        <button class="gc-prev" aria-label="Previous photo">&#10094;</button>
+        <button class="gc-next" aria-label="Next photo">&#10095;</button>
       </div>
-      <div class="gc-meta">
-        <p class="gc-caption" id="gc-caption"></p>
-        <span class="gc-counter" id="gc-counter"></span>
-      </div>
+      <div class="gc-counter"><span class="gc-current">1</span> / <span class="gc-total">25</span></div>
       <div class="gc-thumbs" id="beam-gallery">
     <figure><img src="img/beam/equator.JPG" alt="Students visit equator" loading="lazy" decoding="async"><figcaption>Students visit the Equator</figcaption></figure>
     <figure><img src="img/beam/zebra-morning.JPG" alt="Zebra" loading="lazy" decoding="async"><figcaption>Mornings in the Maasai Mara</figcaption></figure>
@@ -417,9 +415,11 @@ function closeLightbox() {
 }
 
 /* ---------- Photo gallery carousel ----------
-   The <figure> elements inside #beam-gallery are the source of truth.
-   To add a photo, just add another <figure><img ...><figcaption>...</figcaption></figure>
-   to that list -- the big stage, the counter and the arrows all pick it up automatically. */
+   Styled to match the "Around Camp" slideshow on join-ra.html: centered at 960px,
+   crossfading slides, caption overlaid on a gradient scrim, centered counter below.
+   The <figure> elements inside #beam-gallery are the source of truth. To add a photo,
+   add another <figure><img ...><figcaption>...</figcaption></figure> to that list --
+   the stage, counter and arrows all pick it up automatically. */
 document.addEventListener('DOMContentLoaded', function () {
   var lightbox = document.getElementById('lightbox');
   lightbox.addEventListener('click', function (e) { if (e.target === this) closeLightbox(); });
@@ -429,10 +429,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var figures = Array.prototype.slice.call(strip.querySelectorAll('figure'));
   if (!figures.length) return;
 
-  var mainImg = document.getElementById('gc-main');
-  var capEl   = document.getElementById('gc-caption');
-  var countEl = document.getElementById('gc-counter');
-  var idx = 0, inView = false;
+  var stage   = document.querySelector('#beam-carousel .gc-stage');
+  var layers  = Array.prototype.slice.call(stage.querySelectorAll('.gc-layer'));
+  var current = document.querySelector('#beam-carousel .gc-current');
+  var total   = document.querySelector('#beam-carousel .gc-total');
+  var idx = 0, front = 0, inView = false;
+
+  if (total) total.textContent = figures.length;
 
   function data(i) {
     var f = figures[(i + figures.length) % figures.length];
@@ -452,13 +455,36 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /* Crossfade: paint the incoming photo onto the hidden layer, then swap which layer
+     is visible once it has decoded, so we never fade in on a blank frame. */
+  function crossfadeTo(d) {
+    var back = layers[1 - front];
+    var img  = back.querySelector('img');
+    back.querySelector('figcaption').innerHTML = d.cap;
+    img.alt = d.alt;
+
+    var swapped = false;
+    function swap() {
+      if (swapped) return;
+      swapped = true;
+      layers[front].classList.remove('is-on');
+      back.classList.add('is-on');
+      front = 1 - front;
+    }
+
+    if (img.getAttribute('src') === d.src && img.complete && img.naturalWidth) { swap(); return; }
+    img.onload = swap;
+    img.onerror = swap;
+    img.src = d.src;
+    if (img.complete && img.naturalWidth) swap();
+    setTimeout(swap, 400); /* never stall on a slow image */
+  }
+
   function show(i, moveStrip) {
     idx = (i + figures.length) % figures.length;
     var d = data(idx);
-    mainImg.src = d.src;
-    mainImg.alt = d.alt;
-    capEl.innerHTML = d.cap;
-    countEl.textContent = (idx + 1) + ' / ' + figures.length;
+    crossfadeTo(d);
+    if (current) current.textContent = idx + 1;
     figures.forEach(function (f, n) { f.classList.toggle('is-active', n === idx); });
     if (moveStrip !== false) revealThumb(figures[idx]);
     preload(idx + 1);
@@ -466,10 +492,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (lightbox.classList.contains('active')) openLightbox(d.src, d.alt, d.cap);
   }
 
-  document.getElementById('gc-prev').addEventListener('click', function () { show(idx - 1); });
-  document.getElementById('gc-next').addEventListener('click', function () { show(idx + 1); });
+  stage.querySelector('.gc-prev').addEventListener('click', function () { show(idx - 1); });
+  stage.querySelector('.gc-next').addEventListener('click', function () { show(idx + 1); });
 
-  mainImg.addEventListener('click', function () {
+  stage.addEventListener('click', function (e) {
+    if (e.target.closest('.gc-prev, .gc-next')) return;
     var d = data(idx);
     openLightbox(d.src, d.alt, d.cap);
   });
@@ -505,7 +532,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   var touchX = null;
-  var stage = document.querySelector('.gc-stage');
   stage.addEventListener('touchstart', function (e) {
     touchX = e.changedTouches[0].clientX;
   }, { passive: true });
