@@ -23,11 +23,36 @@
 .step-num{width:36px;height:36px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.9rem;flex-shrink:0}
 .step h3{margin-bottom:.25rem;font-size:1.1rem}
 .step p{margin:0}
-.camp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
-.camp-grid figure{margin:0}
-.camp-grid img{width:100%;height:180px;object-fit:cover;border-radius:4px;display:block;cursor:pointer;transition:opacity 0.2s}
-.camp-grid img:hover{opacity:0.8}
-.camp-grid figcaption{font-size:.85rem;color:var(--text-muted);margin-top:.4rem;text-align:center}
+/* PHOTO CAROUSEL */
+.gc-stage{position:relative;background:var(--green-dark);border-radius:6px;overflow:hidden;aspect-ratio:16/10;max-height:70vh}
+.gc-main{width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in}
+.gc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,.85);color:var(--green-dark);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;z-index:2;padding:0}
+.gc-arrow:hover{background:#fff}
+.gc-arrow:focus-visible{outline:3px solid var(--green-light);outline-offset:2px}
+.gc-arrow svg{width:20px;height:20px;stroke:currentColor;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.gc-prev{left:.75rem}
+.gc-next{right:.75rem}
+.gc-meta{display:flex;align-items:baseline;justify-content:space-between;gap:1.5rem;margin:.75rem 0 1rem}
+.gc-caption{font-size:.9rem;color:var(--text-muted)}
+.gc-counter{font-size:.8rem;color:var(--text-muted);letter-spacing:.08em;white-space:nowrap}
+.gc-thumbs{position:relative;display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:.5rem;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.gc-thumbs::-webkit-scrollbar{height:6px}
+.gc-thumbs::-webkit-scrollbar-track{background:transparent}
+.gc-thumbs::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.gc-thumbs figure{margin:0;flex:0 0 calc((100% - 2.5rem)/6);scroll-snap-align:start}
+.gc-thumbs img{width:100%;height:72px;object-fit:cover;border-radius:4px;display:block;cursor:pointer;opacity:.55;transition:opacity .2s;outline:2px solid transparent;outline-offset:-2px}
+.gc-thumbs img:hover{opacity:.85}
+.gc-thumbs img:focus-visible{outline-color:var(--green-light)}
+.gc-thumbs figure.is-active img{opacity:1;outline-color:var(--green)}
+.gc-thumbs figcaption{display:none}
+@media(max-width:900px){.gc-thumbs figure{flex:0 0 calc((100% - 1.5rem)/4)}}
+@media(max-width:680px){
+  .gc-stage{aspect-ratio:4/3}
+  .gc-arrow{width:36px;height:36px}
+  .gc-arrow svg{width:16px;height:16px}
+  .gc-thumbs figure{flex:0 0 calc((100% - 1rem)/3)}
+  .gc-thumbs img{height:60px}
+}
 .lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:2rem}
 .lightbox.active{display:flex}
 .lightbox-content{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center}
@@ -47,10 +72,10 @@
 .site-layout .map-fig img{width:100%;height:auto;border-radius:4px;display:block}
 .site-layout .map-fig figcaption{font-size:.85rem;color:var(--text-muted);margin-top:.5rem}
 .instructors-layout{display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:center}
-.instructors-layout .vertical-photo{width:100%;max-width:320px;height:460px;object-fit:cover;border-radius:4px;justify-self:center;display:block}
+.instructors-layout .instructor-photo{width:100%;max-width:360px;height:auto;border-radius:4px;justify-self:center;display:block}
 @media(max-width:900px){
   .site-layout,.instructors-layout{grid-template-columns:1fr}
-  .instructors-layout .vertical-photo{height:400px;max-width:280px}
+  .instructors-layout .instructor-photo{max-width:420px}
   .site-layout .map-fig{margin-left:auto;margin-right:auto}
 }
 </style>
@@ -136,7 +161,7 @@
           <li>Current research in the field of behavioral ecology</li>
         </ul>
       </div>
-      <img src="img/beam/student-binos.png" alt="BEAM students observing wildlife with binoculars">
+      <img src="img/beam/student-binos-new.JPG" alt="BEAM students observing wildlife with binoculars">
     </div>
   </div>
 </section>
@@ -173,7 +198,7 @@
         <p>Jana Woerner is the lead instructor for BEAM 2027. She is a PhD candidate in the Department of Integrative Biology at Michigan State University, and has taught the course since 2022. She has a wide range of research and field experience, including time spent living in Kenya and studying spotted hyenas in the Maasai Mara National Reserve.</p>
         <p>For more information about the course, please email <a href="mailto:woernerj@msu.edu">Jana Woerner</a>.</p>
       </div>
-      <img class="horizontal-photo" src="img/beam/jana-woerner.JPG" alt="Instructor posing with a MHP branded LandCruiser" height = 350 width = 525>
+      <img class="instructor-photo" src="img/beam/jana-woerner.JPG" alt="Instructor posing with a MHP branded LandCruiser" width="2000" height="1333" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -191,7 +216,7 @@
       <img src="img/beam/students-lion.jpg" alt="BEAM students observing a lion">
     </div>
     <div class="split" style="margin-top:2.5rem">
-      <img src="img/beam/students-equator.jpg" alt="BEAM students at the equator">
+      <img src="img/beam/phone-pic.JPG" alt="BEAM students at the equator">
       <div>
         <p>Students potentially interested in taking this course should attend an informational meeting held in the fall or early spring semester. Please email one of the instructors if you are interested; they will have more information about the meeting time and place and will be able to add your email address to the BEAM list.</p>
         <p>Students who enroll in this course are required to attend at least four additional preparatory meetings to be held during the spring semester. A valid passport, visa, and record of immunizations are required for travel to Kenya.</p>
@@ -286,7 +311,7 @@
           <li><a href="https://wwwnc.cdc.gov/travel/destinations/traveler/none/kenya" target="_blank">CDC Health Information for Travelers to Kenya</a></li>
         </ul>
       </div>
-      <img src="img/beam/students-maasai.jpg" alt="BEAM students with members of the Maasai community">
+      <img src="img/beam/students-maasai-new.jpg" alt="BEAM students with members of the Maasai community">
     </div>
   </div>
 </section>
@@ -296,29 +321,44 @@
     <p class="section-label">From the Field</p>
     <h2>Photo Gallery</h2>
     <div class="divider"></div>
-    <p style="margin-bottom:2rem">Click any photo to view it full-size.</p>
-    <div class="camp-grid" id="beam-gallery">
-      <figure><img src="img/beam/students-lions.jpg" alt="Students with lion pride"><figcaption>Lion pride sighting</figcaption></figure>
-      <figure><img src="img/beam/students-giraffe.jpg" alt="Students observing giraffes"><figcaption>Giraffe observations</figcaption></figure>
-      <figure><img src="img/beam/students-escarpment.jpg" alt="Students on the Rift Valley escarpment"><figcaption>Rift Valley escarpment</figcaption></figure>
-      <figure><img src="img/beam/student-meru.jpg" alt="Student at Meru"><figcaption>Meru National Park</figcaption></figure>
-      <figure><img src="img/beam/lion-pride.jpg" alt="Lion pride"><figcaption>Lion pride</figcaption></figure>
-      <figure><img src="img/beam/cub-car.jpg" alt="Hyena cub near vehicle"><figcaption>Hyena cub up close</figcaption></figure>
-      <figure><img src="img/beam/baboons.jpg" alt="Baboons sunbathing"><figcaption>A group of baboons, <em>Papio anubis</em>, sunbathe in the morning light</figcaption></figure>
-      <figure><img src="img/beam/buffalo.jpg" alt="Cape buffalo herd"><figcaption>A herd of Cape buffalo, <em>Syncerus caffer</em></figcaption></figure>
-      <figure><img src="img/beam/wildebeest.jpg" alt="Wildebeest migration from above"><figcaption>Wildebeest, <em>Connochaetes taurinus</em>, during their annual migration, seen from a hot air balloon</figcaption></figure>
-      <figure><img src="img/beam/zebra.jpg" alt="Zebras drinking water"><figcaption>Zebras, <em>Equus burchelli</em>, drink water</figcaption></figure>
-      <figure><img src="img/beam/hartebeest.jpg" alt="Two hartebeest"><figcaption>Two hartebeest, <em>Alcelaphus buselaphus</em></figcaption></figure>
-      <figure><img src="img/beam/research-presentations.jpg" alt="Student research presentations"><figcaption>Students present their findings from their research projects</figcaption></figure>
-      <figure><img src="img/beam/dna-extraction.jpg" alt="DNA extraction work"><figcaption>Students extract DNA from the blood samples they collected from an anesthetized hyena</figcaption></figure>
-      <figure><img src="img/beam/beam-lecture.jpg" alt="Bush lecture in camp"><figcaption>Bush lecture back in camp</figcaption></figure>
-      <figure><img src="img/beam/maasai-village.jpg" alt="Maasai village visit"><figcaption>A visit to a Maasai village</figcaption></figure>
-      <figure><img src="img/beam/maasai-dance.jpg" alt="Maasai traditional dance"><figcaption>Students watch as local Maasai perform a traditional dance</figcaption></figure>
-      <figure><img src="img/beam/maasai-dance2.jpg" alt="Students dancing with Maasai"><figcaption>Students dance with the Maasai</figcaption></figure>
-      <figure><img src="img/beam/maasai-school.jpg" alt="Local Maasai school visit"><figcaption>Students visit a local Maasai school</figcaption></figure>
-      <figure><img src="img/beam/craft-center.jpg" alt="Women's craft center visit"><figcaption>Students visit a women's craft center</figcaption></figure>
-      <figure><img src="img/beam/stormy-sunset.jpg" alt="Stormy sunset"><figcaption>Sunset with storm clouds in the distance</figcaption></figure>
-      <figure><img src="img/beam/beam-border.jpg" alt="Kenya-Tanzania border"><figcaption>Students visit the Kenya-Tanzania border</figcaption></figure>
+    <p style="margin-bottom:1.5rem">Use the arrows to browse, or click the large photo to view it full-size.</p>
+    <div class="gc">
+      <div class="gc-stage">
+        <button class="gc-arrow gc-prev" id="gc-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <img class="gc-main" id="gc-main" alt="">
+        <button class="gc-arrow gc-next" id="gc-next" aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+      <div class="gc-meta">
+        <p class="gc-caption" id="gc-caption"></p>
+        <span class="gc-counter" id="gc-counter"></span>
+      </div>
+      <div class="gc-thumbs" id="beam-gallery">
+    <figure><img src="img/beam/equator.JPG" alt="Students visit equator" loading="lazy" decoding="async"><figcaption>Students visit the Equator</figcaption></figure>
+    <figure><img src="img/beam/zebra-morning.JPG" alt="Zebra" loading="lazy" decoding="async"><figcaption>Mornings in the Maasai Mara</figcaption></figure>
+    <figure><img src="img/beam/students-lions.jpg" alt="Students with lion pride" loading="lazy" decoding="async"><figcaption>Lion pride sighting</figcaption></figure>
+    <figure><img src="img/beam/hyena.JPG" alt="Hyena with hot air balloons" loading="lazy" decoding="async"><figcaption>Spotted hyena sighting</figcaption></figure>
+    <figure><img src="img/beam/sundowner.jpg" alt="Students celebrate" loading="lazy" decoding="async"><figcaption>Students celebrate with a sundowner</figcaption></figure>
+    <figure><img src="img/beam/student-meru.jpg" alt="Student at Meru" loading="lazy" decoding="async"><figcaption>Meru National Park</figcaption></figure>
+    <figure><img src="img/beam/fisicamp.JPEG" alt="Fisi camp" loading="lazy" decoding="async"><figcaption>Students visit Fisi (Hyena) Camp</figcaption></figure>
+    <figure><img src="img/beam/lion-pride.jpg" alt="Lion pride" loading="lazy" decoding="async"><figcaption>Lion pride</figcaption></figure>
+    <figure><img src="img/beam/cub-car.jpg" alt="Hyena cub near vehicle" loading="lazy" decoding="async"><figcaption>Hyena cub up close</figcaption></figure>
+    <figure><img src="img/beam/students-objectives.jpg" alt="Bush breakfast" loading="lazy" decoding="async"><figcaption>Breakfast in the "bush"</figcaption></figure>
+    <figure><img src="img/beam/baboons.jpg" alt="Baboons sunbathing" loading="lazy" decoding="async"><figcaption>A group of baboons, <em>Papio anubis</em>, sunbathe in the morning light</figcaption></figure>
+    <figure><img src="img/beam/game-spotting.jpg" alt="Looking for wildlife" loading="lazy" decoding="async"><figcaption>Students look for wildlife</figcaption></figure>
+    <figure><img src="img/beam/wildebeest.jpg" alt="Wildebeest migration from above" loading="lazy" decoding="async"><figcaption>Wildebeest, <em>Connochaetes taurinus</em>, during their annual migration, seen from a hot air balloon</figcaption></figure>
+    <figure><img src="img/beam/beam-lecture.jpg" alt="Bush lecture in camp" loading="lazy" decoding="async"><figcaption>Bush lecture back in camp</figcaption></figure>
+    <figure><img src="img/beam/bino-pic.jpg" alt="Students taking pictures" loading="lazy" decoding="async"><figcaption>Perfecting the phone-bino pic</figcaption></figure>
+    <figure><img src="img/beam/maasai-village.jpg" alt="Maasai village visit" loading="lazy" decoding="async"><figcaption>A visit to a Maasai village</figcaption></figure>
+    <figure><img src="img/beam/maasai-dance.jpg" alt="Maasai traditional dance" loading="lazy" decoding="async"><figcaption>Students watch as local Maasai perform a traditional dance</figcaption></figure>
+    <figure><img src="img/beam/zebra.jpg" alt="Zebras drinking water" loading="lazy" decoding="async"><figcaption>Zebras, <em>Equus burchelli</em>, drink water</figcaption></figure>
+    <figure><img src="img/beam/balloon.JPEG" alt="Balloon ride" loading="lazy" decoding="async"><figcaption>Hot air balloon ride over the Mara</figcaption></figure>
+    <figure><img src="img/beam/maasai-school.jpg" alt="Local Maasai school visit" loading="lazy" decoding="async"><figcaption>Students visit a local Maasai school</figcaption></figure>
+    <figure><img src="img/beam/lion-tracking.JPG" alt="Lionness with a collar" loading="lazy" decoding="async"><figcaption>VHF tracking lions in Ol Pejeta</figcaption></figure>
+    <figure><img src="img/beam/craft-center.jpg" alt="Women's craft center visit" loading="lazy" decoding="async"><figcaption>Students visit a women's craft center</figcaption></figure>
+    <figure><img src="img/beam/IMG_6843.JPG" alt="Game spotting" loading="lazy" decoding="async"><figcaption>Observing game</figcaption></figure>
+    <figure><img src="img/beam/beam-border.jpg" alt="Kenya-Tanzania border" loading="lazy" decoding="async"><figcaption>Students visit the Kenya-Tanzania border</figcaption></figure>
+    <figure><img src="img/beam/stormy-sunset.jpg" alt="Stormy sunset" loading="lazy" decoding="async"><figcaption>Sunset with storm clouds in the distance</figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
@@ -326,7 +366,7 @@
 <div class="lightbox" id="lightbox">
   <div class="lightbox-content">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <img id="lightbox-img" src="" alt="">
+    <img id="lightbox-img" alt="">
     <div class="lightbox-caption" id="lightbox-caption"></div>
   </div>
 </div>
@@ -362,13 +402,12 @@
 </footer>
 
 <script>
-function openLightbox(img) {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const caption = document.getElementById('lightbox-caption');
-  lightboxImg.src = img.src;
-  caption.textContent = img.nextElementSibling.textContent;
-  lightbox.classList.add('active');
+/* ---------- Lightbox ---------- */
+function openLightbox(src, alt, captionHTML) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = alt || '';
+  document.getElementById('lightbox-caption').innerHTML = captionHTML || '';
+  document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
@@ -377,20 +416,107 @@ function closeLightbox() {
   document.body.style.overflow = 'auto';
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
+/* ---------- Photo gallery carousel ----------
+   The <figure> elements inside #beam-gallery are the source of truth.
+   To add a photo, just add another <figure><img ...><figcaption>...</figcaption></figure>
+   to that list -- the big stage, the counter and the arrows all pick it up automatically. */
+document.addEventListener('DOMContentLoaded', function () {
+  var lightbox = document.getElementById('lightbox');
+  lightbox.addEventListener('click', function (e) { if (e.target === this) closeLightbox(); });
+
+  var strip = document.getElementById('beam-gallery');
+  if (!strip) return;
+  var figures = Array.prototype.slice.call(strip.querySelectorAll('figure'));
+  if (!figures.length) return;
+
+  var mainImg = document.getElementById('gc-main');
+  var capEl   = document.getElementById('gc-caption');
+  var countEl = document.getElementById('gc-counter');
+  var idx = 0, inView = false;
+
+  function data(i) {
+    var f = figures[(i + figures.length) % figures.length];
+    var im = f.querySelector('img');
+    var cp = f.querySelector('figcaption');
+    return { src: im.getAttribute('src'), alt: im.getAttribute('alt') || '', cap: cp ? cp.innerHTML : '' };
+  }
+
+  function preload(i) { var im = new Image(); im.src = data(i).src; }
+
+  function revealThumb(f) {
+    var left = f.offsetLeft, right = left + f.offsetWidth;
+    if (left < strip.scrollLeft) {
+      strip.scrollTo({ left: left - 8, behavior: 'smooth' });
+    } else if (right > strip.scrollLeft + strip.clientWidth) {
+      strip.scrollTo({ left: right - strip.clientWidth + 8, behavior: 'smooth' });
+    }
+  }
+
+  function show(i, moveStrip) {
+    idx = (i + figures.length) % figures.length;
+    var d = data(idx);
+    mainImg.src = d.src;
+    mainImg.alt = d.alt;
+    capEl.innerHTML = d.cap;
+    countEl.textContent = (idx + 1) + ' / ' + figures.length;
+    figures.forEach(function (f, n) { f.classList.toggle('is-active', n === idx); });
+    if (moveStrip !== false) revealThumb(figures[idx]);
+    preload(idx + 1);
+    preload(idx - 1);
+    if (lightbox.classList.contains('active')) openLightbox(d.src, d.alt, d.cap);
+  }
+
+  document.getElementById('gc-prev').addEventListener('click', function () { show(idx - 1); });
+  document.getElementById('gc-next').addEventListener('click', function () { show(idx + 1); });
+
+  mainImg.addEventListener('click', function () {
+    var d = data(idx);
+    openLightbox(d.src, d.alt, d.cap);
   });
 
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
+  figures.forEach(function (f) {
+    var im = f.querySelector('img');
+    im.tabIndex = 0;
+    im.setAttribute('role', 'button');
   });
 
-  document.querySelectorAll('#beam-gallery img').forEach(img => {
-    img.addEventListener('click', function() {
-      openLightbox(this);
-    });
+  strip.addEventListener('click', function (e) {
+    var f = e.target.closest('figure');
+    if (f) show(figures.indexOf(f));
   });
+
+  strip.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var f = e.target.closest('figure');
+    if (f) { e.preventDefault(); show(figures.indexOf(f)); }
+  });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      inView = entries[0].isIntersecting;
+    }, { threshold: 0.15 }).observe(document.getElementById('gallery'));
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { closeLightbox(); return; }
+    if (!lightbox.classList.contains('active') && !inView) return;
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); show(idx - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(idx + 1); }
+  });
+
+  var touchX = null;
+  var stage = document.querySelector('.gc-stage');
+  stage.addEventListener('touchstart', function (e) {
+    touchX = e.changedTouches[0].clientX;
+  }, { passive: true });
+  stage.addEventListener('touchend', function (e) {
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 40) show(idx + (dx < 0 ? 1 : -1));
+    touchX = null;
+  }, { passive: true });
+
+  show(0, false);
 });
 </script>
 </body>
