@@ -110,6 +110,16 @@
   .research-card { aspect-ratio: 4/3; }
   .research-card-overlay p { max-height: 3rem; opacity: 1; }
 }
+.training-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.training-grid .research-card { aspect-ratio: 3/2; }
+@media (max-width: 680px) {
+  .training-grid { grid-template-columns: 1fr; }
+  .training-grid .research-card { aspect-ratio: 4/3; }
+}
 </style>
 
 <section class="bg-pale">
@@ -157,6 +167,31 @@
         <p>The MHP is deeply embedded in the Maasai Mara region. We work alongside Maasai community members, hire Maasai staff and researchers, provide outreach and teaching events at local schools, financially support the education of young Maasai scientists, aim to reduce and resolve human-hyena conflict in the region, and provide workshops and talks on a variety of topics from hyena biology to statistical tools for wildlife monitoring.</p>
         <a href="community-outreach.html" class="btn-primary" style="display:inline-block; margin-top:1rem;">Our Outreach Work</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pale">
+  <div class="section-inner">
+    <p class="section-label">Training</p>
+    <h2>Train with the MHP</h2>
+    <div class="divider"></div>
+    <p style="max-width:760px; margin-bottom:2.5rem">The MHP helps train the next generation of field biologists. Research assistants live in our Maasai Mara camps and contribute to one of the longest-running studies of wild mammals, while our BEAM study abroad course brings undergraduates to Kenya for an intensive introduction to behavioral ecology.</p>
+    <div class="training-grid">
+      <a href="join-ra.html" class="research-card">
+        <img src="img/ra-data.jpg" alt="Research assistants entering field data in camp">
+        <div class="research-card-overlay">
+          <h3>Field Research Assistantships</h3>
+          <p>Live in camp and collect data on wild hyena clans</p>
+        </div>
+      </a>
+      <a href="beam.html" class="research-card">
+        <img src="img/beam/equator.JPG" alt="BEAM students in Kenya">
+        <div class="research-card-overlay">
+          <h3>BEAM Study Abroad 2027</h3>
+          <p>An intensive three-week field course in behavioral ecology</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
