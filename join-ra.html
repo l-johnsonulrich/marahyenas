@@ -6,6 +6,9 @@
   <title>Life in the Field &mdash; Mara Hyena Project</title>
   <link rel="stylesheet" href="css/style.css">
 <style>
+.director-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media(max-width:900px){.director-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.director-grid{grid-template-columns:1fr}}
 .contact-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.5rem;display:flex;align-items:flex-start;gap:1.25rem}
 .contact-card .avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0}
 .contact-card .avatar-i{width:64px;height:64px;border-radius:50%;background:var(--green-pale);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:"EB Garamond",serif;font-size:1.4rem;color:var(--green);flex-shrink:0}
@@ -259,13 +262,13 @@
     <h2>Reach Out to a Director</h2>
     <div class="divider"></div>
     <p style="max-width:640px;margin-bottom:2.5rem">Each Co-Director manages their own recruitment. Contact the director whose research focus most closely matches yours.</p>
-    <div class="grid-2" style="gap:1rem">
-      <div class="contact-card"><img src="img/team/lily-johnson-ulrich.jpeg" alt="Dr. Lily Johnson-Ulrich" class="avatar"><div><h3>Dr. Lily Johnson-Ulrich</h3><p class="role">Hunter College, CUNY</p><p class="focus">Cognitive ecology, urbanization, behavioral variation, neophilia/neophobia</p><a href="https://lilyjohnsonulrich.weebly.com/" target="_blank">Website &#8599;</a><a href="mailto:lily.johnsonulrich@hunter.cuny.edu">Email</a></div></div>
-      <div class="contact-card"><img src="img/team/kay-holekamp.png" alt="Dr. Kay Holekamp" class="avatar"><div><h3>Dr. Kay Holekamp</h3><p class="role">Michigan State University</p><p class="focus">Behavioral ecology, social behavior, mammalian development, evolution of intelligence</p><a href="https://www.holekamplab.org/" target="_blank">Website &#8599;</a><a href="https://www.holekamplab.org/prospective-students.html" target="_blank">Prospective Students &#8599;</a></div></div>
-      <div class="contact-card"><img src="img/team/zach-laubach.jpg" alt="Dr. Zach Laubach" class="avatar"><div><h3>Dr. Zach Laubach</h3><p class="role">University of Colorado Boulder</p><p class="focus">Early-life effects, epigenetics, stress physiology, molecular ecology</p><a href="https://laubach.github.io/" target="_blank">Website &#8599;</a></div></div>
-      <div class="contact-card"><img src="img/team/eli-strauss.jpeg" alt="Dr. Eli Strauss" class="avatar"><div><h3>Dr. Eli Strauss</h3><p class="role">Max Planck Institute of Animal Behavior</p><p class="focus">Social networks, collective behavior, computational methods</p><a href="https://straussed.github.io/" target="_blank">Website &#8599;</a></div></div>
-      <div class="contact-card"><img src="img/team/kenna-lehmann.jpeg" alt="Dr. Kenna Lehmann" class="avatar"><div><h3>Dr. Kenna Lehmann</h3><p class="role">Contact via MHP</p><p class="focus">Social behavior, fitness consequences of sociality</p><a href="https://kennadslehmann.weebly.com/" target="_blank">Website &#8599;</a></div></div>
-      <div class="contact-card"><img src="img/team/tracy-montgomery.png" alt="Dr. Tracy Montgomery" class="avatar"><div><h3>Dr. Tracy Montgomery</h3><p class="role">Contact via MHP</p><p class="focus">Individual behavioral variation, personality, ecological consequences</p><a href="https://tracymmontgomery.weebly.com/" target="_blank">Website &#8599;</a></div></div>
+    <div class="director-grid">
+      <div class="contact-card"><img src="img/team/lily-johnson-ulrich.jpeg" alt="Dr. Lily Johnson-Ulrich" class="avatar"><div><h3>Dr. Lily Johnson-Ulrich</h3><p class="role">Hunter College, CUNY</p><p class="focus">Cognitive ecology, urbanization, behavioral variation, neophilia/neophobia</p><a href="https://lilyjohnsonulrich.weebly.com/" target="_blank">Website</a><a href="mailto:lily.johnsonulrich@hunter.cuny.edu">Email</a></div></div>
+      <div class="contact-card"><img src="img/team/kay-holekamp.png" alt="Dr. Kay Holekamp" class="avatar"><div><h3>Dr. Kay Holekamp</h3><p class="role">Michigan State University</p><p class="focus">Behavioral ecology, social behavior, mammalian development, evolution of intelligence</p><a href="https://www.holekamplab.org/" target="_blank">Website</a></div></div>
+      <div class="contact-card"><img src="img/team/zach-laubach.jpg" alt="Dr. Zach Laubach" class="avatar"><div><h3>Dr. Zach Laubach</h3><p class="role">University of Colorado Boulder</p><p class="focus">Early-life effects, epigenetics, stress physiology, molecular ecology</p><a href="https://laubach.github.io/" target="_blank">Website</a></div></div>
+      <div class="contact-card"><img src="img/team/eli-strauss.jpeg" alt="Dr. Eli Strauss" class="avatar"><div><h3>Dr. Eli Strauss</h3><p class="role">Michigan State University</p><p class="focus">Social networks, collective behavior, computational methods</p><a href="https://straussed.github.io/" target="_blank">Website</a></div></div>
+      <div class="contact-card"><img src="img/team/kenna-lehmann.jpeg" alt="Dr. Kenna Lehmann" class="avatar"><div><h3>Dr. Kenna Lehmann</h3><p class="role">Michigan State University</p><p class="focus">Social behavior, fitness consequences of sociality</p><a href="https://kennadslehmann.weebly.com/" target="_blank">Website</a></div></div>
+      <div class="contact-card"><img src="img/team/tracy-montgomery.png" alt="Dr. Tracy Montgomery" class="avatar"><div><h3>Dr. Tracy Montgomery</h3><p class="role">Michigan State University</p><p class="focus">Individual behavioral variation, personality, ecological consequences</p><a href="https://tracymont.github.io/" target="_blank">Website</a></div></div>
     </div>
   </div>
 </section>

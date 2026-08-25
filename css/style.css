@@ -353,7 +353,7 @@ footer {
   margin-bottom: 2rem;
 }
 .footer-brand img { height: 48px; margin-bottom: 1rem; }
-.footer-brand p { font-size: 0.85rem; line-height: 1.6; }
+.footer-brand p { font-size: 0.85rem; line-height: 1.6; color: var(--white); }
 .footer-col h4 {
   font-size: 0.75rem;
   letter-spacing: 0.15em;
