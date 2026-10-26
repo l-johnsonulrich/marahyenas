@@ -84,7 +84,11 @@
 <script>
 // Edit captions and order here. Add or remove entries freely.
 const photos = [
-  {src:"img/slideshow/research-cognition.jpg", title:"A spotted hyena in the morning light", text:"One of the thousands of individually known hyenas we have followed across the Maasai Mara."},
+  {src:"img/slideshow/cub-grad.jpg", title:"Cubs on their first graduation excursion", text:"GEL takes her cubs (CREM and MOO) on their first outing away from the den in KCM clan."},
+  {src:"img/slideshow/BLGden.jpg", title:"South Clan", text:"BLG, a mid-ranking female, standing by the communal den in South Clan."},
+  {src:"img/slideshow/30805918561_6f5b5eeb3d_b.jpg", title:"The wider Mara&#8211;Serengeti ecosystem", text:"Our study clans range across open grassland beneath the distant escarpment."},
+  {src:"img/slideshow/CSBY-JLYR.jpg", title:"Spotted hyenas love water", text:"CSBY, a low-ranking adult female and JLYR, a high-ranking subadult taking a moment to play in the water in HZ clan."},
+  {src:"img/slideshow/EmeraldTreeHZ.jpg", title:"Emerald Tree", text:"A majestic landmark in Happy Zebra territory."},
   {src:"img/slideshow/hyena-landscape.jpg", title:"A clan gathers at dawn", text:"Spotted hyenas are highly social and live in large, structured clans of related and unrelated members."},
   {src:"img/slideshow/socialsniff.jpg", title:"A greeting ceremony", text:"Clan members greet one another nose to nose, a behavior central to hyena social life."},
   {src:"img/slideshow/research-development.jpg", title:"An adult and a young cub", text:"Cubs are born in dens and depend on their mothers for well over a year, longer than most carnivores."},
@@ -93,9 +97,27 @@ const photos = [
   {src:"img/slideshow/hero-landscape.jpg", title:"Storm light over the Mara", text:"Weather moves fast across the open grassland that the clans call home."},
   {src:"img/slideshow/cubs-car.JPG", title:"Following the clan", text:"Our field vehicle is set up for daily observation and radio-tracking from before sunrise."},
   {src:"img/slideshow/camp.jpg", title:"The field camp", text:"Researchers live in camp in the Mara through the field season, heading out at dawn and dusk."},
-  {src:"img/slideshow/community-outreach.jpg", title:"Outreach and teaching", text:"We bring hyena biology to local schools, students, and partners, often using real skulls and specimens."},
-  {src:"img/slideshow/hero-hyena.jpg", title:"Acacia at sunset", text:"The Maasai Mara, home to the clans we have studied since 1988."},
-  {src:"img/slideshow/30805918561_6f5b5eeb3d_b.jpg", title:"The wider Mara&#8211;Serengeti ecosystem", text:"Our study clans range across open grassland beneath the distant escarpment."}
+  {src:"img/slideshow/community-outreach.png", title:"Outreach and teaching", text:"We bring hyena biology to local schools, students, and partners, often using real skulls and specimens. Pictured here left to right: Benson Pion, Hadley Courad, Wilson, Phoebe Parker-Shames."},
+  {src:"img/slideshow/hero-hyena.jpg", title:"Acacia at sunset", text:"The Maasai Mara, home to the clans we have studied since 1988. Pictured here: The Happy Zebra communal den."},
+  {src:"img/slideshow/30805918561_6f5b5eeb3d_b.jpg", title:"The wider Mara&#8211;Serengeti ecosystem", text:"Our study clans range across open grassland beneath the distant escarpment."},
+  {src:"img/slideshow/female-male.jpg", title:"Hyena Body Language", text:"A female hyena side-eyes an approaching male."},
+  {src:"img/slideshow/funnygrin.jpg", title:"Courtship", text:"A female displays a 'funny grin' to a submissive male hyena."},
+  {src:"img/slideshow/gps-collar.jpg", title:"GPS Tracking", text:"We deploy GPS collars to track hyena movements."},
+  {src:"img/slideshow/grt.jpg", title:"Hyena Greeting", text:"Just like canids, hyenas sniff each other's genitals to say hello."},
+  {src:"img/slideshow/HIGS-BOSON.jpg", title:"Fluffy Cub", text:"HIGS, a HZ cub, showing off the fluffy coat cubs grow before they graduate from the communal den."},
+  {src:"img/slideshow/HKR-BILJ-CRIM.jpg", title:"Hyena Family", text:"An adult female in North Clan, HKR, and her half-grown cubs, BILJ and CRIM relaxing."},
+  {src:"img/slideshow/hyena-puddles.jpg", title:"Hyenas Relaxing", text:"Hyenas lounging in North Clan."},
+  {src:"img/slideshow/lcs-wafl.jpg", title:"Sisters", text:"LCS and WAFL sharing a natal den in North Clan."},
+  {src:"img/slideshow/lcs-wawa.jpg", title:"Nursing", text:"LCS, a low-ranking North hyena nursing her son, WAWA, at the communal den."},
+  {src:"img/slideshow/lion-hyena.jpg", title:"Lion-Hyena Interactions", text:"Talek West clan surrounds an intruding lion."},
+  {src:"img/slideshow/littermates.jpg", title:"Littermates", text:"Two hyena cubs (siblings) at South Clan playing while their mother rests."},
+  {src:"img/slideshow/male-courtship.jpg", title:"Male Courtship", text:"A male grooming his foreleg as part of a courtship display."},
+  {src:"img/slideshow/monsoon-den.jpg", title:"Monsoon Season", text:"South clan's communal den during Monsoon season."},
+  {src:"img/slideshow/sleepy-cub-2.jpg", title:"Infant Hyena", text:"A small black cub dozing in the sunlight at the den."},
+  {src:"img/slideshow/social.jpg", title:"Social Sniffing", text:"A group of hyenas social sniffing during an encounter with a lionness (not pictured)."},
+  {src:"img/slideshow/SOUP-den.jpg", title:"Rainbow Den", text:"SOUP, a north clan female, resting inside a den hole."},
+  {src:"img/slideshow/weaning.jpg", title:"Weaning Tantrum", text:"A cub throwing a weaning tantrum."},
+  {src:"img/slideshow/ypsi-female.jpg", title:"Courtship", text:"An immigrant male, YPSI, cautiously approaches LOGC and her cub CSTZ."}
 ];
 
 let current = 0;

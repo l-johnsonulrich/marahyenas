@@ -53,7 +53,7 @@ document.getElementById('nav-placeholder').innerHTML = `
         <div class="dropdown">
           <a href="construction.html">Hyena Behavior</a>
           <a href="construction.html">Myths &amp; Misconceptions</a>
-          <a href="construction.html">Photo Gallery</a>
+          <a href="gallery.html">Photo Gallery</a>
         </div>
       </li>
       <li>
