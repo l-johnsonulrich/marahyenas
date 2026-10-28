@@ -5,13 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hyena Behavior &mdash; Mara Hyena Project</title>
   <link rel="stylesheet" href="css/style.css">
+<style>
+.facts{list-style:none;padding:0;margin:0;display:grid;gap:.75rem;max-width:880px}
+.facts li{position:relative;padding-left:1.4rem;line-height:1.6}
+.facts li::before{content:"";position:absolute;left:0;top:.62em;width:.45rem;height:.45rem;border-radius:50%;background:var(--green)}
+.facts ul{list-style:none;padding:0;margin:.55rem 0 .2rem;display:grid;gap:.5rem}
+.facts ul li{padding-left:1.25rem;font-size:.95em;color:var(--text-muted)}
+.facts ul li::before{top:.66em;width:.4rem;height:.4rem;background:transparent;border:1.5px solid var(--green);box-sizing:border-box}
+sup.cite{font-size:.68em;line-height:0;margin-left:.15em;white-space:nowrap}
+sup.cite a{color:var(--green);text-decoration:none}
+sup.cite a:hover{text-decoration:underline}
+.ref-list{padding-left:1.75rem;margin:0;max-width:880px}
+.ref-list li{font-size:.9rem;color:var(--text-muted);margin-bottom:.6rem;line-height:1.5;scroll-margin-top:6rem}
+.ref-list li:target{background:var(--green-pale)}
+.ref-list a{color:var(--green);word-break:break-word}
+/* Photo rows: use photos-1, photos-2, photos-3, or photos-4 to match the number of figures */
+.photo-row{display:grid;gap:1rem;margin-top:2rem}
+.photos-1{grid-template-columns:1fr}
+.photos-2{grid-template-columns:repeat(2,1fr)}
+.photos-3{grid-template-columns:repeat(3,1fr)}
+.photos-4{grid-template-columns:repeat(4,1fr)}
+.photo-row figure{margin:0}
+.photo-row .ph{aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--green-pale)}
+.photos-1 .ph{aspect-ratio:21/9}
+.photos-2 .ph{aspect-ratio:3/2}
+.photo-row img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-row figcaption{font-size:.82rem;color:var(--text-muted);margin-top:.45rem;line-height:1.4}
+@media(max-width:800px){
+  .photos-4{grid-template-columns:repeat(2,1fr)}
+  .photos-3{grid-template-columns:repeat(2,1fr)}
+  .photos-3 figure:last-child{grid-column:1/-1}
+  .photos-3 figure:last-child .ph{aspect-ratio:16/9}
+}
+@media(max-width:500px){
+  .photos-2,.photos-3,.photos-4{grid-template-columns:1fr}
+  .photos-3 figure:last-child .ph{aspect-ratio:4/3}
+  .photos-1 .ph{aspect-ratio:4/3}
+}
+</style>
 </head>
 <body>
   <div id="nav-placeholder"></div>
   <script src="js/nav.js"></script>
 
 <div class="page-header" style="position:relative; overflow:hidden; padding:0;">
-  <img src="img/hyena-behavior-header.jpg" alt="Spotted hyena clan in the Maasai Mara" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;">
+  <img src="img/hyena-landscape.jpg" alt="Spotted hyena clan in the Maasai Mara" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;">
   <div style="position:relative; background:rgba(14,61,30,0.62); padding:4rem 2rem; text-align:center;">
     <h1>Hyena Behavior</h1>
     <p>An introduction to the social lives of spotted hyenas, drawn from nearly four decades of research in the Maasai Mara.</p>
@@ -25,8 +63,23 @@
     <div class="divider"></div>
     <div class="split">
       <div>
-        <p>Spotted hyenas live in matrilineal societies called clans, which can include up to 130 individuals in the prey-rich Maasai Mara. Clans are organized as fission-fusion societies, meaning clan members rarely gather all together; instead, individuals associate in smaller subgroups that shift in composition throughout the day.</p>
-        <p>Within a clan, females are socially dominant to all immigrant males, and rank is inherited from the mother in a system structurally similar to that of many cercopithecine primates. A cub's adult social position is largely determined before it is even weaned, with profound consequences for lifetime reproductive success, access to food, and survival.</p>
+      <ul class="facts">
+        <li>Spotted hyenas live in female-dominated clans of up to 130 individuals.<sup class="cite"><a href="#ref-1">1</a></sup></li>
+        <li>Clans are <strong>fission&ndash;fusion</strong> societies: members share a territory and a communal den, but spend most of their time alone or in small, shifting subgroups.<sup class="cite"><a href="#ref-2">2</a></sup></li>
+        <li>Large clans contain several unrelated <strong>matrilines</strong> (adult females with their cubs and grandcubs) plus adult immigrant males.<sup class="cite"><a href="#ref-3">3</a></sup>
+          <ul>
+            <li>Cubs inherit their mother's rank through social support, much as in many monkeys, ranking just below their mothers.<sup class="cite"><a href="#ref-4">4</a>,<a href="#ref-5">5</a></sup></li>
+            <li>Rank shapes access to food, reproductive success, and survival.<sup class="cite"><a href="#ref-6">6</a>,<a href="#ref-7">7</a></sup></li>
+          </ul>
+        </li>
+        <li>Hyena society is <strong>nepotistic</strong> and built on <strong>political alliances</strong>: relatives back each other in fights to hold their places in the hierarchy.<sup class="cite"><a href="#ref-8">8</a>&ndash;<a href="#ref-11">11</a></sup>
+          <ul>
+            <li>Immigrant males arrive with no relatives or allies, so they start at the very bottom and queue for status in order of arrival.<sup class="cite"><a href="#ref-12">12</a>&ndash;<a href="#ref-14">14</a></sup></li>
+            <li>Rank reversals are rare; the females that do rise have the strongest, most reliable allies.<sup class="cite"><a href="#ref-11">11</a></sup></li>
+            <li>Most rank changes come instead from births and deaths, so nearly every hyena slides slowly down the hierarchy over its life.<sup class="cite"><a href="#ref-15">15</a></sup></li>
+          </ul>
+        </li>
+      </ul>
       </div>
       <img src="img/behavior-clan.jpg" alt="Spotted hyena clan resting at a communal den">
     </div>
@@ -38,8 +91,23 @@
     <p class="section-label">Communication</p>
     <h2>Vocalizations &amp; Signals</h2>
     <div class="divider"></div>
-    <p>Spotted hyenas have one of the most diverse vocal repertoires of any terrestrial carnivore. The long-distance whoop carries for kilometers and is individually distinctive, allowing clan members to recognize one another across the savanna and to coordinate movement. Giggles, groans, grunts, lows, and rumbles are used in close-range social interactions, with acoustic structure encoding information about the caller's identity, dominance rank, and motivational state.</p>
-    <p>Hyenas also communicate through scent marking with paste from their anal glands, deposited along clan territory boundaries and at communal latrines. Visual signals, including tail position, ear orientation, and the conspicuous "meeting ceremony" in which clan members investigate one another's erect phalluses, mediate close-range social interactions and reinforce social bonds.</p>
+    <ul class="facts">
+      <li>Hyenas have a large and varied vocal repertoire.<sup class="cite"><a href="#ref-16">16</a></sup>
+        <ul>
+          <li><strong>Whoops</strong> carry for kilometers and rally clan-mates to defend territory, food, or the den.<sup class="cite"><a href="#ref-16">16</a></sup></li>
+          <li>Whoops are individually distinctive, and mothers recognize their own cubs' whoops.<sup class="cite"><a href="#ref-17">17</a>,<a href="#ref-18">18</a></sup></li>
+          <li>Giggles, groans, growls, lows, and rumbles are used in close-range social interactions.<sup class="cite"><a href="#ref-16">16</a></sup></li>
+        </ul>
+      </li>
+      <li><strong>Paste</strong> from the anal glands marks territories and signals clan, sex, reproductive state, identity, and possibly rank; gland bacteria help create clan-specific odors.<sup class="cite"><a href="#ref-19">19</a>&ndash;<a href="#ref-21">21</a></sup></li>
+      <li>In the <strong>greeting ceremony</strong>, two hyenas stand head-to-tail and sniff each other's erect phalluses, reinforcing social bonds and alliances.<sup class="cite"><a href="#ref-22">22</a>,<a href="#ref-23">23</a></sup></li>
+    </ul>
+    <div class="photo-row photos-4">
+      <figure><div class="ph"><img src="img/behavior/communication-1.jpg" alt="Hyena whooping" onerror="this.style.visibility='hidden'"></div><figcaption>A hyena whooping</figcaption></figure>
+      <figure><div class="ph"><img src="img/behavior/communication-2.jpg" alt="Hyenas greeting" onerror="this.style.visibility='hidden'"></div><figcaption>A greeting ceremony</figcaption></figure>
+      <figure><div class="ph"><img src="img/behavior/communication-3.jpg" alt="Hyena pasting on a grass stalk" onerror="this.style.visibility='hidden'"></div><figcaption>Pasting on a grass stalk</figcaption></figure>
+      <figure><div class="ph"><img src="img/behavior/communication-4.jpg" alt="Hyena communication" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -51,40 +119,294 @@
     <div class="split">
       <img src="img/behavior-hunting.jpg" alt="Spotted hyenas at a kill">
       <div>
-        <p>Despite a longstanding reputation as scavengers, spotted hyenas obtain most of their food by hunting. In the Maasai Mara, hyenas regularly take down adult wildebeest, zebra, and Thomson's gazelle, often by themselves or in small coordinated groups. Larger prey such as Cape buffalo are taken cooperatively by multiple hunters.</p>
-        <p>Hyenas have the most powerful jaws of any African carnivore relative to their size, enabling them to crush bones and extract marrow that other predators cannot access. At a kill, social rank strongly predicts feeding priority: dominant females and their offspring eat first, and feeding bouts are often punctuated by intense competition both within the clan and with lions, which routinely usurp hyena kills.</p>
+      <ul class="facts">
+        <li>Hyenas are hunters, not just scavengers: they kill 60&ndash;95% of the food they eat.<sup class="cite"><a href="#ref-24">24</a></sup>
+          <ul>
+            <li>Over three-quarters of hunts are by lone hyenas, even on prey three times their size; zebra are usually hunted in groups.<sup class="cite"><a href="#ref-25">25</a></sup></li>
+            <li>About one in three hunts succeeds, and young hyenas aren't skilled hunters until age 5&ndash;6.<sup class="cite"><a href="#ref-25">25</a></sup></li>
+          </ul>
+        </li>
+        <li>Like wolves, hyenas are <strong>endurance hunters</strong>: they run prey to exhaustion, then bite at the belly to disembowel it, and prey die of shock and blood loss.<sup class="cite"><a href="#ref-26">26</a>&ndash;<a href="#ref-29">29</a></sup>
+          <ul>
+            <li>Unlike lions, which kill with a suffocating or spine-breaking bite, hyenas have jaws built for <strong>cracking bones</strong>.<sup class="cite"><a href="#ref-30">30</a></sup></li>
+          </ul>
+        </li>
+        <li>Feeding groups average 8 hyenas (up to 56), and an adult can eat 1.3 kg per minute.<sup class="cite"><a href="#ref-2">2</a>,<a href="#ref-26">26</a></sup>
+          <ul>
+            <li>Rank decides who eats first, and mothers help their offspring at kills long after weaning.<sup class="cite"><a href="#ref-2">2</a>,<a href="#ref-31">31</a>,<a href="#ref-32">32</a></sup></li>
+          </ul>
+        </li>
+        <li>Diets are flexible: hyenas eat whatever prey is most abundant, including more livestock where grazing has increased.<sup class="cite"><a href="#ref-25">25</a>,<a href="#ref-33">33</a></sup></li>
+      </ul>
       </div>
+    </div>
+    <div class="photo-row photos-2">
+      <figure><div class="ph"><img src="img/behavior/hunting-1.jpg" alt="Hyena chasing prey" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="ph"><img src="img/behavior/hunting-2.jpg" alt="Hyena cracking a bone" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
     </div>
   </div>
 </section>
 
 <section class="bg-pale">
   <div class="section-inner">
-    <p class="section-label">Reproduction</p>
-    <h2>Mating &amp; Maternal Care</h2>
+    <p class="section-label">Competition</p>
+    <h2>Lions &amp; Hyenas</h2>
     <div class="divider"></div>
-    <p>Female spotted hyenas have a unique reproductive anatomy: their external genitalia are masculinized, with a fully erectile pseudopenis through which they urinate, copulate, and give birth. This unusual morphology is associated with high prenatal androgen exposure but does not appear to reflect male-like sexual behavior or aggression in adults.</p>
-    <p>Litters typically consist of one or two cubs, born at a remote natal den before being moved to a clan-wide communal den within a few weeks. Cubs are born with eyes open and teeth erupted, and same-sex twin siblings sometimes engage in intense aggression within the first days of life. Maternal investment is exceptionally long for a carnivore: cubs nurse for up to 18 months and remain dependent on their mothers for protection and feeding opportunities well past weaning.</p>
+    <ul class="facts">
+      <li>Lions are hyenas' main competitor and, along with humans, the leading cause of death for adult hyenas.<sup class="cite"><a href="#ref-1">1</a></sup></li>
+      <li>Lions steal hyena kills far more often than the reverse.<sup class="cite"><a href="#ref-24">24</a>,<a href="#ref-26">26</a>,<a href="#ref-34">34</a></sup>
+        <ul>
+          <li>GPS tracking shows hyenas move away from lions, while male lions tend to move toward hyenas.<sup class="cite"><a href="#ref-35">35</a></sup></li>
+        </ul>
+      </li>
+      <li>Hyenas <strong>mob</strong> lions to drive them off a kill or out of their territory, but must greatly outnumber them to win.<sup class="cite"><a href="#ref-36">36</a></sup>
+        <ul>
+          <li>Hyenas rarely beat male lions, getting food in only 26 of 93 encounters with them.<sup class="cite"><a href="#ref-36">36</a></sup></li>
+          <li>Hyenas with strong social bonds, and those that greet just beforehand, are most likely to join a mob.<sup class="cite"><a href="#ref-37">37</a></sup></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="photo-row photos-1">
+      <figure><div class="ph"><img src="img/behavior/lions-1.jpg" alt="Hyenas mobbing a lion" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
+    </div>
   </div>
 </section>
 
 <section class="bg-white">
   <div class="section-inner">
-    <p class="section-label">Cognition</p>
-    <h2>Intelligence &amp; Problem-Solving</h2>
+    <p class="section-label">Reproduction</p>
+    <h2>Mating &amp; Maternal Care</h2>
     <div class="divider"></div>
-    <p>Spotted hyenas are among the most cognitively flexible carnivores studied to date. They readily solve novel physical problems, learn from observing conspecifics, and adjust their behavior to changing social conditions. Experimental work using puzzle boxes has shown substantial individual variation in innovation and persistence, with bolder and more exploratory hyenas typically more successful at extracting hidden food rewards.</p>
-    <p>Hyena social cognition is similarly sophisticated. Individuals recognize the kinship and rank relationships of other clan members, recruit specific allies during conflicts, and modify their behavior depending on which clan members are nearby. This capacity for tracking complex social information has made spotted hyenas an important model species for testing hypotheses about the evolution of mammalian intelligence.</p>
+    <ul class="facts">
+      <li>Females urinate, mate, and give birth through a <strong>pseudopenis</strong>, which develops largely independently of androgens.<sup class="cite"><a href="#ref-38">38</a></sup></li>
+      <li>Females choose their mates, and because they are larger and dominant, males must court them carefully (see <a href="#males">Dispersal &amp; Male Life</a>).<sup class="cite"><a href="#ref-39">39</a></sup></li>
+      <li>After a gestation of about 110 days, females give birth to 1&ndash;2 cubs (rarely 3) at an isolated natal den, then move them to the communal den at 3&ndash;4 weeks.<sup class="cite"><a href="#ref-1">1</a>,<a href="#ref-24">24</a>,<a href="#ref-26">26</a></sup>
+        <ul>
+          <li>Cubs are born with a black coat (<strong>lanugo</strong>), eyes open, and teeth erupted.<sup class="cite"><a href="#ref-40">40</a></sup></li>
+          <li>Twins fight from birth to establish <strong>dominance</strong>, not to kill each other; siblicide is rare.<sup class="cite"><a href="#ref-41">41</a>,<a href="#ref-42">42</a></sup></li>
+          <li><strong>Infanticide</strong> by adult females is a real risk at the communal den, causing about a quarter of juvenile deaths.<sup class="cite"><a href="#ref-43">43</a></sup></li>
+        </ul>
+      </li>
+      <li>Cubs nurse for up to 24 months, an exceptionally long investment for a carnivore.<sup class="cite"><a href="#ref-6">6</a></sup></li>
+    </ul>
+    <div class="photo-row photos-4">
+      <figure><div class="ph"><img src="img/behavior/mating-1.jpg" alt="Male hyena courting a female" onerror="this.style.visibility='hidden'"></div><figcaption>A male courting a female</figcaption></figure>
+      <figure><div class="ph"><img src="img/behavior/mating-2.jpg" alt="Black-coated newborn hyena cub" onerror="this.style.visibility='hidden'"></div><figcaption>A young cub in its black natal coat</figcaption></figure>
+      <figure><div class="ph"><img src="img/behavior/mating-3.jpg" alt="Hyena cubs at the communal den" onerror="this.style.visibility='hidden'"></div><figcaption>Cubs at the communal den</figcaption></figure>
+      <figure><div class="ph"><img src="img/behavior/mating-4.jpg" alt="Mother hyena nursing" onerror="this.style.visibility='hidden'"></div><figcaption>A mother nursing her cub</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pale" id="males">
+  <div class="section-inner">
+    <p class="section-label">Life History</p>
+    <h2>Dispersal &amp; Male Life</h2>
+    <div class="divider"></div>
+    <ul class="facts">
+      <li>Females usually spend their whole lives in their birth clan, but males leave voluntarily, anywhere from a month to several years after reaching puberty at about two years old.<sup class="cite"><a href="#ref-1">1</a>,<a href="#ref-44">44</a></sup>
+        <ul>
+          <li>While still at home, young males outrank adult females lower in the hierarchy than their mothers.<sup class="cite"><a href="#ref-12">12</a></sup></li>
+          <li>Once they leave, males behave submissively toward every new hyena they meet.<sup class="cite"><a href="#ref-1">1</a>,<a href="#ref-12">12</a></sup></li>
+        </ul>
+      </li>
+      <li>Dispersal appears to be driven by female mate choice: females strongly prefer immigrant males, which sire nearly all cubs, likely helping them avoid inbreeding.<sup class="cite"><a href="#ref-14">14</a>,<a href="#ref-44">44</a></sup></li>
+      <li>Immigrants start at the bottom of their new clan's hierarchy and queue for status by arrival order, rising only when higher-ranking immigrants die or leave.<sup class="cite"><a href="#ref-13">13</a>,<a href="#ref-14">14</a></sup>
+        <ul>
+          <li>Instead of fighting for status, males compete through <strong>endurance rivalry</strong>, essentially by outlasting their rivals.<sup class="cite"><a href="#ref-45">45</a>,<a href="#ref-46">46</a></sup></li>
+          <li>Females seem to need time to get to know a newcomer, so a male may spend years in a clan before he sires cubs.<sup class="cite"><a href="#ref-45">45</a>,<a href="#ref-46">46</a></sup></li>
+        </ul>
+      </li>
+      <li>Males court females <strong>submissively</strong>, bowing, grooming their forelegs, and repeatedly approaching then backing away, because they risk being bitten.<sup class="cite"><a href="#ref-39">39</a></sup>
+        <ul>
+          <li>Males prefer to associate with high-ranking females, whose cubs are most likely to survive.<sup class="cite"><a href="#ref-47">47</a></sup></li>
+        </ul>
+      </li>
+      <li>About 40% of immigrant males later move to yet another clan; the benefits of this secondary dispersal are still unknown.<sup class="cite"><a href="#ref-1">1</a></sup></li>
+    </ul>
+    <div class="photo-row photos-1">
+      <figure><div class="ph"><img src="img/behavior/males-1.jpg" alt="Immigrant male hyena" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="section-inner">
+    <p class="section-label">Development</p>
+    <h2>Play</h2>
+    <div class="divider"></div>
+    <ul class="facts">
+      <li>Play begins in the second week of life as severe sibling aggression fades, helping prepare cubs to join the clan.<sup class="cite"><a href="#ref-48">48</a></sup>
+        <ul>
+          <li>Play peaks at 2&ndash;4 months; males and females play equally, and cubs of high-ranking mothers play more.<sup class="cite"><a href="#ref-49">49</a></sup></li>
+        </ul>
+      </li>
+      <li>Adults play as much as youngsters, and even rough play rarely escalates, making play a &ldquo;safe social bridge.&rdquo;<sup class="cite"><a href="#ref-50">50</a></sup>
+        <ul>
+          <li>Adults often play after mating, clan wars, and other exciting events, and <strong>water play</strong> is a favorite among hyenas of all ranks (personal observations).</li>
+        </ul>
+      </li>
+      <li>A relaxed open-mouth <strong>play face</strong> and play vocalizations signal that it's all in fun.<sup class="cite"><a href="#ref-51">51</a></sup></li>
+    </ul>
+    <div class="photo-row photos-2">
+      <figure><div class="ph"><img src="img/behavior/play-1.jpg" alt="Hyena cubs playing" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="ph"><img src="img/behavior/play-2.jpg" alt="Adult hyenas play fighting" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
+    </div>
   </div>
 </section>
 
 <section class="bg-pale">
   <div class="section-inner">
-    <p class="section-label">Daily Life</p>
-    <h2>Activity &amp; Movement</h2>
+    <p class="section-label">Cognition</p>
+    <h2>Intelligence &amp; Problem-Solving</h2>
     <div class="divider"></div>
-    <p>Spotted hyenas are primarily nocturnal and crepuscular, with peak activity in the hours around dawn and dusk. During the heat of the day, clan members rest in dense vegetation, in mud wallows, or at communal dens. Hyenas may travel 20 kilometers or more in a single night while patrolling territory boundaries, hunting, scavenging, or visiting clan members at the den.</p>
-    <p>Clan territories in the Maasai Mara are defended collectively against neighboring clans, with confrontations between clans sometimes involving 20 or more individuals on each side. Territorial defense, like much of hyena social life, depends heavily on coalitions: which clan members show up, and who their allies are, often determines the outcome.</p>
+    <ul class="facts">
+      <li>Hyenas solve novel puzzle boxes, and bolder, more exploratory individuals succeed most often.<sup class="cite"><a href="#ref-52">52</a></sup>
+        <ul>
+          <li>Hyenas in the undisturbed Mara were more innovative than those near Talek town or in the city of Mekelle, Ethiopia.<sup class="cite"><a href="#ref-53">53</a></sup></li>
+          <li>Social learning is limited: watching others reduces wariness but doesn't improve success.<sup class="cite"><a href="#ref-54">54</a></sup></li>
+        </ul>
+      </li>
+      <li>Pairs of captive hyenas spontaneously cooperate to solve two-animal tasks.<sup class="cite"><a href="#ref-55">55</a></sup></li>
+      <li>Hyenas recognize others' relationships and recruit allies, though they rely heavily on simple rules of thumb.<sup class="cite"><a href="#ref-9">9</a>,<a href="#ref-56">56</a>,<a href="#ref-57">57</a></sup>
+        <ul>
+          <li>Hyenas raised in larger groups have better <strong>inhibitory control</strong>, especially low-ranking ones.<sup class="cite"><a href="#ref-58">58</a></sup></li>
+        </ul>
+      </li>
+      <li>Their primate-like societies make hyenas a key model for the evolution of intelligence.<sup class="cite"><a href="#ref-5">5</a>,<a href="#ref-59">59</a></sup></li>
+    </ul>
+    <div class="photo-row photos-2">
+      <figure><div class="ph"><img src="img/behavior/cognition-1.jpg" alt="Hyena working on a puzzle box" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
+      <figure><div class="ph"><img src="img/behavior/cognition-2.jpg" alt="Hyena problem-solving" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="section-inner">
+    <p class="section-label">Territory</p>
+    <h2>Territory &amp; Clan Wars</h2>
+    <div class="divider"></div>
+    <ul class="facts">
+      <li>Clan members share and jointly defend a territory; on the prey-rich plains of the Mara&ndash;Serengeti, territories form an unbroken mosaic.<sup class="cite"><a href="#ref-24">24</a></sup>
+        <ul>
+          <li>Territories range from 20&ndash;30 km&sup2; in Ngorongoro Crater and Amboseli to over 1,000 km&sup2; in the Kalahari Desert.<sup class="cite"><a href="#ref-24">24</a></sup></li>
+          <li>Clans advertise their borders with whoops, <strong>pasting</strong>, and <strong>border patrols</strong>.<sup class="cite"><a href="#ref-16">16</a>,<a href="#ref-19">19</a>,<a href="#ref-24">24</a></sup></li>
+        </ul>
+      </li>
+      <li>In <strong>clan wars</strong>, members band together to fight neighboring clans, sometimes with 20 or more hyenas per side; coalitions decide the outcome.<sup class="cite"><a href="#ref-9">9</a>,<a href="#ref-19">19</a>,<a href="#ref-26">26</a></sup>
+        <ul>
+          <li>Clan wars are most common where hyenas are dense and are rarely seen where they are sparse, as in the Namib Desert.<sup class="cite"><a href="#ref-24">24</a></sup></li>
+        </ul>
+      </li>
+      <li>Hyenas are mostly nocturnal and crepuscular; Mara hyenas stay active through the night without clear peaks.<sup class="cite"><a href="#ref-24">24</a>,<a href="#ref-60">60</a>,<a href="#ref-61">61</a></sup>
+        <ul>
+          <li>Daily travel depends on prey: about 10&ndash;12 km in the Mara versus 23&ndash;27 km in the Kalahari, while Serengeti hyenas commute about 40 km to follow migratory herds.<sup class="cite"><a href="#ref-24">24</a></sup></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="photo-row photos-1">
+      <figure><div class="ph"><img src="img/behavior/territory-1.jpg" alt="Hyenas during a clan war" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="bg-pale">
+  <div class="section-inner">
+    <p class="section-label">Conservation</p>
+    <h2>Hyenas &amp; People</h2>
+    <div class="divider"></div>
+    <ul class="facts">
+      <li>Spotted hyenas are Africa's most abundant large carnivore, but populations outside protected areas are declining.<sup class="cite"><a href="#ref-1">1</a>,<a href="#ref-24">24</a></sup></li>
+      <li>Hyenas sometimes kill livestock along reserve borders and are often killed in retaliation.<sup class="cite"><a href="#ref-62">62</a>,<a href="#ref-63">63</a></sup>
+        <ul>
+          <li>Near pastoralists, hyenas become more nocturnal and more vigilant and have higher stress hormones; tourists don't have this effect.<sup class="cite"><a href="#ref-60">60</a>,<a href="#ref-64">64</a>,<a href="#ref-65">65</a></sup></li>
+          <li>As cattle grazing intensified in the Talek area, one Mara clan gradually split into two.<sup class="cite"><a href="#ref-24">24</a></sup></li>
+        </ul>
+      </li>
+      <li>Hyenas can benefit where people suppress lions: in a disturbed part of the Mara, hyena numbers rose as lions declined.<sup class="cite"><a href="#ref-66">66</a></sup></li>
+      <li>In northern Ethiopia, hyenas are tolerated in cities; in Mekelle they remove about 207 tonnes of carcass waste a year, preventing an estimated 5 human and 140 livestock cases of anthrax and bovine TB annually.<sup class="cite"><a href="#ref-67">67</a></sup></li>
+    </ul>
+    <div class="photo-row photos-1">
+      <figure><div class="ph"><img src="img/behavior/people-1.jpg" alt="Hyenas near people or livestock" onerror="this.style.visibility='hidden'"></div><figcaption>Caption</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="section-inner">
+    <p class="section-label">Sources</p>
+    <h2>References</h2>
+    <div class="divider"></div>
+    <ol class="ref-list">
+      <li id="ref-1">Smith JE, Holekamp KE (2026) Spotted hyenas: smart and powerful social carnivores. In: <em>Encyclopedia of Animal Behavior</em>, 3rd ed. Elsevier. <a href="https://doi.org/10.1016/B978-0-443-29068-8.00203-8" target="_blank" rel="noopener">doi.org/10.1016/B978-0-443-29068-8.00203-8</a></li>
+      <li id="ref-2">Smith JE, Kolowski JM, Graham KE, Dawes SE, Holekamp KE (2008) Social and ecological determinants of fission&ndash;fusion dynamics in the spotted hyaena. <em>Animal Behaviour</em> 76: 619&ndash;636.</li>
+      <li id="ref-3">Holekamp KE, Smith JE, Strelioff CC, Van Horn RC, Watts HE (2012) Society, demography and genetic structure in the spotted hyena. <em>Molecular Ecology</em> 21: 613&ndash;632.</li>
+      <li id="ref-4">Engh AL, Esch K, Smale L, Holekamp KE (2000) Mechanisms of maternal rank &lsquo;inheritance&rsquo; in the spotted hyaena, <em>Crocuta crocuta</em>. <em>Animal Behaviour</em> 60: 323&ndash;332.</li>
+      <li id="ref-5">Drea CM, Frank LG (2003) The social complexity of spotted hyenas. In: de Waal FBM, Tyack PL (eds) <em>Animal Social Complexity: Intelligence, Culture, and Individualized Societies</em>, pp. 121&ndash;148. Cambridge, MA: Harvard University Press.</li>
+      <li id="ref-6">Holekamp KE, Smale L, Szykman M (1996) Rank and reproduction in the female spotted hyaena. <em>Journal of Reproduction and Fertility</em> 108: 229&ndash;237.</li>
+      <li id="ref-7">Strauss ED, Shizuka D, Holekamp KE (2020) Juvenile rank acquisition is associated with fitness independent of adult rank. <em>Proceedings of the Royal Society B</em> 287: 20192969.</li>
+      <li id="ref-8">Wahaj SA, Van Horn RC, Van Horn TL, et al. (2004) Kin discrimination in the spotted hyena (<em>Crocuta crocuta</em>): nepotism among siblings. <em>Behavioral Ecology and Sociobiology</em> 56: 237&ndash;247.</li>
+      <li id="ref-9">Smith JE, Van Horn RC, Powning KS, et al. (2010) Evolutionary forces favoring intragroup coalitions among spotted hyenas and other animals. <em>Behavioral Ecology</em> 21: 284&ndash;303.</li>
+      <li id="ref-10">Vullioud C, Davidian E, Wachter B, Rousset F, Courtiol A, H&ouml;ner OP (2019) Social support drives female dominance in the spotted hyaena. <em>Nature Ecology &amp; Evolution</em> 3: 71&ndash;76.</li>
+      <li id="ref-11">Strauss ED, Holekamp KE (2019) Social alliances improve rank and fitness in convention-based societies. <em>Proceedings of the National Academy of Sciences</em> 116: 8919&ndash;8924.</li>
+      <li id="ref-12">Smale L, Frank LG, Holekamp KE (1993) Ontogeny of dominance in free-living spotted hyaenas: juvenile rank relations with adult females and immigrant males. <em>Animal Behaviour</em> 46: 467&ndash;477.</li>
+      <li id="ref-13">East ML, Hofer H (2001) Male spotted hyenas (<em>Crocuta crocuta</em>) queue for status in social groups dominated by females. <em>Behavioral Ecology</em> 12: 558&ndash;568.</li>
+      <li id="ref-14">Engh AL, Funk SM, Van Horn RC, Scribner KT, Bruford MW, Libants S, Szykman M, Smale L, Holekamp KE (2002) Reproductive skew among males in a female-dominated mammalian society. <em>Behavioral Ecology</em> 13: 193&ndash;200.</li>
+      <li id="ref-15">Strauss ED (2023) Demographic turnover can be a leading driver of hierarchy dynamics, and social inheritance modifies its effects. <em>Philosophical Transactions of the Royal Society B</em> 378: 20220308.</li>
+      <li id="ref-16">East ML, Hofer H (1991) Loud calling in a female-dominated mammalian society: I and II. <em>Animal Behaviour</em> 42: 637&ndash;669.</li>
+      <li id="ref-17">Holekamp KE, Boydston EE, Szykman M, Graham I, Nutt KJ, Birch S, Piskiel A, Singh M (1999) Vocal recognition in the spotted hyaena and its possible implications regarding the evolution of intelligence. <em>Animal Behaviour</em> 58: 383&ndash;395.</li>
+      <li id="ref-18">Lehmann KDS, Jensen FH, Gersick AS, Strandburg-Peshkin A, Holekamp KE (2022) Long-distance vocalizations of spotted hyenas contain individual, but not group, signatures. <em>Proceedings of the Royal Society B</em> 289: 20220548.</li>
+      <li id="ref-19">Boydston EE, Morelli TL, Holekamp KE (2001) Sex differences in territorial behavior exhibited by the spotted hyena (Hyaenidae, <em>Crocuta crocuta</em>). <em>Ethology</em> 107: 369&ndash;385.</li>
+      <li id="ref-20">Burgener N, Dehnhard M, Hofer H, East ML (2009) Does anal gland scent signal identity in the spotted hyaena? <em>Animal Behaviour</em> 77: 707&ndash;715.</li>
+      <li id="ref-21">Theis KR, Schmidt TM, Holekamp KE (2012) Evidence for a bacterial mechanism for group-specific social odors among hyenas. <em>Scientific Reports</em> 2: 615.</li>
+      <li id="ref-22">East ML, Hofer H, Wickler W (1993) The erect &lsquo;penis&rsquo; as a flag of submission in a female-dominated society: greetings in Serengeti spotted hyenas. <em>Behavioral Ecology and Sociobiology</em> 33: 355&ndash;370.</li>
+      <li id="ref-23">Smith JE, Powning KS, Dawes SE, et al. (2011) Greetings promote cooperation and reinforce social bonds among spotted hyaenas. <em>Animal Behaviour</em> 81: 401&ndash;415.</li>
+      <li id="ref-24">Holekamp KE, Dloniak SM (2010) Intraspecific variation in the behavioral ecology of a tropical carnivore, the spotted hyena. <em>Advances in the Study of Behavior</em> 42: 189&ndash;229.</li>
+      <li id="ref-25">Holekamp KE, Smale L, Berg R, Cooper SM (1997) Hunting rates and hunting success in the spotted hyena (<em>Crocuta crocuta</em>). <em>Journal of Zoology</em> 242: 1&ndash;15.</li>
+      <li id="ref-26">Kruuk H (1972) <em>The Spotted Hyena: A Study of Predation and Social Behavior.</em> Chicago: University of Chicago Press.</li>
+      <li id="ref-27">Mills MGL (1990) <em>Kalahari Hyaenas: Comparative Behavioural Ecology of Two Species.</em> London: Unwin Hyman.</li>
+      <li id="ref-28">Mech LD, Smith DW, MacNulty DR (2015) <em>Wolves on the Hunt: The Behavior of Wolves Hunting Wild Prey.</em> Chicago: University of Chicago Press.</li>
+      <li id="ref-29">Smith JE, Holekamp KE (2022) Behavioral strategies and morphological adaptations contributing to hunting success in the spotted hyena. In: Srinivasan M, W&uuml;rsig B (eds) <em>Social Strategies of Carnivorous Mammalian Predators</em>. Springer Nature.</li>
+      <li id="ref-30">Tanner JB, Dumont ER, Sakai ST, Lundrigan BL, Holekamp KE (2008) Of arcs and vaults: the biomechanics of bone-cracking in spotted hyenas (<em>Crocuta crocuta</em>). <em>Biological Journal of the Linnean Society</em> 95: 246&ndash;255.</li>
+      <li id="ref-31">Frank LG (1986) Social organization of the spotted hyaena (<em>Crocuta crocuta</em>): I and II. <em>Animal Behaviour</em> 34: 1500&ndash;1527.</li>
+      <li id="ref-32">Watts HE, Tanner JB, Lundrigan BL, Holekamp KE (2009) Post-weaning maternal effects and the evolution of female dominance in the spotted hyena. <em>Proceedings of the Royal Society B</em> 276: 2291&ndash;2298.</li>
+      <li id="ref-33">Jarvey JC (2024) <em>Social and ecological influences on spotted hyena (Crocuta crocuta) foraging ecology.</em> PhD dissertation, Michigan State University.</li>
+      <li id="ref-34">Trinkel M, Kastberger G (2005) Competitive interactions between spotted hyenas and lions in the Etosha National Park, Namibia. <em>African Journal of Ecology</em> 43: 220&ndash;224.</li>
+      <li id="ref-35">Barker NA, Vissat LL, Joubert FG, Stowbunenko V, Alexander KA, Slotow R, Getz WM (2026) Predators in motion: fine-scale dyadic movements reveal interference competition and asymmetric coordination in African lions and spotted hyenas. <em>Frontiers in Ethology</em> 5: 1901233.</li>
+      <li id="ref-36">Lehmann KDS, Montgomery TM, MacLachlan SM, Parker JM, Spagnuolo OS, VandeWetering KJ, Bills PS, Holekamp KE (2017) Lions, hyenas and mobs (oh my!). <em>Current Zoology</em> 63: 313&ndash;322.</li>
+      <li id="ref-37">Montgomery TM, Lehmann KDS, Gregg S, Keyser K, McTigue LE, Beehner JC, Holekamp KE (2023) Determinants of hyena participation in risky collective action. <em>Proceedings of the Royal Society B</em> 290: 20231390.</li>
+      <li id="ref-38">Glickman SE, Cunha GR, Drea CM, Conley AJ, Place NJ (2006) Mammalian sexual differentiation: lessons from the spotted hyena. <em>Trends in Endocrinology and Metabolism</em> 17: 349&ndash;356.</li>
+      <li id="ref-39">Szykman M, Van Horn RC, Engh AL, Boydston EE, Holekamp KE (2007) Courtship and mating in free-living spotted hyenas. <em>Behaviour</em> 144: 815&ndash;846.</li>
+      <li id="ref-40">Frank LG, Glickman SE, Licht P (1991) Fatal sibling aggression, precocial development, and androgens in neonatal spotted hyenas. <em>Science</em> 252: 702&ndash;704.</li>
+      <li id="ref-41">Wahaj SA, Holekamp KE (2006) Functions of sibling aggression in the spotted hyaena, <em>Crocuta crocuta</em>. <em>Animal Behaviour</em> 71: 1401&ndash;1409.</li>
+      <li id="ref-42">Wahaj SA, Place NJ, Weldele ML, Glickman SE, Holekamp KE (2007) Siblicide in the spotted hyena: analysis with ultrasonic examination of wild and captive individuals. <em>Behavioral Ecology</em> 18: 974&ndash;984.</li>
+      <li id="ref-43">Brown AK, Pioon MO, Holekamp KE, Strauss ED (2021) Infanticide by females is a leading source of juvenile mortality in a large social carnivore. <em>The American Naturalist</em> 198: 642&ndash;652.</li>
+      <li id="ref-44">H&ouml;ner OP, Wachter B, East ML, Streich WJ, Wilhelm K, Burke T, Hofer H (2007) Female mate-choice drives the evolution of male-biased dispersal in a social mammal. <em>Nature</em> 448: 798&ndash;801.</li>
+      <li id="ref-45">East ML, Burke T, Wilhelm K, Greig C, Hofer H (2003) Sexual conflicts in spotted hyenas: male and female mating tactics and their reproductive outcome with respect to age, social status and tenure. <em>Proceedings of the Royal Society B</em> 270: 1247&ndash;1254.</li>
+      <li id="ref-46">Curren LJ, Sawdy MA, Scribner KT, Lehmann KDS, Holekamp KE (2022) Endurance rivalry among male spotted hyenas: what does it mean to &ldquo;endure&rdquo;? <em>Behavioral Ecology and Sociobiology</em> 76: 112.</li>
+      <li id="ref-47">Szykman M, Engh AL, Van Horn RC, Funk SM, Scribner KT, Holekamp KE (2001) Association patterns among male and female spotted hyenas (<em>Crocuta crocuta</em>) reflect male mate choice. <em>Behavioral Ecology and Sociobiology</em> 50: 231&ndash;238.</li>
+      <li id="ref-48">Drea CM, Hawk JE, Glickman SE (1996) Aggression decreases as play emerges in infant spotted hyaenas: preparation for joining the clan. <em>Animal Behaviour</em> 51: 1323&ndash;1336.</li>
+      <li id="ref-49">Tanner JB, Smale L, Holekamp KE (2007) Ontogenetic variation in the play behavior of spotted hyenas. <em>Journal of Developmental Processes</em> 2: 5&ndash;30.</li>
+      <li id="ref-50">Nolfo AP, Casetta G, Palagi E (2021) Play fighting in wild spotted hyaenas: like a bridge over the troubled water of a hierarchical society. <em>Animal Behaviour</em> 180: 363&ndash;373.</li>
+      <li id="ref-51">Francesconi M, Masciarelli E, Schianini V, Job M, Davidian E, H&ouml;ner OP, Palagi E (2026) Eyes, ears, and play in the wild: flexible use of sensory channels in spotted hyena communication. <em>Behavioral Ecology and Sociobiology</em> 80: 41.</li>
+      <li id="ref-52">Benson-Amram S, Holekamp KE (2012) Innovative problem solving by wild spotted hyenas. <em>Proceedings of the Royal Society B</em> 279: 4087&ndash;4095.</li>
+      <li id="ref-53">Johnson-Ulrich L, Yirga G, Strong RL, Holekamp KE (2021) The effect of urbanization on innovation in spotted hyenas. <em>Animal Cognition</em> 24: 1027&ndash;1038.</li>
+      <li id="ref-54">Benson-Amram S, Heinen VK, Gessner A, Weldele ML, Holekamp KE (2014) Limited social learning of a novel technical problem by spotted hyenas. <em>Behavioural Processes</em> 109: 111&ndash;120.</li>
+      <li id="ref-55">Drea CM, Carter AN (2009) Cooperative problem solving in a social carnivore. <em>Animal Behaviour</em> 78: 967&ndash;977.</li>
+      <li id="ref-56">Engh AL, Siebert ER, Greenberg DA, Holekamp KE (2005) Patterns of alliance formation and postconflict aggression indicate spotted hyaenas recognize third-party relationships. <em>Animal Behaviour</em> 69: 209&ndash;217.</li>
+      <li id="ref-57">Holekamp KE, Sakai ST, Lundrigan BL (2007) Social intelligence in the spotted hyena (<em>Crocuta crocuta</em>). <em>Philosophical Transactions of the Royal Society B</em> 362: 523&ndash;538.</li>
+      <li id="ref-58">Johnson-Ulrich L, Holekamp KE (2020) Group size and social rank predict inhibitory control in spotted hyaenas. <em>Animal Behaviour</em> 160: 157&ndash;168.</li>
+      <li id="ref-59">Holekamp KE, Dantzer B, Stricker G, Yoshida KCS, Benson-Amram S (2015) Brains, brawn and sociality: a hyaena's tale. <em>Animal Behaviour</em> 103: 237&ndash;248.</li>
+      <li id="ref-60">Kolowski JM, Katan D, Theis KR, Holekamp KE (2007) Daily patterns of activity in the spotted hyena. <em>Journal of Mammalogy</em> 88: 1017&ndash;1028.</li>
+      <li id="ref-61">Minasandra P, Jensen FH, Gersick AS, Holekamp KE, Strauss ED, Strandburg-Peshkin A (2023) Accelerometer-based predictions of behaviour elucidate factors affecting the daily activity patterns of spotted hyenas. <em>Royal Society Open Science</em> 10: 230750.</li>
+      <li id="ref-62">Kolowski JM, Holekamp KE (2006) Spatial, temporal, and physical characteristics of livestock depredations by large carnivores along a Kenyan reserve border. <em>Biological Conservation</em> 128: 529&ndash;541.</li>
+      <li id="ref-63">Pangle WM, Holekamp KE (2010) Lethal and nonlethal anthropogenic effects on spotted hyenas in the Masai Mara National Reserve. <em>Journal of Mammalogy</em> 91: 154&ndash;164.</li>
+      <li id="ref-64">Boydston EE, Kapheim KM, Watts HE, Szykman M, Holekamp KE (2003) Altered behaviour in spotted hyenas associated with increased human activity. <em>Animal Conservation</em> 6: 207&ndash;219.</li>
+      <li id="ref-65">Van Meter PE, French JA, Dloniak SM, Watts HE, Kolowski JM, Holekamp KE (2009) Fecal glucocorticoids reflect socio-ecological and anthropogenic stressors in the lives of wild spotted hyenas. <em>Hormones and Behavior</em> 55: 329&ndash;337.</li>
+      <li id="ref-66">Green DS, Johnson-Ulrich L, Couraud HE, Holekamp KE (2018) Anthropogenic disturbance induces opposing population trends in spotted hyenas and African lions. <em>Biodiversity and Conservation</em> 27.</li>
+      <li id="ref-67">Sonawane C, Yirga G, Carter NH (2021) Public health and economic benefits of spotted hyenas <em>Crocuta crocuta</em> in a peri-urban system. <em>Journal of Applied Ecology</em> 58.</li>
+    </ol>
   </div>
 </section>
 
