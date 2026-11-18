@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
   <title>Contact Us &mdash; Mara Hyena Project</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -77,13 +78,30 @@
   <p>We&#8217;d love to hear from you. Fill out the form below and we&#8217;ll get back to you as soon as we can.</p>
 </div>
 
+<section class="bg-pale">
+  <div class="section-inner" style="max-width:640px; margin:0 auto; text-align:center;">
+    <h2>Organization Information</h2>
+    <div class="divider" style="margin:1rem auto 1.5rem;"></div>
+    <p><strong>Mara Hyena Project, Inc.</strong><br>
+    A registered 501(c)(3) nonprofit organization<br>
+    EIN: 92-3667163</p>
+    <p style="margin-top:1rem;"><strong>Mailing address</strong><br>
+    1315 Berten Street<br>
+    Lansing, MI 48910</p>
+    <p style="margin-top:1rem;">Verify our tax-exempt status with the
+    <a href="https://apps.irs.gov/app/eos/" target="_blank" style="color:var(--green); font-weight:500;">IRS Tax Exempt Organization Search</a>
+    (search EIN 92-3667163).</p>
+    <!-- Optional: upload your IRS determination letter to the repo (e.g., docs/irs-determination-letter.pdf) and uncomment:
+    <p style="margin-top:0.5rem;"><a href="docs/irs-determination-letter.pdf" target="_blank" style="color:var(--green); font-weight:500;">IRS determination letter (PDF)</a></p>
+    -->
+  </div>
+</section>
+
 <section class="bg-white">
   <div class="section-inner">
     <div class="contact-form">
 
-      <!-- Replace YOUR_FORMSPREE_ID below with your actual Formspree form ID -->
-      <!-- Sign up at formspree.io, create a form, and paste the ID here -->
-      <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" id="contact-form">
+      <form action="https://formspree.io/f/myewjblp" method="POST" id="contact-form">
 
         <div class="form-group">
           <label for="name">Your Name</label>
@@ -114,6 +132,9 @@
           <textarea id="message" name="message" placeholder="Your message&hellip;" required></textarea>
         </div>
 
+        <!-- Spam trap: hidden from people, bots fill it in and Formspree discards those -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
         <div class="form-submit">
           <button type="submit" class="btn-primary" style="border:none; cursor:pointer; font-size:1rem; padding:0.9rem 2.5rem;">Send Message</button>
         </div>
@@ -131,8 +152,7 @@
   <div class="section-inner" style="max-width:640px; margin:0 auto; text-align:center;">
     <h2>Other Ways to Reach Us</h2>
     <div class="divider" style="margin:1rem auto 1.5rem;"></div>
-    <p>For urgent inquiries or if you don&#8217;t hear back within a week, you can email us directly at <a href="mailto:marahyenaproject@gmail.com" style="color:var(--green); font-weight:500;">marahyenaproject@gmail.com</a>.</p>
-    <p style="margin-top:1rem;">Follow us on Instagram <a href="https://instagram.com/marahyenaproject" target="_blank" style="color:var(--green); font-weight:500;">@marahyenaproject</a> for field updates.</p>
+    <p>Follow us on Instagram <a href="https://instagram.com/marahyenaproject" target="_blank" style="color:var(--green); font-weight:500;">@marahyenaproject</a> for field updates.</p>
   </div>
 </section>
 
@@ -177,10 +197,14 @@ form.addEventListener('submit', async (e) => {
     body: data,
     headers: { 'Accept': 'application/json' }
   });
+  const msg = document.getElementById('success-msg');
   if (response.ok) {
     form.reset();
-    document.getElementById('success-msg').style.display = 'block';
+    msg.textContent = 'Thank you for reaching out! We’ll be in touch soon.';
+  } else {
+    msg.textContent = 'Sorry, something went wrong. Please try again in a few minutes.';
   }
+  msg.style.display = 'block';
 });
 </script>
 
